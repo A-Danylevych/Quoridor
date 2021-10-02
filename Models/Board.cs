@@ -28,13 +28,28 @@ namespace Model
 
         for(int i = 0; i < SideWidth; i++)
         {
-            for(int j = 0; j < CellsCount; j++)
+            for(int j = 0; j < SideWidth; j++)
             {
-                
+                if(i != SideWidth-1)
+                {
+                    Cells[i*SideWidth + j].BottomConnect(Cells[(i+1)*SideWidth + j]);
+                }
+                if(j != SideWidth-1)
+                {
+                    Cells[i*SideWidth + j].RightConnect(Cells[i*SideWidth + j+1]);
+                }
+                if(j != 0)
+                {
+                    Cells[i*SideWidth + j].LeftConnect(Cells[i*SideWidth + j-1]);
+                }
+                if(i != 0)
+                {
+                    Cells[i*SideWidth + j].UpperConnect(Cells[(i-1)*SideWidth + j]);
+                }
             }
         }
     }
-    public static Board getInstance(string name)
+    public static Board GetInstance(string name)
     {
         if (instance == null)
         {
