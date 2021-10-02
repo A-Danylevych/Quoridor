@@ -2,9 +2,17 @@ namespace Model
 {
     class Cell : IPlaceable
     {
-        Cell LeftCell { get; set; }
-        Cell RightCell { get; set; }
-        Cell UpCell { get; set; }
-        Cell DownCell { get; set; }
+        IPlaceable LeftCell { get; set; }
+        IPlaceable RightCell { get; set; }
+        IPlaceable UpCell { get; set; }
+        IPlaceable DownCell { get; set; }
+        public void UpConnect(IPlaceable placeable)
+        {
+
+        }
+        public void Connect(IPlaceable placeable, )
+        {
+            DownCell = placeable;
+        }
     }
 }
