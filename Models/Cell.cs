@@ -23,7 +23,7 @@ namespace Model
             Connect(placeable, Direction.Left);
         }
         
-        public void Connect(IPlaceable placeable, Direction direction)
+        private void Connect(IPlaceable placeable, Direction direction)
         {
             switch(direction){
                 case Direction.Up:
