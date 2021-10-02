@@ -9,9 +9,9 @@ namespace Model
     protected Game()
     {
         isRunning = true;
-        Board = Board.getInstance();
+        Board = Board.GetInstance();
     }
-    public static Game getInstance()
+    public static Game GetInstance()
     {
         if (instance == null)
         {
