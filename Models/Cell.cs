@@ -1,6 +1,6 @@
 namespace Model
 {
-    class Cell
+    class Cell : IPlaceable
     {
         Cell LeftCell { get; set; }
         Cell RightCell { get; set; }
