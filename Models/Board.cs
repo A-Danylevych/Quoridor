@@ -30,7 +30,22 @@ namespace Model
         {
             for(int j = 0; j < SideWidth; j++)
             {
-                Cells[i*SideWidth + j].Connect();
+                if(i != SideWidth-1)
+                {
+                    Cells[i*SideWidth + j].BottomConnect(Cells[(i+1)*SideWidth + j]);
+                }
+                if(j != SideWidth-1)
+                {
+                    Cells[i*SideWidth + j].RightConnect(Cells[i*SideWidth + j+1]);
+                }
+                if(j != 0)
+                {
+                    Cells[i*SideWidth + j].LeftConnect(Cells[i*SideWidth + j-1]);
+                }
+                if(i != 0)
+                {
+                    Cells[i*SideWidth + j].UpperConnect(Cells[(i-1)*SideWidth + j]);
+                }
             }
         }
     }

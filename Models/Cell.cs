@@ -6,6 +6,7 @@ namespace Model
         IPlaceable RightCell { get; set; }
         IPlaceable UpCell { get; set; }
         IPlaceable DownCell { get; set; }
+
         public void UpperConnect(IPlaceable placeable)
         {
             Connect(placeable, Direction.Up);
@@ -41,6 +42,13 @@ namespace Model
                 default:
                     throw new System.ArgumentException("Unexpected direction");
             }
+        }
+        public Cell()
+        {
+            LeftCell = new Wall();
+            RightCell = new Wall();
+            UpCell = new Wall();
+            DownCell = new Wall();
         }
     }
 }
