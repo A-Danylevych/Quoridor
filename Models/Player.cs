@@ -2,8 +2,9 @@ namespace Model
 {
     class Player
     {
-        private Player(Color color)
+        private Player(Color color, Cell cell)
         {
+            CurrentCell = cell; 
             Color = color;
             WallsCount = 10;
         }
@@ -12,29 +13,9 @@ namespace Model
         private Color Color{get; private set;}
         public uint WallsCount{ get; private set;}
 
-        public void ChooseAction()
+        private void ChangeCell(Cell cell)
         {
-
-        }
-        public void PlaceWall()
-        {
-
-        }
-        public void MoveLeft()
-        {
-
-        }
-        public void MoveRight()
-        {
-
-        }
-        public void MoveRight()
-        {
-
-        }
-        public void MoveRight()
-        {
-
+            CurrentCell = cell;
         }
     }
 }
