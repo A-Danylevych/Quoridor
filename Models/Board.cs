@@ -7,9 +7,7 @@ namespace Model
         private List<Cell> Cells {get; set;}
         private const int CellsCount = 81;
         private const int SideWidth = 9;
-
         private static object syncRoot = new Object();
-
         protected Board()
         {
             NewBoard();
@@ -99,6 +97,5 @@ namespace Model
             }
         return instance;
         }
-
     }
 }
