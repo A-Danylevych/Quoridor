@@ -2,44 +2,46 @@ namespace Model
 {
     public class Game
     {
-    private Player UpperPlayer;
-    private Player DownPlayer;
-    private Player CurrentPlayer;
-    private Game instance;
-    private bool isRunning; 
-    private Board Board;
-    private static object syncRoot = new Object(); 
-    public Game()
-    {
-        isRunning = true;
-        Board = Board.GetInstance();
-    }
-    public void ChangeCurrentPlayer()
-    {
-        if(CurrentPlayer == DownPlayer)
+        private Player TopPlayer;
+        private Player BottomPlayer;
+        private Player CurrentPlayer;
+        private Game instance;
+        private bool isRunning; 
+        private Board Board;
+        private static object syncRoot = new Object(); 
+        public Game()
         {
-            CurrentPlayer = UpperPlayer;
+            isRunning = true;
+            Board = Board.GetInstance();
+        }
+        public void ChangeCurrentPlayer()
+    {
+        if(CurrentPlayer == BottomPlayer)
+        {
+            CurrentPlayer = TopPlayer;
         }
         else
         {
-            CurrentPlayer = DownPlayer;
+            CurrentPlayer = Bottomlayer;
         }
     }
-    public void Update()
-    {
-        ChangeCurrentPlayer();
-    }
-    public static Game GetInstance()
-    {
-        if (instance == null)
+        public void Update()
         {
-            lock (syncRoot)
-            {
-                if (instance == null)
-                    instance = new Game();
-            }
+            ChangeCurrentPlayer();
         }
-        return instance;
-    }
+        public static Game GetInstance()
+        {
+            if (instance == null)
+            {
+                lock (syncRoot)
+                {
+                    if (instance == null)
+                    {
+                        instance = new Game();
+                    }
+                }   
+            }
+            return instance;
+        }
     }
 }
