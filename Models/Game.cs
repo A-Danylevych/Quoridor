@@ -1,15 +1,33 @@
 namespace Model
 {
-    class Game
+    public class Game
     {
+    private Player FirstPlayer;
+    private Player SecondPlayer;
+    private Player CurrentPlayer;
     private Game instance;
     private bool isRunning; 
     private Board Board;
     private static object syncRoot = new Object(); 
-    protected Game()
+    public Game()
     {
         isRunning = true;
         Board = Board.GetInstance();
+    }
+    public void ChangeCurrentPlayer()
+    {
+        if(CurrentPlayer == FirstPlayer)
+        {
+            CurrentPlayer = SecondPlayer;
+        }
+        else
+        {
+            CurrentPlayer = FirstPlayer;
+        }
+    }
+    public void Update()
+    {
+
     }
     public static Game GetInstance()
     {
