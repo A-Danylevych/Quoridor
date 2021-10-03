@@ -59,6 +59,24 @@ namespace Model
             int downIndex = CellsCount - SideWidth/2 - 2;
             return Cells[downIndex];
         }
+        public List<Cell> TopWinningCells()
+        {
+            List<Cell> topWinningCells = new List<Cell>();
+            for(int i = CellsCount - 1; i > CellsCount - 1 - SideWidth; i--)
+            {
+                topWinningCells.Add(Cells[i]);
+            }
+            return topWinningCells;
+        }
+        public List<Cell> BottomWinningCells()
+        {
+            List<Cell> bottomWinningCells = new List<Cell>();
+            for(int i = 0; i< SideWidth; i++)
+            {
+                bottomWinningCells.Add(Cells[i]);
+            }
+            return bottomWinningCells;
+        }
         private void PlacePlayer(Player player, Cell cell)
         {
             player.ChangeCell(cell);
