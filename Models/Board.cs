@@ -49,6 +49,10 @@ namespace Model
             }
         }
     }
+    public void PlaceFigure()
+    {
+
+    }
     public static Board GetInstance(string name)
     {
         if (instance == null)

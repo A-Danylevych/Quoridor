@@ -2,8 +2,8 @@ namespace Model
 {
     public class Game
     {
-    private Player FirstPlayer;
-    private Player SecondPlayer;
+    private Player UpperPlayer;
+    private Player DownPlayer;
     private Player CurrentPlayer;
     private Game instance;
     private bool isRunning; 
@@ -16,18 +16,18 @@ namespace Model
     }
     public void ChangeCurrentPlayer()
     {
-        if(CurrentPlayer == FirstPlayer)
+        if(CurrentPlayer == DownPlayer)
         {
-            CurrentPlayer = SecondPlayer;
+            CurrentPlayer = UpperPlayer;
         }
         else
         {
-            CurrentPlayer = FirstPlayer;
+            CurrentPlayer = DownPlayer;
         }
     }
     public void Update()
     {
-
+        ChangeCurrentPlayer();
     }
     public static Game GetInstance()
     {
