@@ -15,16 +15,16 @@ namespace Model
             Board = Board.GetInstance();
         }
         public void ChangeCurrentPlayer()
-    {
-        if(CurrentPlayer == BottomPlayer)
         {
-            CurrentPlayer = TopPlayer;
+            if(CurrentPlayer == BottomPlayer)
+            {
+                CurrentPlayer = TopPlayer;
+            }
+            else
+            {
+                CurrentPlayer = Bottomlayer;
+            }
         }
-        else
-        {
-            CurrentPlayer = Bottomlayer;
-        }
-    }
         public void Update()
         {
             ChangeCurrentPlayer();
