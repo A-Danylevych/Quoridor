@@ -2,12 +2,14 @@ namespace Model
 {
     class Player
     {
-        public Person()
+        private Player(Color color)
         {
+            Color = color;
             WallsCount = 10;
         }
-        public Cell CurrentCell{ get; private set;}
+        private Cell CurrentCell{ get; private set;}
     
+        private Color Color{get; private set;}
         public uint WallsCount{ get; private set;}
 
         public void ChooseAction()
