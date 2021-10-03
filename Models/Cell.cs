@@ -2,10 +2,10 @@ namespace Model
 {
     class Cell : IPlaceable
     {
-        IPlaceable LeftCell { get; set; }
-        IPlaceable RightCell { get; set; }
-        IPlaceable UpCell { get; set; }
-        IPlaceable DownCell { get; set; }
+        public IPlaceable LeftCell { get; private set; }
+        public IPlaceable RightCell { get; private set; }
+        public IPlaceable UpCell { get; private set; }
+        public IPlaceable DownCell { get; private set; }
         public void UpperConnect(IPlaceable placeable) => Connect(placeable, Direction.Up);
         public void BottomConnect(IPlaceable placeable) => Connect(placeable, Direction.Down);
         public void RightConnect(IPlaceable placeable) => Connect(placeable, Direction.Right);
