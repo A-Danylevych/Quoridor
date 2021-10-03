@@ -49,13 +49,15 @@ namespace Model
                 }
             }
         }
-        public void UpperStartPosition()
+        public Cell TopStartPosition()
         {
-
+            int upperIndex = SideWidth/2;
+            return Cells[upperIndex];
         }
-        public void DownStartPosition()
+        public Cell BottomStartPosition()
         {
-
+            int downIndex = CellsCount - SideWidth/2 - 2;
+            return Cells[downIndex];
         }
         private void PlacePlayer(Player player, Cell cell)
         {

@@ -2,8 +2,8 @@ namespace Model
 {
     public class Game
     {
-        private Player UpperPlayer;
-        private Player DownPlayer;
+        private Player TopPlayer;
+        private Player BottomPlayer;
         private Player CurrentPlayer;
         private Game instance;
         private bool isRunning; 
@@ -16,13 +16,13 @@ namespace Model
         }
         public void ChangeCurrentPlayer()
     {
-        if(CurrentPlayer == DownPlayer)
+        if(CurrentPlayer == BottomPlayer)
         {
-            CurrentPlayer = UpperPlayer;
+            CurrentPlayer = TopPlayer;
         }
         else
         {
-            CurrentPlayer = DownPlayer;
+            CurrentPlayer = Bottomlayer;
         }
     }
         public void Update()
