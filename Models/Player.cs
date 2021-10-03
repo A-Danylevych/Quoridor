@@ -8,7 +8,7 @@ namespace Model
             Color = color;
             WallsCount = 10;
         }
-        private Cell CurrentCell{ get; private set;}
+        public Cell CurrentCell{ get; private set;}
     
         private Color Color{get; private set;}
         public uint WallsCount{ get; private set;}
