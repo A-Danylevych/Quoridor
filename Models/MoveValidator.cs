@@ -2,44 +2,39 @@ namespace Model
 {
     class MoveValidator
     {
-        private bool IsValid{get; private set;}
-
-        public bool MoveIsValid(Action action, Direction direction, Player player)
+        private List<Cell> RenderPossibleToMove = new List<Cell>();
+        public List<Cell> MoveIsValid(Direction direction, Player player)
         {
-            if(action == 1)
-            {
                 switch(direction)
                 {
                     case Direction.Up:
-                        if(player.CurrentCell.UpCell is Wall)
+                        if(!player.CurrentCell.UpCell is Wall)
                         {
-                            IsValid = false;
-                            return false;
+                            {RenderPossibleToMove.Add(player.CurrentCell.UpCell);};
                         }
-                        else{}
 
                     case Direction.Down:
-                        if(player.CurrentCell.DownCell is Wall)
+                        if(!player.CurrentCell.DownCell is Wall)
                         {
-                            IsValid = false;
-                            return false;
+                            {RenderPossibleToMove.Add(player.CurrentCell.DownCell);};
                         }
 
                     case Direction.Left:
-                        if(player.CurrentCell.LeftCell is Wall)
+                        if(!player.CurrentCell.LeftCell is Wall)
                         {
-                            IsValid = false;
-                            return false;
+                            {RenderPossibleToMove.Add(player.CurrentCell.LeftCell);};
                         }
 
                     case Direction.Right:
-                        if(player.CurrentCell.RightCell is Wall)
+                        if(!player.CurrentCell.RightCell is Wall)
                         {
-                            IsValid = false;
-                            return false;
+                            {RenderPossibleToMove.Add(player.CurrentCell.RightCell);};
                         }
                 }
-            }
+        }
+        public List<Cell> CheckForOtherPlayer(Player topPlayer, Player bottomPlayer)
+        {
+
         }
     }
 }
