@@ -46,12 +46,16 @@ namespace Model
             {
                 case Action.MakeMove:
 
-                        Viewer.RenderPossibleCellsToMove();             
+                        Viewer.RenderPossibleCellsToMove();           
+                        Cell cell = Controller.WaitForCell();  
+                        ChangeCurrentPlayer();
                         break;
                 case Action.PlaceWall:
+                    Wall wall = Controller.WaitForWall();
+                    ChangeCurrentPlayer();
                     break;
             }
-            ChangeCurrentPlayer();
+            
         }
         public static Game GetInstance()
         {
