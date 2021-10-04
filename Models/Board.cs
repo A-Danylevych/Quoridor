@@ -16,6 +16,22 @@ namespace Model
         {
             InitializeCells();
         }
+        public void MovePlayer(Player player, CellCoords coords)
+        {
+            Cell cell = FindCellByCoords(coords);
+            MovePlayer(player, cell);
+        }
+        private Cell FindCellByCoords(CellCoords coords)
+        {
+            foreach(Cell cell in Cells)
+            {
+                if(cell.Coords.Top == coords.Top && cell.Coords.Left == coords.Left)
+                {
+                    return cell;
+                }
+            }
+            return null;
+        }
         private void InitializeCells()
         {
             Cells = new List<Cell>();
