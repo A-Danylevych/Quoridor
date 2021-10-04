@@ -69,7 +69,7 @@ namespace Model
             }
             if(!gameState.inPlay)
             {
-                Viewer.RenderEnding(gameState.Winner.Color);
+                Viewer.RenderEnding(gameState.Winner.Color.ToString());
             }
             
         }
