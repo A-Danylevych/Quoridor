@@ -1,15 +1,15 @@
 namespace Model
 {
-    class MoveValidator
+    static class MoveValidator
     {
-        public List<Cell> PossibleToMoveCells(Player currentPlayer, Player otherPlayer)
+        static public List<Cell> PossibleToMoveCells(Player currentPlayer, Player otherPlayer)
         {
             List<Cell> PossibleToMove = new List<Cell>();
             PossibleToMove = MoveIsValid(currentPlayer, PossibleToMove);       
             PossibleToMove = CheckForOtherPlayer(currentPlayer, otherPlayer, PossibleToMove);
             return PossibleToMove;
         }
-        public bool IsThereAWay(GameState gameState, Player topPlayer, Player bottomPlayer)
+        static public bool IsThereAWay(GameState gameState, Player topPlayer, Player bottomPlayer)
         {
             if(FindAWay(gameState.BottomWinningCells, bottomPlayer.CurrentCell) && FindAWay(gameState.TopWinningCells, topPlayer)){
                 return true;
@@ -17,10 +17,10 @@ namespace Model
             return false;
         }
 
-        private bool FindAWay(List<Cell> cells, Cell cell){
-            
+        static private bool FindAWay(List<Cell> cells, Cell cell){
+
         }
-        private List<Cell> MoveIsValid(Player player, List<Cell> PossibleToMove)
+        static private List<Cell> MoveIsValid(Player player, List<Cell> PossibleToMove)
         {
             if(!player.CurrentCell.UpCell is Wall)
             {
@@ -41,7 +41,7 @@ namespace Model
             return PossibleToMove;
         }
 
-        private List<Cell> CheckForOtherPlayer(Player currentPlayer, Player otherPlayer, List<Cell> PossibleToMove)
+        static private List<Cell> CheckForOtherPlayer(Player currentPlayer, Player otherPlayer, List<Cell> PossibleToMove)
         {   
             if(currentPlayer.CurrentCell.DownCell == otherPlayer.CurrentCell)
             {   

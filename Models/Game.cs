@@ -56,10 +56,9 @@ namespace Model
             switch(Controller.WaitForAction)
             {
                 case Action.MakeMove:
-
-                        Viewer.RenderPossibleCellsToMove();           
+        
                         Cell cell = Controller.WaitForCell(); 
-                
+                        
                         ChangeCurrentPlayer();
                         break;
                 case Action.PlaceWall:
