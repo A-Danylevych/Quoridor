@@ -80,6 +80,7 @@ namespace Model
                             CurrentPlayer.UnPlaceWall();
                         }
                     }
+                    Viewer.RenderRemainingWalls(TopPlayer.WallsCount, BottomCount.WallsCount);
                     break;
             }
             if(!gameState.inPlay)
