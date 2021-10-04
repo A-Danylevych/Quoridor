@@ -5,8 +5,8 @@ namespace Model
     class GameState
     {
         public bool inPlay {get; private set;}
-        List<Cell> TopWinningCells;
-        List<Cell> BottomWinningCells;
+        public List<Cell> TopWinningCells { get; private set;}
+        public List<Cell> BottomWinningCells { get; private set;}
         public Player Winner {get; private set;}
         public bool CheckTopWinning(Player player) 
         {

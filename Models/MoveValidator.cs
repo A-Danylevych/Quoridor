@@ -9,6 +9,17 @@ namespace Model
             PossibleToMove = CheckForOtherPlayer(currentPlayer, otherPlayer, PossibleToMove);
             return PossibleToMove;
         }
+        public bool IsThereAWay(GameState gameState, Player topPlayer, Player bottomPlayer)
+        {
+            if(FindAWay(gameState.BottomWinningCells, bottomPlayer.CurrentCell) && FindAWay(gameState.TopWinningCells, topPlayer)){
+                return true;
+            }
+            return false;
+        }
+
+        private bool FindAWay(List<Cell> cells, Cell cell){
+            
+        }
         private List<Cell> MoveIsValid(Player player, List<Cell> PossibleToMove)
         {
             if(!player.CurrentCell.UpCell is Wall)
