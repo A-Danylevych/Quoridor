@@ -2,10 +2,15 @@ namespace Model
 {
     class Wall : IPlaceable
     {
+        public CellCoords Coords { get; private set;}
         IPlaceable LeftCell { get; set; }
         IPlaceable RightCell { get; set; }
         IPlaceable UpCell { get; set; }
         IPlaceable DownCell { get; set; }
+        public Wall(CellCoords coords)
+        {
+            Coords = coords;
+        }
         public void UpperConnect(IPlaceable placeable) => Connect(placeable, Direction.Up);
         public void BottomConnect(IPlaceable placeable) => Connect(placeable, Direction.Down);
         public void RightConnect(IPlaceable placeable) => Connect(placeable, Direction.Right);

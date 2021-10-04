@@ -11,7 +11,18 @@ namespace Model
         public Cell CurrentCell{ get; private set;}
     
         public Color Color{get; private set;}
-        public uint WallsCount{ get; private set;}
+        public int WallsCount{ get; private set;}
+         public bool PlaceWall()
+        {
+            if(WallsCount > 0){
+                WallsCount --;
+                return true;
+            }
+            return false;
+        }
+        public void UnPlaceWall(){
+            WallsCount ++;
+        }
 
         private void ChangeCell(Cell cell)
         {

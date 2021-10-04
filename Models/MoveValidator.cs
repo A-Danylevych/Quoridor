@@ -1,8 +1,22 @@
+using System.Collections.Generic;
+
 namespace Model
 {
     static class MoveValidator
     {
-        static public List<Cell> PossibleToMoveCells(Player currentPlayer, Player otherPlayer)
+        static public bool IsValidMove(Cell cell, Player currentPlayer, Player otherPlayer)
+        {
+            List<Cell> possibleMoves = PossibleToMoveCells(currentPlayer, otherPlayer);
+            foreach(Cell possibleCell in possibleMoves)
+            {
+                if(possibleCell.Coords.Equals(cell.Coords))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+        static private List<Cell> PossibleToMoveCells(Player currentPlayer, Player otherPlayer)
         {
             List<Cell> PossibleToMove = new List<Cell>();
             PossibleToMove = MoveIsValid(currentPlayer, PossibleToMove);       

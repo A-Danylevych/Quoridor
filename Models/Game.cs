@@ -18,7 +18,7 @@ namespace Model
             Controller = controller;
             viewer = viewer;
             isRunning = true;
-            Board = Board.GetInstance();
+            Board = new Board();
             Board.NewBoard();
             Cell topStartPosition = Board.TopStartPosition();
             TopPlayer = new Player(Color.Green, topStartPosition);
@@ -56,14 +56,31 @@ namespace Model
             switch(Controller.WaitForAction)
             {
                 case Action.MakeMove:
-        
                         Cell cell = Controller.WaitForCell(); 
-                        
-                        ChangeCurrentPlayer();
+                        if(MoveValidator.IsValidMove(cell, currentPlayer, otherPlayer))
+                        {
+                            var playerCoords = CurrentPlayer.CurrentCell.Coords;
+                            Viewer.RenderPlayer(playerCoords.Top, playerCoords.Left);
+                            ChangeCurrentPlayer();
+                        }
                         break;
                 case Action.PlaceWall:
                     Wall wall = Controller.WaitForWall();
-                    ChangeCurrentPlayer();
+                    if(CurrentPlayer.PlaceWall())
+                    {
+                        Board.PutWall(wall);
+                        if(MoveValidator.IsThereAWay(gameState, topPlayer, bottomPlayer))
+                        {
+                            var wallCoords = wall.Coords;
+                            Viewer.RenderWall(wallCoords.Top, wallCoords.Left);
+                        }
+                        else
+                        {
+                            Board.DropWall(wall);
+                            CurrentPlayer.UnPlaceWall();
+                        }
+                    
+                    }
                     break;
             }
             if(!gameState.inPlay)

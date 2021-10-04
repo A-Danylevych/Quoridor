@@ -7,8 +7,7 @@ namespace Model
         private List<Cell> Cells {get; set;}
         private const int CellsCount = 81;
         private const int SideWidth = 9;
-        private static object syncRoot = new Object();
-        protected Board()
+        public Board()
         {
             NewBoard();
         }
@@ -111,19 +110,11 @@ namespace Model
         {
             player.ChangeCell(cell);
         }
-        public static Board GetInstance()
-        {
-            if (instance == null)
-            {
-                lock (syncRoot)
-                {
-                    if (instance == null)
-                    {
-                        instance = new Board(name);
-                    }
-                }
-            }
-        return instance;
+        public void PutWall(Wall wall){
+
+        }
+        public void DropWall(Wall wall){
+            
         }
     }
 }
