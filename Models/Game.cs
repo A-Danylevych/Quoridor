@@ -43,7 +43,7 @@ namespace Model
         private bool CheckWinning(){
             if(CurrentPlayer == BottomPlayer)
             {
-                return gameState.CheckBottompWinnin(BottomPlayer);
+                return gameState.CheckBottompWinning(BottomPlayer);
 
             }
             else
