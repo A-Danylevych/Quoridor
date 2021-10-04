@@ -79,7 +79,6 @@ namespace Model
                             Board.DropWall(wall);
                             CurrentPlayer.UnPlaceWall();
                         }
-                    
                     }
                     break;
             }
