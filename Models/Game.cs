@@ -61,6 +61,7 @@ namespace Model
                         {
                             var playerCoords = CurrentPlayer.CurrentCell.Coords;
                             Viewer.RenderPlayer(playerCoords.Top, playerCoords.Left);
+                            CheckWinning();
                             ChangeCurrentPlayer();
                         }
                         break;
