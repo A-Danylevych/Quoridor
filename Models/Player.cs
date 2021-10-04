@@ -10,7 +10,7 @@ namespace Model
         }
         public Cell CurrentCell{ get; private set;}
     
-        private Color Color{get; private set;}
+        public Color Color{get; private set;}
         public uint WallsCount{ get; private set;}
 
         private void ChangeCell(Cell cell)

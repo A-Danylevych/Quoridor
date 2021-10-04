@@ -2,7 +2,7 @@ namespace Model
 {
     enum Color
     {
-        Red,
-        Blue
+        Red = "Red",
+        Green = "Green"
     }
 }
