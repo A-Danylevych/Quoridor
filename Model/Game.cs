@@ -1,23 +1,24 @@
+using System;
 using System.Collections.Generic;
 
 namespace Model
 {
     public class Game
     {
-        private Player TopPlayer;
+        private readonly Player TopPlayer;
         public IController Controller {get; private set;}
         public IViewer Viewer {get; private set;}
-        private Player BottomPlayer;
+        private readonly Player BottomPlayer;
         private Player CurrentPlayer;
         private Player OtherPlayer;
-        private GameState gameState;
+        private readonly GameState gameState;
         private Game instance;
-        private Board Board;
-        private static object syncRoot = new Object(); 
+        private readonly Board Board;
+        private readonly static object syncRoot = new Object(); 
         private Game(IController controller, IViewer viewer)
         {
             Controller = controller;
-            viewer = viewer;
+            Viewer = viewer;
             Board = new Board();
             Board.NewBoard();
             Cell topStartPosition = Board.TopStartPosition();
@@ -87,13 +88,13 @@ namespace Model
                     Viewer.RenderRemainingWalls(TopPlayer.WallsCount, BottomPlayer.WallsCount);
                     break;
             }
-            if(!gameState.inPlay)
+            if(!gameState.InPlay)
             {
                 Viewer.RenderEnding();
             }
             
         }
-        public static Game GetInstance(IController controller, IViewer viewer)
+        public Game GetInstance(IController controller, IViewer viewer)
         {
             if (instance == null)
             {

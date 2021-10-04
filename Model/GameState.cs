@@ -4,7 +4,7 @@ namespace Model
 {
     class GameState
     {
-        public bool inPlay {get; private set;}
+        public bool InPlay {get; private set;}
         public List<Cell> TopWinningCells { get; private set;}
         public List<Cell> BottomWinningCells { get; private set;}
         public Player Winner {get; private set;}
@@ -33,7 +33,7 @@ namespace Model
             {
                 if(currentCell == cell)
                 {
-                    inPlay = false;
+                    InPlay = false;
                     return true;
                 }
             }
@@ -43,7 +43,7 @@ namespace Model
         {
             TopWinningCells = topWinningCells;
             BottomWinningCells = bottomWinningCells;
-            inPlay = true;
+            InPlay = true;
         }
     }
 }
