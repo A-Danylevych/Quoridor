@@ -2,6 +2,7 @@ namespace Model
 {
     class Cell : IPlaceable
     {
+        public CellCoords Coords { get; private set;}
         public IPlaceable LeftCell { get; private set; }
         public IPlaceable RightCell { get; private set; }
         public IPlaceable UpCell { get; private set; }
@@ -29,8 +30,9 @@ namespace Model
                     throw new System.ArgumentException("Unexpected direction");
             }
         }
-        public Cell()
+        public Cell(CellCoords coords)
         {
+            Coords = coords;
             LeftCell = new Wall();
             RightCell = new Wall();
             UpCell = new Wall();

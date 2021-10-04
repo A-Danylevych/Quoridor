@@ -16,12 +16,40 @@ namespace Model
         {
             InitializeCells();
         }
+        public void MovePlayer(Player player, CellCoords coords)
+        {
+            Cell cell = FindCellByCoords(coords);
+            MovePlayer(player, cell);
+        }
+        private Cell FindCellByCoords(CellCoords coords)
+        {
+            foreach(Cell cell in Cells)
+            {
+                if(cell.Coords.Top == coords.Top && cell.Coords.Left == coords.Left)
+                {
+                    return cell;
+                }
+            }
+            return null;
+        }
         private void InitializeCells()
         {
             Cells = new List<Cell>();
-            for(int i = 0; i < CellsCount; i++)
+            int leftStart = 25;
+            int topStart = 25;
+            int top = topStart;
+            int left = leftStart;
+            int offset = 75; 
+            for(int i = 0; i < SideWidth; i++)
             {
-                Cells.Add(new Cell());
+                for(int j = 0; j<SideWidth; j++)
+                {
+                    CellCoords coords = new CellCoords(top, left);
+                    Cells.Add(new Cell(coords));
+                    left += offset;
+                }
+                top += offset;
+                left = leftStart;
             }
 
             for(int i = 0; i < SideWidth; i++)

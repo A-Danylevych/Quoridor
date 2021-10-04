@@ -21,15 +21,15 @@ namespace Model
             Board = Board.GetInstance();
             Board.NewBoard();
             Cell topStartPosition = Board.TopStartPosition();
-            TopPlayer = new Player(topStartPosition);
+            TopPlayer = new Player(Color.Green, topStartPosition);
             Cell bottomStartPosition = Board.BottomStartPosition();
-            BottomPlayer = new Player(bottomStartPosition);
+            BottomPlayer = new Player(Color.Red, bottomStartPosition);
             CurrentPlayer = BottomPlayer;
             List<Cell> topWinningCells = Board.TopWinningCells();
             List<Cell> bottomWinningCells = Board.BottomWinningCells();
             gameState = new GameState(topWinningCells, bottomWinningCells);
         }
-        public void ChangeCurrentPlayer()
+        private void ChangeCurrentPlayer()
         {
             if(CurrentPlayer == BottomPlayer)
             {
@@ -40,6 +40,17 @@ namespace Model
                 CurrentPlayer = BottomPlayer;
             }
         }
+        private bool CheckWinning(){
+                if(CurrentPlayer == BottomPlayer)
+                {
+                    return gameState.CheckBottompWinnin(BottomPlayer);
+
+                }
+                else
+                {
+                    return gameState.CheckTopWinning(TopPlayer);
+                }
+        }
         public void Update()
         {
             switch(Controller.WaitForAction)
@@ -47,13 +58,18 @@ namespace Model
                 case Action.MakeMove:
 
                         Viewer.RenderPossibleCellsToMove();           
-                        Cell cell = Controller.WaitForCell();  
+                        Cell cell = Controller.WaitForCell(); 
+                
                         ChangeCurrentPlayer();
                         break;
                 case Action.PlaceWall:
                     Wall wall = Controller.WaitForWall();
                     ChangeCurrentPlayer();
                     break;
+            }
+            if(!gameState.inPlay)
+            {
+                Viewer.RenderEnding(gameState.Winner.Color);
             }
             
         }

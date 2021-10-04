@@ -7,8 +7,25 @@ namespace Model
         public bool inPlay {get; private set;}
         List<Cell> TopWinningCells;
         List<Cell> BottomWinningCells;
-        public bool CheckTopWinning(Player player) => CheckWinning(player.CurrentCell, TopWinningCells);
-        public bool CheckBottompWinning(Player player) => CheckWinning(player.CurrentCell, BottomWinningCells);
+        public Player Winner {get; private set;}
+        public bool CheckTopWinning(Player player) 
+        {
+            if(CheckWinning(player.CurrentCell, TopWinningCells))
+            {
+                Winner = player;
+                return true;
+            }
+            return false;
+        }
+        public bool CheckBottompWinning(Player player) 
+        {
+            if(CheckWinning(player.CurrentCell, BottomWinningCells))
+            {
+                Winner = player;
+                return true;
+            }
+            return false;
+        }
 
         private bool CheckWinning(Cell currentCell, List<Cell> winningCells)
         {

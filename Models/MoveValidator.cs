@@ -2,39 +2,47 @@ namespace Model
 {
     class MoveValidator
     {
-        private List<Cell> RenderPossibleToMove = new List<Cell>();
-        public List<Cell> MoveIsValid(Direction direction, Player player)
+        public List<Cell> PossibleToMoveCells(Player currentPlayer, Player otherPlayer)
         {
-                switch(direction)
-                {
-                    case Direction.Up:
-                        if(!player.CurrentCell.UpCell is Wall)
-                        {
-                            {RenderPossibleToMove.Add(player.CurrentCell.UpCell);};
-                        }
-
-                    case Direction.Down:
-                        if(!player.CurrentCell.DownCell is Wall)
-                        {
-                            {RenderPossibleToMove.Add(player.CurrentCell.DownCell);};
-                        }
-
-                    case Direction.Left:
-                        if(!player.CurrentCell.LeftCell is Wall)
-                        {
-                            {RenderPossibleToMove.Add(player.CurrentCell.LeftCell);};
-                        }
-
-                    case Direction.Right:
-                        if(!player.CurrentCell.RightCell is Wall)
-                        {
-                            {RenderPossibleToMove.Add(player.CurrentCell.RightCell);};
-                        }
-                }
+            List<Cell> PossibleToMove = new List<Cell>();
+            PossibleToMove = MoveIsValid(currentPlayer, PossibleToMove);       
+            PossibleToMove = CheckForOtherPlayer(currentPlayer, otherPlayer, PossibleToMove);
+            return PossibleToMove;
         }
-        public List<Cell> CheckForOtherPlayer(Player topPlayer, Player bottomPlayer)
+        private List<Cell> MoveIsValid(Player player, List<Cell> PossibleToMove)
         {
+            if(!player.CurrentCell.UpCell is Wall)
+            {
+                PossibleToMove.Add(player.CurrentCell.UpCell);
+            }
+            if(!player.CurrentCell.DownCell is Wall)
+            {
+                PossibleToMove.Add(player.CurrentCell.DownCell);
+            }
+            if(!player.CurrentCell.LeftCell is Wall)
+            {
+                PossibleToMove.Add(player.CurrentCell.LeftCell);
+            }
+            if(!player.CurrentCell.RightCell is Wall)
+            {
+                PossibleToMove.Add(player.CurrentCell.RightCell);
+            }
+            return PossibleToMove;
+        }
 
+        private List<Cell> CheckForOtherPlayer(Player currentPlayer, Player otherPlayer, List<Cell> PossibleToMove)
+        {   
+            if(currentPlayer.CurrentCell.DownCell == otherPlayer.CurrentCell)
+            {   
+                PossibleToMove.Remove(otherPlayer.CurrentCell);
+                PossibleToMove.Add(otherPlayer.CurrentCell.DownCell);
+            }
+            else if(currentPlayer.CurrentCell.UpCell == otherPlayer.CurrentCell)
+            {
+                PossibleToMove.Remove(otherPlayer.CurrentCell);
+                PossibleToMove.Add(otherPlayer.CurrentCell.UpCell);
+            }
+            return PossibleToMove;
         }
     }
 }
