@@ -41,15 +41,15 @@ namespace Model
             }
         }
         private bool CheckWinning(){
-                if(CurrentPlayer == BottomPlayer)
-                {
-                    return gameState.CheckBottompWinnin(BottomPlayer);
+            if(CurrentPlayer == BottomPlayer)
+            {
+                return gameState.CheckBottompWinnin(BottomPlayer);
 
-                }
-                else
-                {
-                    return gameState.CheckTopWinning(TopPlayer);
-                }
+            }
+            else
+            {
+                return gameState.CheckTopWinning(TopPlayer);
+            }
         }
         public void Update()
         {
