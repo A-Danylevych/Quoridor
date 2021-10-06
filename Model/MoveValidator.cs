@@ -30,13 +30,32 @@ namespace Model
             }
             return false;
         }
+        static private bool FindAWay(List<Cell> Cells, Cell cell)
+        {
+            Stack<Cell> StackCells = new Stack<Cell>();
+            List<Cell> Visited = new List<Cell>();
+            
+            StackCells.Push(cell);
+            Visited.Add(cell);
 
-        static private bool FindAWay(List<Cell> cells, Cell cell){
+            while (StackCells.Count != 0)
+            {
+                Cell CurrenrCell = StackCells.Pop();
+                foreach (Cell next in CurrenrCell.GetNeighbors())
+                {
+                    if(!(Visited.Contains(next)))
+                    {
+                        if(Cells.Contains(next))
+                        {
+                            return true;
+                        }
+                        StackCells.Push(next);
+                        Visited.Add(next);            
+                    }
+                    
+                }
+            }
             return false;
-<<<<<<< HEAD
-=======
-
->>>>>>> 6518c2a90d4d134a706b6b9a9c4e82ebd2b5daad
         }
         static private List<Cell> MoveIsValid(Player player, List<Cell> PossibleToMove)
         {
