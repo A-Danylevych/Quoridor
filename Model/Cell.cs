@@ -1,3 +1,6 @@
+using System.Collections.Generic;
+
+
 namespace Model
 {
     public class Cell : IPlaceable
@@ -29,6 +32,27 @@ namespace Model
                 default:
                     throw new System.ArgumentException("Unexpected direction");
             }
+        }
+        public List<Cell> GetNeighbors()
+        {
+            List<Cell> Neighbors = new List<Cell>();
+            if(!(UpCell is Wall))
+            {
+                Neighbors.Add((Cell)UpCell);
+            }
+            if(!(DownCell is Wall))
+            {
+                Neighbors.Add((Cell)DownCell);
+            }
+            if(!(LeftCell is Wall))
+            {
+                Neighbors.Add((Cell)LeftCell);
+            }
+            if(!(RightCell is Wall))
+            {
+                Neighbors.Add((Cell)RightCell);
+            }
+            return Neighbors;
         }
         public Cell(CellCoords coords)
         {
