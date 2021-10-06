@@ -33,10 +33,6 @@ namespace Model
 
         static private bool FindAWay(List<Cell> cells, Cell cell){
             return false;
-<<<<<<< HEAD
-=======
-
->>>>>>> 6518c2a90d4d134a706b6b9a9c4e82ebd2b5daad
         }
         static private List<Cell> MoveIsValid(Player player, List<Cell> PossibleToMove)
         {
