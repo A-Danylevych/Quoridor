@@ -23,6 +23,9 @@ namespace Quoridor
         {
             Draw draw = new Draw();
 
+            draw.DrawWall = true;
+            draw.DrawDot = true;
+
             foreach (Control x in this.Controls) //починаємо працювати з кожним елементом форми
             {
 
@@ -58,47 +61,42 @@ namespace Quoridor
                     };
                 }
 
-                /*if ((string)x.Tag == "Red Dot")
-                    x.MouseClick += (a_sender, a_args) => //активується при кліку миші
-                     gored = true;
-
-                if ((string)x.Tag == "Green Dot")
-                    x.MouseClick += (a_sender, a_args) => //активується при кліку миші
-                     gogreen = true;*/
-
                 if ((string)x.Tag == "Cell")  //прописуємо дії для гральних клітинок
                 {
+                    if (draw.DrawDot == true)
+                    {
+                        draw.GoRed = true;
 
-                    if (draw.GoRed == true)
-                        x.MouseClick += (a_sender, a_args) => //активується при кліку миші
-                        {
-                            int rtop = x.Top + 4;
-                            int rleft = x.Left + 4;
+                        if (draw.GoRed == true)
+                            x.MouseClick += (a_sender, a_args) => //активується при кліку миші
+                            {
+                                int rtop = x.Top + 4;
+                                int rleft = x.Left + 4;
 
-                            RedDot.Top = rtop;
-                            RedDot.Left = rleft;
+                                RedDot.Top = rtop;
+                                RedDot.Left = rleft;
 
-                            RedDot.BringToFront();
+                                RedDot.BringToFront();
 
-                            draw.GoGreen = true;
-                            draw.GoRed = false;
-                        };
+                                draw.GoGreen = true;
+                                draw.GoRed = false;
+                            };
 
-                    if (draw.GoGreen == true)
-                        x.MouseClick += (a_sender, a_args) => //активується при кліку миші
-                        {
-                            int gtop = x.Top + 4;
-                            int gleft = x.Left + 4;
+                        if (draw.GoGreen == true)
+                            x.MouseClick += (a_sender, a_args) => //активується при кліку миші
+                            {
+                                int gtop = x.Top + 4;
+                                int gleft = x.Left + 4;
 
-                            GreenDot.Top = gtop;
-                            GreenDot.Left = gleft;
+                                GreenDot.Top = gtop;
+                                GreenDot.Left = gleft;
 
-                            GreenDot.BringToFront();
+                                GreenDot.BringToFront();
 
-                            draw.GoGreen = false;
-                            draw.GoRed = true;
-                        };
-
+                                draw.GoGreen = false;
+                                draw.GoRed = true;
+                            };
+                    }
                 };
 
             }
@@ -116,13 +114,13 @@ namespace Quoridor
 
     public class Draw  //змінює стан клітинок
     {
-        public bool DrawWall { get; set; } = true;
+        public bool DrawWall { get; set; } = false;
 
         public bool DrawDot { get; set; } = false;
 
         public bool GoGreen { get; set; } = false;
 
-        public bool GoRed { get; set; } = true;
+        public bool GoRed { get; set; } = false;
     }
 
     class Moove  //зчитує рухи
