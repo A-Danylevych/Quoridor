@@ -25,10 +25,7 @@ namespace Model
         }
         static public bool IsThereAWay(GameState gameState, Player topPlayer, Player bottomPlayer)
         {
-            if(FindAWay(gameState.BottomWinningCells, bottomPlayer.CurrentCell) && FindAWay(gameState.TopWinningCells, topPlayer.CurrentCell)){
-                return true;
-            }
-            return false;
+            return FindAWay(gameState.BottomWinningCells, bottomPlayer.CurrentCell) && FindAWay(gameState.TopWinningCells, topPlayer.CurrentCell);
         }
         static private bool FindAWay(List<Cell> Cells, Cell cell)
         {
