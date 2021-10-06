@@ -32,6 +32,7 @@ namespace Model
         }
 
         static private bool FindAWay(List<Cell> cells, Cell cell){
+            return false;
 
         }
         static private List<Cell> MoveIsValid(Player player, List<Cell> PossibleToMove)
