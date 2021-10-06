@@ -504,7 +504,7 @@ namespace Quoridor
             this.pictureBox1.Size = new System.Drawing.Size(700, 25);
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Tag = "Wall";
+            this.pictureBox1.Tag = "Map";
             // 
             // pictureBox3
             // 
@@ -514,7 +514,7 @@ namespace Quoridor
             this.pictureBox3.Size = new System.Drawing.Size(25, 700);
             this.pictureBox3.TabIndex = 2;
             this.pictureBox3.TabStop = false;
-            this.pictureBox3.Tag = "Wall";
+            this.pictureBox3.Tag = "Map";
             // 
             // gameTimer
             // 
@@ -539,7 +539,7 @@ namespace Quoridor
             this.pictureBox4.Size = new System.Drawing.Size(700, 25);
             this.pictureBox4.TabIndex = 1;
             this.pictureBox4.TabStop = false;
-            this.pictureBox4.Tag = "Wall";
+            this.pictureBox4.Tag = "Map";
             // 
             // pictureBox5
             // 
@@ -984,9 +984,9 @@ namespace Quoridor
             // pictureBox49
             // 
             this.pictureBox49.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pictureBox49.Location = new System.Drawing.Point(251, 251);
+            this.pictureBox49.Location = new System.Drawing.Point(250, 251);
             this.pictureBox49.Name = "pictureBox49";
-            this.pictureBox49.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox49.Size = new System.Drawing.Size(51, 50);
             this.pictureBox49.TabIndex = 45;
             this.pictureBox49.TabStop = false;
             this.pictureBox49.Tag = "Cell";
@@ -1449,7 +1449,7 @@ namespace Quoridor
             this.pictureBox95.Size = new System.Drawing.Size(25, 700);
             this.pictureBox95.TabIndex = 2;
             this.pictureBox95.TabStop = false;
-            this.pictureBox95.Tag = "Wall";
+            this.pictureBox95.Tag = "Map";
             // 
             // pictureBox96
             // 
@@ -2795,7 +2795,6 @@ namespace Quoridor
             // GreenDot
             // 
             this.GreenDot.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.GreenDot.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("GreenDot.BackgroundImage")));
             this.GreenDot.Image = ((System.Drawing.Image)(resources.GetObject("GreenDot.Image")));
             this.GreenDot.Location = new System.Drawing.Point(331, 31);
             this.GreenDot.Name = "GreenDot";
@@ -2808,7 +2807,6 @@ namespace Quoridor
             // RedDot
             // 
             this.RedDot.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.RedDot.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("RedDot.BackgroundImage")));
             this.RedDot.Image = ((System.Drawing.Image)(resources.GetObject("RedDot.Image")));
             this.RedDot.Location = new System.Drawing.Point(333, 634);
             this.RedDot.Name = "RedDot";
