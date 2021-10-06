@@ -30,6 +30,28 @@ namespace Model
                     throw new System.ArgumentException("Unexpected direction");
             }
         }
+
+        public List<Cell> GetNeighbors()
+        {
+            List<Cell> Neighbors = new List<Cell>();
+            if(!(UpCell is Wall))
+            {
+                Neighbors.Add(UpCell);
+            }
+            if(!(DownCell is Wall))
+            {
+                Neighbors.Add(DownCell);
+            }
+            if(!(LeftCell is Wall))
+            {
+                Neighbors.Add(LeftCell);
+            }
+            if(!(RightCell is Wall))
+            {
+                Neighbors.Add(RightCell);
+            }
+            return Neighbors;
+        }
         public Cell(CellCoords coords)
         {
             Coords = coords;

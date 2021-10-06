@@ -25,14 +25,35 @@ namespace Model
         }
         static public bool IsThereAWay(GameState gameState, Player topPlayer, Player bottomPlayer)
         {
-            if(FindAWay(gameState.BottomWinningCells, bottomPlayer.CurrentCell) && FindAWay(gameState.TopWinningCells, topPlayer)){
-                return true;
-            }
-            return false;
+            return FindAWay(gameState.BottomWinningCells, bottomPlayer.CurrentCell) && FindAWay(gameState.TopWinningCells, topPlayer);
         }
 
-        static private bool FindAWay(List<Cell> cells, Cell cell){
+        static private bool FindAWay(List<Cell> Cells, Cell cell)
+        {
+            Stack<Cell> StackCells = new Stack<Cell>();
+            List<Cell> Visited = new List<Cell>();
+            
+            StackCells.Push(cell);
+            Visited.Add(cell);
 
+            while (StackCells.Count != 0)
+            {
+                Cell CurrenrCell = StackCells.Pop();
+                foreach (Cell next in CurrenrCell.GetNeighbors())
+                {
+                    if(!(Visited.Contains(next)))
+                    {
+                        if(Cells.Contains(next))
+                        {
+                            return true;
+                        }
+                        StackCells.Push(next);
+                        Visited.Add(next);            
+                    }
+                    
+                }
+            }
+            return false;
         }
         static private List<Cell> MoveIsValid(Player player, List<Cell> PossibleToMove)
         {
