@@ -19,15 +19,14 @@ namespace Quoridor
         public Form1()  //запускає дії в формі
         {
             Controller = new Controller.Controller();
-            Dot = RedDot;
             InitializeComponent();
+            Dot = RedDot;
             resetGame();
         }
 
         private void mainGameTimer(object sender, EventArgs e)  //запускає всі процеси в грі (логічні і не дуже)
         {
        
-
             foreach (Control x in this.Controls) //починаємо працювати з кожним елементом форми
             {
 
@@ -72,15 +71,10 @@ namespace Quoridor
                             int left = x.Left + 4;
                             Controller.SetCell(top, left);
                             RenderPlayer(top, left);
-
                         };
                 }
             }
-
         }
-
-
-    
  
         private void resetGame() //дії, які відбуваються при перезапуску гри
         {
@@ -110,7 +104,7 @@ namespace Quoridor
             throw new NotImplementedException();
         }
 
-        public void ChangePlayer(string winner)
+        public void ChangePlayer()
         {
             if(Dot == GreenDot)
             {
@@ -121,23 +115,6 @@ namespace Quoridor
                 Dot = GreenDot;
             }
         }
-    }
-
-    public class Draw  //змінює стан клітинок
-    {
-        public bool DrawWall { get; set; } = false;
-
-        public bool DrawDot { get; set; } = false;
-
-        public bool GoGreen { get; set; } = false;
-
-        public bool GoRed { get; set; } = false;
-    }
-
-    class Moove  //зчитує рухи
-    {
-        // public
-
     }
 
 }

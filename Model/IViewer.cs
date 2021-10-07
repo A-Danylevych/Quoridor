@@ -8,6 +8,6 @@ namespace Model
         void RenderPlayer(int top, int left);
         void RenderWall(int top, int left);
         void RenderRemainingWalls(int TopCount, int BottomCount);
-        void ChangePlayer(string winner);
+        void ChangePlayer();
     }
 }
