@@ -12,7 +12,7 @@ namespace Model
         private Player CurrentPlayer;
         private Player OtherPlayer;
         private readonly GameState gameState;
-        private Game instance;
+        private static Game instance;
         private readonly Board Board;
         private readonly static object syncRoot = new Object(); 
         private Game(IController controller, IViewer viewer)
@@ -61,9 +61,9 @@ namespace Model
             {
                 case Action.MakeMove:
                         Cell cell = Controller.GetCell(); 
-                        if(MoveValidator.IsValidMove(cell, CurrentPlayer, OtherPlayer))
+                        if(!MoveValidator.IsValidMove(cell, CurrentPlayer, OtherPlayer))
                         {
-                            var playerCoords = CurrentPlayer.CurrentCell.Coords;
+                            var playerCoords = cell.Coords;
                             Viewer.RenderPlayer(playerCoords.Top, playerCoords.Left);
                             CheckWinning();
                             ChangeCurrentPlayer();
@@ -94,7 +94,7 @@ namespace Model
             }
             
         }
-        public Game GetInstance(IController controller, IViewer viewer)
+        public static Game GetInstance(IController controller, IViewer viewer)
         {
             if (instance == null)
             {

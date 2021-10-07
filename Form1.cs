@@ -16,11 +16,13 @@ namespace Quoridor
     {
         Controller.Controller Controller { get; set; }
         PictureBox Dot { get; set; }
+        Game Game;
         public Form1()  //запускає дії в формі
         {
             Controller = new Controller.Controller();
             InitializeComponent();
             Dot = RedDot;
+            Game = Game.GetInstance(Controller, this);
             resetGame();
         }
 
@@ -32,11 +34,11 @@ namespace Quoridor
 
                 if ((string)x.Tag == "Wall")  //прописуємо дії для стін
                 {
-                    Controller.SetAction(Model.Action.PlaceWall);
-
+                    
                     x.MouseClick += (a_sender, a_args) =>  //активується при кліку миші, ставимо стіни
                     {
-                        Controller.SetWall(x.Top,x.Left);
+                        Controller.SetAction(Model.Action.PlaceWall);
+                        Controller.SetWall(x.Top, x.Left);
                         x.BackColor = Color.LightSlateGray;  //змінюємо колір на постійний
                         x.BringToFront();  //переносимо на перед
                     };
@@ -70,10 +72,14 @@ namespace Quoridor
                             int top = x.Top + 4;
                             int left = x.Left + 4;
                             Controller.SetCell(top, left);
-                            RenderPlayer(top, left);
+                            Game.Update();
                         };
+                    
                 }
+                
             }
+            ChangePlayer();
+           
         }
  
         private void resetGame() //дії, які відбуваються при перезапуску гри
@@ -96,7 +102,12 @@ namespace Quoridor
 
         public void RenderWall(int top, int left)
         {
-            throw new NotImplementedException();
+            RenderWall(top, left, Color.LightSlateGray);
+        }
+        private void RenderWall(int top, int left, Color color)
+        {
+            
+          
         }
 
         public void RenderRemainingWalls(int TopCount, int BottomCount)
