@@ -57,10 +57,10 @@ namespace Model
         }
         public void Update()
         {
-            switch(Controller.WaitForAction())
+            switch(Controller.GetAction())
             {
                 case Action.MakeMove:
-                        Cell cell = Controller.WaitForCell(); 
+                        Cell cell = Controller.GetCell(); 
                         if(MoveValidator.IsValidMove(cell, CurrentPlayer, OtherPlayer))
                         {
                             var playerCoords = CurrentPlayer.CurrentCell.Coords;
@@ -70,7 +70,7 @@ namespace Model
                         }
                         break;
                 case Action.PlaceWall:
-                    Wall wall = Controller.WaitForWall();
+                    Wall wall = Controller.GetWall();
                     if(CurrentPlayer.PlaceWall())
                     {
                         Board.PutWall(wall);

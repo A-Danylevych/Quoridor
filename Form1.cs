@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
+using Quoridor.Controller;
 
 //розробила базову логіку гри, дала можливість гравцю ставити стіни і ходити - Довгань Валерія
 
@@ -10,37 +11,35 @@ namespace Quoridor
 {
 
     public partial class Form1 : Form //Все, що відбувається в формі
-    {   bool setwall = false, setdot = false;
+    {
+        Controller.Controller Controller { get; set; }
 
         bool isGameOver { get; set; }  //стан початку гри
         public Form1()  //запускає дії в формі
         {
+            Controller = new Controller.Controller();
             InitializeComponent();
             resetGame();
         }
 
         private void mainGameTimer(object sender, EventArgs e)  //запускає всі процеси в грі (логічні і не дуже)
         {
-            Draw draw = new Draw();
-
-            draw.DrawWall = true;
-            draw.DrawDot = true;
+       
 
             foreach (Control x in this.Controls) //починаємо працювати з кожним елементом форми
             {
 
                 if ((string)x.Tag == "Wall")  //прописуємо дії для стін
                 {
-                    
-                    if (draw.DrawWall == true)
-                    {
+
+
                         x.MouseClick += (a_sender, a_args) =>  //активується при кліку миші, ставимо стіни
                         {
+                            Controller.SetWall(2,3);
                             x.BackColor = Color.LightSlateGray;  //змінюємо колір на постійний
                             x.BringToFront();  //переносимо на перед
-                            setwall = true;
                         };
-                    }
+
 
                     x.MouseHover += (a_sender, a_args) =>  //активується при наведенні миші на стіну
                     {
@@ -63,11 +62,7 @@ namespace Quoridor
 
                 if ((string)x.Tag == "Cell")  //прописуємо дії для гральних клітинок
                 {
-                    if (draw.DrawDot == true)
-                    {
-                        draw.GoRed = true;
-
-                        if (draw.GoRed == true)
+   
                             x.MouseClick += (a_sender, a_args) => //активується при кліку миші
                             {
                                 int rtop = x.Top + 4;
@@ -78,11 +73,9 @@ namespace Quoridor
 
                                 RedDot.BringToFront();
 
-                                draw.GoGreen = true;
-                                draw.GoRed = false;
                             };
 
-                        if (draw.GoGreen == true)
+
                             x.MouseClick += (a_sender, a_args) => //активується при кліку миші
                             {
                                 int gtop = x.Top + 4;
@@ -93,15 +86,13 @@ namespace Quoridor
 
                                 GreenDot.BringToFront();
 
-                                draw.GoGreen = false;
-                                draw.GoRed = true;
                             };
                     }
-                };
+                }
 
             }
 
-        }
+
     
  
         private void resetGame() //дії, які відбуваються при перезапуску гри

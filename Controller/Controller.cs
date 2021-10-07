@@ -5,23 +5,45 @@ using System.Text;
 using System.Threading.Tasks;
 using Model;
 
-namespace Quoridor_1._0.Controller
+namespace Quoridor.Controller
 {
-    class Controller : IController
+    public class Controller : IController
     {
-        public Model.Action WaitForAction()
+        Model.Action Action { get; set; }
+        Cell Cell { get; set; }
+        Wall Wall { get; set; }
+
+        public void SetAction(Model.Action action)
         {
-            throw new NotImplementedException();
+            Action = action;
+        }
+        public Model.Action GetAction()
+        {
+            return Action;
+        }
+        public void SetCell(int top, int left)
+        {
+            var coords = new CellCoords(top, left);
+            Cell = new Cell(coords);
         }
 
-        public Cell WaitForCell()
+        public Cell GetCell()
         {
-            throw new NotImplementedException();
+            return Cell;
         }
-
-        public Wall WaitForWall()
+        public void SetWall(int top, int left)
         {
-            throw new NotImplementedException();
+            var coords = new CellCoords(top, left);
+            Wall = new Wall(coords);
+        }
+        public Wall GetWall()
+        {
+            return Wall;
+        }
+        public Controller()
+        {
+
         }
     }
 }
+
