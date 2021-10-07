@@ -78,7 +78,6 @@ namespace Quoridor
                 }
                 
             }
-            ChangePlayer();
            
         }
  
