@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 using Quoridor.Controller;
+using Model;
+using Color = System.Drawing.Color;
 
 //розробила базову логіку гри, дала можливість гравцю ставити стіни і ходити - Довгань Валерія
 
@@ -10,14 +12,14 @@ using Quoridor.Controller;
 namespace Quoridor
 {
 
-    public partial class Form1 : Form //Все, що відбувається в формі
+    public partial class Form1 : Form, IViewer //Все, що відбувається в формі
     {
         Controller.Controller Controller { get; set; }
-
-        bool isGameOver { get; set; }  //стан початку гри
+        PictureBox Dot { get; set; }
         public Form1()  //запускає дії в формі
         {
             Controller = new Controller.Controller();
+            Dot = RedDot;
             InitializeComponent();
             resetGame();
         }
@@ -31,14 +33,14 @@ namespace Quoridor
 
                 if ((string)x.Tag == "Wall")  //прописуємо дії для стін
                 {
+                    Controller.SetAction(Model.Action.PlaceWall);
 
-
-                        x.MouseClick += (a_sender, a_args) =>  //активується при кліку миші, ставимо стіни
-                        {
-                            Controller.SetWall(2,3);
-                            x.BackColor = Color.LightSlateGray;  //змінюємо колір на постійний
-                            x.BringToFront();  //переносимо на перед
-                        };
+                    x.MouseClick += (a_sender, a_args) =>  //активується при кліку миші, ставимо стіни
+                    {
+                        Controller.SetWall(x.Top,x.Left);
+                        x.BackColor = Color.LightSlateGray;  //змінюємо колір на постійний
+                        x.BringToFront();  //переносимо на перед
+                    };
 
 
                     x.MouseHover += (a_sender, a_args) =>  //активується при наведенні миші на стіну
@@ -62,44 +64,62 @@ namespace Quoridor
 
                 if ((string)x.Tag == "Cell")  //прописуємо дії для гральних клітинок
                 {
-   
-                            x.MouseClick += (a_sender, a_args) => //активується при кліку миші
-                            {
-                                int rtop = x.Top + 4;
-                                int rleft = x.Left + 4;
+                    Controller.SetAction(Model.Action.MakeMove);
 
-                                RedDot.Top = rtop;
-                                RedDot.Left = rleft;
+                        x.MouseClick += (a_sender, a_args) => //активується при кліку миші
+                        {
+                            int top = x.Top + 4;
+                            int left = x.Left + 4;
+                            Controller.SetCell(top, left);
+                            RenderPlayer(top, left);
 
-                                RedDot.BringToFront();
-
-                            };
-
-
-                            x.MouseClick += (a_sender, a_args) => //активується при кліку миші
-                            {
-                                int gtop = x.Top + 4;
-                                int gleft = x.Left + 4;
-
-                                GreenDot.Top = gtop;
-                                GreenDot.Left = gleft;
-
-                                GreenDot.BringToFront();
-
-                            };
-                    }
+                        };
                 }
-
             }
+
+        }
 
 
     
  
         private void resetGame() //дії, які відбуваються при перезапуску гри
         {
-            isGameOver = false;  //вказуємо що гра триває
 
             gameTimer.Start();  //починається відлік гри, всі дії можуть відбуватися
+        }
+
+        public void RenderEnding()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void RenderPlayer(int top, int left)
+        {
+            Dot.Top = top;
+            Dot.Left = left;
+            GreenDot.BringToFront();
+        }
+
+        public void RenderWall(int top, int left)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void RenderRemainingWalls(int TopCount, int BottomCount)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void ChangePlayer(string winner)
+        {
+            if(Dot == GreenDot)
+            {
+                Dot = RedDot;
+            }
+            else
+            {
+                Dot = GreenDot;
+            }
         }
     }
 
