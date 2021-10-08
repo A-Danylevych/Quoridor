@@ -27,7 +27,7 @@ namespace Quoridor
             resetGame();
         }
 
-        bool isGameOver;
+        bool isGameOver = true;
 
         private void keyisdown(object sender, KeyEventArgs e)
         {
@@ -39,60 +39,28 @@ namespace Quoridor
                 resetGame();
         }
 
-        int leftWallsForRed = 10, leftWallsForGreen = 10, rtop, rleft, gtop, gleft;
-
         private void mainGameTimer(object sender, EventArgs e)  //запускає всі процеси в грі (логічні і не дуже)
         {
-            //label1.Text = "Залишилось стін: " + leftWallsForRed;
-            //label2.Text = "Залишилось стін: " + leftWallsForGreen;
-
-            if (GreenDot.Top > 625)
-            {
-                gameOver("Вы проиграли!");
-                isGameOver = true;
-            }
-
-
-            if (RedDot.Top < 30)
-            {
-                gameOver("Вы выиграли!");
-                isGameOver = true;
-            }
 
             foreach (Control x in this.Controls) //починаємо працювати з кожним елементом форми
             {
 
                 if ((string)x.Tag == "Wall")  //прописуємо дії для стін
                 {
-                    if (leftWallsForRed > 0 && red ==  true || leftWallsForGreen >0 && red == false)
-                        x.MouseClick += (a_sender, a_args) =>  //активується при кліку миші, ставимо стіни
-                        {
-                            Controller.SetAction(Model.Action.PlaceWall);
-                            //Controller.SetWall(x.Top, x.Left);
-                            x.BackColor = Color.LightSlateGray;  //змінюємо колір на постійний
-                            x.BringToFront();  //переносимо на перед
-                            if (red == true)
-                            {
-                                leftWallsForRed --;
-                                label1.Text = "Залишилось стін: " + leftWallsForRed;
-                                red = false;
-                            }
-                            else
-                            {
-                                leftWallsForGreen --;
-                                label2.Text = "Залишилось стін: " + leftWallsForGreen;
-                                red = true;
-                            }
-
-                        };
+                    x.MouseClick += (a_sender, a_args) =>  //активується при кліку миші, ставимо стіни
+                    {
+                        Controller.SetAction(Model.Action.PlaceWall);
+                        Controller.SetWall(x.Top, x.Left, IsVertical(x.Top,x.Left));
+                        RenderWall(x.Top, x.Left);
+                        Game.Update();
+                    };
 
 
                     x.MouseHover += (a_sender, a_args) =>  //активується при наведенні миші на стіну
                     {
                         if (x.BackColor != Color.LightSlateGray)  //перевіряємо чи не є стіна постійною
                         {
-                            x.BackColor = Color.LightSteelBlue;  //задаємо колір стіни, яку можливо поставити
-                            x.BringToFront();  //переносимо на передній план
+                            RenderWall(x.Top, x.Left, Color.LightSteelBlue);
                         }
 
                     };
@@ -100,7 +68,7 @@ namespace Quoridor
                     {
                         if (x.BackColor != Color.LightSlateGray)  //перевіряємо чи не є стіна постійною
                         {
-                            x.BackColor = Color.LightSkyBlue;  //повертаємоо початковий колір (поки що кращого виходу з ситуації не знайдено)
+                            RenderWall(x.Top, x.Left, Color.LightSkyBlue);
                             x.SendToBack();
                         }
                     };
@@ -108,26 +76,13 @@ namespace Quoridor
 
                 if ((string)x.Tag == "Cell")  //прописуємо дії для гральних клітинок
                 {
-                    //Controller.SetAction(Model.Action.MakeMove);
+                    Controller.SetAction(Model.Action.MakeMove);
 
                     x.MouseClick += (a_sender, a_args) => //активується при кліку миші
                     {
-                        if (red == true)
-                        {
-                            rtop = x.Top + 4;
-                            rleft = x.Left + 4;
-                            RedDot.Top = rtop;
-                            RedDot.Left = rleft;
-                            //Controller.SetCell(rtop, rleft);
-                        }
-                        else
-                        {
-                            gtop = x.Top + 4;
-                            gleft = x.Left + 4;
-                            GreenDot.Top = gtop;
-                            GreenDot.Left = gleft;
-                            //Controller.SetCell(gtop, gleft);
-                        }
+                            int top = x.Top + 4;
+                            int left = x.Left + 4;
+                            Controller.SetCell(top, left);
 
                         Game.Update();
                     };
@@ -162,8 +117,7 @@ namespace Quoridor
             label2.Text = null;
         }
 
-
-        public bool HorV(int top, int left)
+        public bool IsVertical(int top, int left)
         {
             bool horizont = false; //за замовчуванням вертикальна
             foreach (var v in WallsList())  //if true то горизонтальна
@@ -174,9 +128,9 @@ namespace Quoridor
             return horizont;
         }
 
-        public void RenderEnding()
+        public void RenderEnding(string message)
         {
-            throw new NotImplementedException();
+            gameOver(message);
         }
 
         public void RenderPlayer(int top, int left)
@@ -450,24 +404,23 @@ namespace Quoridor
 
         public void RenderRemainingWalls(int TopCount, int BottomCount)
         {
-            throw new NotImplementedException();
+            label1.Text = "Залишилось стін: " + BottomCount;
+            label2.Text = "Залишилось стін: " + TopCount;
         }
 
-        bool red = true;
 
         public void ChangePlayer()
         {
             if (Dot == GreenDot)
             {
-                red = true;
                 Dot = RedDot;
             }
             else
             {
-                red = false;
                 Dot = GreenDot;
             }
         }
+
     }
 
 }

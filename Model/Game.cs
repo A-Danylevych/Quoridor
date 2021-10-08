@@ -92,7 +92,7 @@ namespace Model
             }
             if(!gameState.InPlay)
             {
-                Viewer.RenderEnding();
+                Viewer.RenderEnding("Something");
             }
             
         }

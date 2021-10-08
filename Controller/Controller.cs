@@ -31,7 +31,7 @@ namespace Quoridor.Controller
         {
             return Cell;
         }
-        public void SetWall(int top, int left)
+        public void SetWall(int top, int left, bool vertical)
         {
             var coords = new CellCoords(top, left);
             Wall = new Wall(coords);

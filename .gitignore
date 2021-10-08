@@ -5,3 +5,7 @@ obj/Debug/DesignTimeResolveAssemblyReferences.cache
 
 .vs/Quoridor 1.0/v16/.suo
 obj/Debug/DesignTimeResolveAssemblyReferences.cache
+*.pdb
+*.cache
+*.pdb
+.vs/Quoridor 1.0/v16/.suo
