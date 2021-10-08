@@ -60,10 +60,11 @@ namespace Model
             switch(Controller.GetAction())
             {
                 case Action.MakeMove:
-                        Cell cell = Controller.GetCell(); 
-                        if(!MoveValidator.IsValidMove(cell, CurrentPlayer, OtherPlayer))
-                        {
-                            var playerCoords = cell.Coords;
+                        Cell cell = Controller.GetCell();
+                    if (!MoveValidator.IsValidMove(cell, CurrentPlayer, OtherPlayer))
+                        {      
+                            Board.MovePlayer(CurrentPlayer, cell);
+                            var playerCoords = CurrentPlayer.CurrentCell.Coords;
                             Viewer.RenderPlayer(playerCoords.Top, playerCoords.Left);
                             CheckWinning();
                             ChangeCurrentPlayer();
