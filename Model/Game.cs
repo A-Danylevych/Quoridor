@@ -66,6 +66,7 @@ namespace Model
                             Board.MovePlayer(CurrentPlayer, cell);
                             var playerCoords = CurrentPlayer.CurrentCell.Coords;
                             Viewer.RenderPlayer(playerCoords.Top, playerCoords.Left);
+                        Viewer.ChangePlayer();
                             CheckWinning();
                             ChangeCurrentPlayer();
                         }

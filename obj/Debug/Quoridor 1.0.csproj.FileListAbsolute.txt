@@ -8,3 +8,13 @@ C:\Users\anton\OneDrive\Documents\GitHub\Quoridor\obj\Debug\Quoridor 1.0.csproj.
 C:\Users\anton\OneDrive\Documents\GitHub\Quoridor\obj\Debug\Quoridor 1.0.exe
 C:\Users\anton\OneDrive\Documents\GitHub\Quoridor\obj\Debug\Quoridor 1.0.pdb
 C:\Users\anton\OneDrive\Documents\GitHub\Quoridor\obj\Debug\Quoridor 1.0.csproj.AssemblyReference.cache
+C:\Users\38095\Documents\GitHub\Quoridor\bin\Debug\Quoridor 1.0.exe.config
+C:\Users\38095\Documents\GitHub\Quoridor\bin\Debug\Quoridor 1.0.exe
+C:\Users\38095\Documents\GitHub\Quoridor\bin\Debug\Quoridor 1.0.pdb
+C:\Users\38095\Documents\GitHub\Quoridor\obj\Debug\Quoridor 1.0.csprojAssemblyReference.cache
+C:\Users\38095\Documents\GitHub\Quoridor\obj\Debug\Quoridor.Form1.resources
+C:\Users\38095\Documents\GitHub\Quoridor\obj\Debug\Quoridor_1._0.Properties.Resources.resources
+C:\Users\38095\Documents\GitHub\Quoridor\obj\Debug\Quoridor 1.0.csproj.GenerateResource.cache
+C:\Users\38095\Documents\GitHub\Quoridor\obj\Debug\Quoridor 1.0.csproj.CoreCompileInputs.cache
+C:\Users\38095\Documents\GitHub\Quoridor\obj\Debug\Quoridor 1.0.exe
+C:\Users\38095\Documents\GitHub\Quoridor\obj\Debug\Quoridor 1.0.pdb
