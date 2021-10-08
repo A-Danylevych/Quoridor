@@ -12,7 +12,7 @@ namespace Model
         private Player CurrentPlayer;
         private Player OtherPlayer;
         private readonly GameState gameState;
-        private Game instance;
+        private static Game instance;
         private readonly Board Board;
         private readonly static object syncRoot = new Object(); 
         private Game(IController controller, IViewer viewer)
@@ -57,20 +57,22 @@ namespace Model
         }
         public void Update()
         {
-            switch(Controller.WaitForAction())
+            switch(Controller.GetAction())
             {
                 case Action.MakeMove:
-                        Cell cell = Controller.WaitForCell(); 
-                        if(MoveValidator.IsValidMove(cell, CurrentPlayer, OtherPlayer))
-                        {
+                    Cell cell = Controller.GetCell();
+                    if (MoveValidator.IsValidMove(cell, CurrentPlayer, OtherPlayer))
+                    {      
+                            Board.MovePlayer(CurrentPlayer, cell);
                             var playerCoords = CurrentPlayer.CurrentCell.Coords;
                             Viewer.RenderPlayer(playerCoords.Top, playerCoords.Left);
+                        Viewer.ChangePlayer();
                             CheckWinning();
                             ChangeCurrentPlayer();
-                        }
-                        break;
+                    }
+                    break;
                 case Action.PlaceWall:
-                    Wall wall = Controller.WaitForWall();
+                    Wall wall = Controller.GetWall();
                     if(CurrentPlayer.PlaceWall())
                     {
                         Board.PutWall(wall);
@@ -90,11 +92,11 @@ namespace Model
             }
             if(!gameState.InPlay)
             {
-                Viewer.RenderEnding();
+                Viewer.RenderEnding("Game over!");
             }
             
         }
-        public Game GetInstance(IController controller, IViewer viewer)
+        public static Game GetInstance(IController controller, IViewer viewer)
         {
             if (instance == null)
             {

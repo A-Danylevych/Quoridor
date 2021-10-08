@@ -20,7 +20,7 @@ namespace Model
             Cell cell = FindCellByCoords(coords);
             MovePlayer(player, cell);
         }
-        private Cell FindCellByCoords(CellCoords coords)
+        public Cell FindCellByCoords(CellCoords coords)
         {
             foreach(Cell cell in Cells)
             {
