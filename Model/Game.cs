@@ -60,17 +60,17 @@ namespace Model
             switch(Controller.GetAction())
             {
                 case Action.MakeMove:
-                        Cell cell = Controller.GetCell();
-                    if (!MoveValidator.IsValidMove(cell, CurrentPlayer, OtherPlayer))
-                        {      
+                    Cell cell = Controller.GetCell();
+                    if (MoveValidator.IsValidMove(cell, CurrentPlayer, OtherPlayer))
+                    {      
                             Board.MovePlayer(CurrentPlayer, cell);
                             var playerCoords = CurrentPlayer.CurrentCell.Coords;
                             Viewer.RenderPlayer(playerCoords.Top, playerCoords.Left);
                         Viewer.ChangePlayer();
                             CheckWinning();
                             ChangeCurrentPlayer();
-                        }
-                        break;
+                    }
+                    break;
                 case Action.PlaceWall:
                     Wall wall = Controller.GetWall();
                     if(CurrentPlayer.PlaceWall())
@@ -92,7 +92,7 @@ namespace Model
             }
             if(!gameState.InPlay)
             {
-                Viewer.RenderEnding("Something");
+                Viewer.RenderEnding("Game over!");
             }
             
         }

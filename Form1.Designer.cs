@@ -34,6 +34,7 @@ namespace Quoridor
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.gameTimer = new System.Windows.Forms.Timer(this.components);
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
@@ -264,9 +265,9 @@ namespace Quoridor
             this.RedDot = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
@@ -495,16 +496,15 @@ namespace Quoridor
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox229)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GreenDot)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RedDot)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.LightSkyBlue;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(382, 14);
+            this.pictureBox1.Size = new System.Drawing.Size(700, 25);
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Tag = "Map";
@@ -513,9 +513,9 @@ namespace Quoridor
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.LightSkyBlue;
             this.pictureBox3.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(14, 379);
+            this.pictureBox3.Size = new System.Drawing.Size(25, 700);
             this.pictureBox3.TabIndex = 2;
             this.pictureBox3.TabStop = false;
             this.pictureBox3.Tag = "Map";
@@ -525,13 +525,24 @@ namespace Quoridor
             this.gameTimer.Interval = 20;
             this.gameTimer.Tick += new System.EventHandler(this.mainGameTimer);
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Blue;
+            this.pictureBox2.Location = new System.Drawing.Point(760, 0);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(25, 650);
+            this.pictureBox2.TabIndex = 2;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Tag = "Wall";
+            // 
             // pictureBox4
             // 
             this.pictureBox4.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pictureBox4.Location = new System.Drawing.Point(0, 366);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox4.Location = new System.Drawing.Point(0, 675);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(382, 13);
+            this.pictureBox4.Size = new System.Drawing.Size(700, 25);
             this.pictureBox4.TabIndex = 1;
             this.pictureBox4.TabStop = false;
             this.pictureBox4.Tag = "Map";
@@ -539,10 +550,10 @@ namespace Quoridor
             // pictureBox5
             // 
             this.pictureBox5.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pictureBox5.Location = new System.Drawing.Point(14, 14);
-            this.pictureBox5.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox5.Location = new System.Drawing.Point(25, 25);
+            this.pictureBox5.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(27, 27);
+            this.pictureBox5.Size = new System.Drawing.Size(50, 50);
             this.pictureBox5.TabIndex = 45;
             this.pictureBox5.TabStop = false;
             this.pictureBox5.Tag = "Cell";
@@ -550,10 +561,10 @@ namespace Quoridor
             // pictureBox6
             // 
             this.pictureBox6.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pictureBox6.Location = new System.Drawing.Point(41, 14);
-            this.pictureBox6.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox6.Location = new System.Drawing.Point(75, 25);
+            this.pictureBox6.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(14, 68);
+            this.pictureBox6.Size = new System.Drawing.Size(25, 125);
             this.pictureBox6.TabIndex = 46;
             this.pictureBox6.TabStop = false;
             this.pictureBox6.Tag = "Wall";
@@ -561,10 +572,10 @@ namespace Quoridor
             // pictureBox7
             // 
             this.pictureBox7.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pictureBox7.Location = new System.Drawing.Point(55, 14);
-            this.pictureBox7.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox7.Location = new System.Drawing.Point(100, 25);
+            this.pictureBox7.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(27, 27);
+            this.pictureBox7.Size = new System.Drawing.Size(50, 50);
             this.pictureBox7.TabIndex = 45;
             this.pictureBox7.TabStop = false;
             this.pictureBox7.Tag = "Cell";
@@ -572,10 +583,10 @@ namespace Quoridor
             // pictureBox8
             // 
             this.pictureBox8.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pictureBox8.Location = new System.Drawing.Point(95, 14);
-            this.pictureBox8.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox8.Location = new System.Drawing.Point(175, 25);
+            this.pictureBox8.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(27, 27);
+            this.pictureBox8.Size = new System.Drawing.Size(50, 50);
             this.pictureBox8.TabIndex = 45;
             this.pictureBox8.TabStop = false;
             this.pictureBox8.Tag = "Cell";
@@ -583,10 +594,10 @@ namespace Quoridor
             // pictureBox9
             // 
             this.pictureBox9.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pictureBox9.Location = new System.Drawing.Point(136, 14);
-            this.pictureBox9.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox9.Location = new System.Drawing.Point(250, 25);
+            this.pictureBox9.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(27, 27);
+            this.pictureBox9.Size = new System.Drawing.Size(50, 50);
             this.pictureBox9.TabIndex = 45;
             this.pictureBox9.TabStop = false;
             this.pictureBox9.Tag = "Cell";
@@ -594,10 +605,10 @@ namespace Quoridor
             // pictureBox10
             // 
             this.pictureBox10.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pictureBox10.Location = new System.Drawing.Point(177, 14);
-            this.pictureBox10.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox10.Location = new System.Drawing.Point(325, 25);
+            this.pictureBox10.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox10.Name = "pictureBox10";
-            this.pictureBox10.Size = new System.Drawing.Size(27, 27);
+            this.pictureBox10.Size = new System.Drawing.Size(50, 50);
             this.pictureBox10.TabIndex = 45;
             this.pictureBox10.TabStop = false;
             this.pictureBox10.Tag = "Cell";
@@ -605,10 +616,10 @@ namespace Quoridor
             // pictureBox11
             // 
             this.pictureBox11.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pictureBox11.Location = new System.Drawing.Point(218, 14);
-            this.pictureBox11.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox11.Location = new System.Drawing.Point(400, 25);
+            this.pictureBox11.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox11.Name = "pictureBox11";
-            this.pictureBox11.Size = new System.Drawing.Size(27, 27);
+            this.pictureBox11.Size = new System.Drawing.Size(50, 50);
             this.pictureBox11.TabIndex = 45;
             this.pictureBox11.TabStop = false;
             this.pictureBox11.Tag = "Cell";
@@ -616,10 +627,10 @@ namespace Quoridor
             // pictureBox12
             // 
             this.pictureBox12.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pictureBox12.Location = new System.Drawing.Point(259, 14);
-            this.pictureBox12.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox12.Location = new System.Drawing.Point(475, 25);
+            this.pictureBox12.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox12.Name = "pictureBox12";
-            this.pictureBox12.Size = new System.Drawing.Size(27, 27);
+            this.pictureBox12.Size = new System.Drawing.Size(50, 50);
             this.pictureBox12.TabIndex = 45;
             this.pictureBox12.TabStop = false;
             this.pictureBox12.Tag = "Cell";
@@ -627,10 +638,10 @@ namespace Quoridor
             // pictureBox13
             // 
             this.pictureBox13.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pictureBox13.Location = new System.Drawing.Point(300, 14);
-            this.pictureBox13.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox13.Location = new System.Drawing.Point(550, 25);
+            this.pictureBox13.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox13.Name = "pictureBox13";
-            this.pictureBox13.Size = new System.Drawing.Size(27, 27);
+            this.pictureBox13.Size = new System.Drawing.Size(50, 50);
             this.pictureBox13.TabIndex = 45;
             this.pictureBox13.TabStop = false;
             this.pictureBox13.Tag = "Cell";
@@ -638,10 +649,10 @@ namespace Quoridor
             // pictureBox14
             // 
             this.pictureBox14.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pictureBox14.Location = new System.Drawing.Point(341, 14);
-            this.pictureBox14.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox14.Location = new System.Drawing.Point(625, 25);
+            this.pictureBox14.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox14.Name = "pictureBox14";
-            this.pictureBox14.Size = new System.Drawing.Size(27, 27);
+            this.pictureBox14.Size = new System.Drawing.Size(50, 50);
             this.pictureBox14.TabIndex = 45;
             this.pictureBox14.TabStop = false;
             this.pictureBox14.Tag = "Cell";
@@ -649,10 +660,10 @@ namespace Quoridor
             // pictureBox15
             // 
             this.pictureBox15.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pictureBox15.Location = new System.Drawing.Point(14, 41);
-            this.pictureBox15.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox15.Location = new System.Drawing.Point(25, 75);
+            this.pictureBox15.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox15.Name = "pictureBox15";
-            this.pictureBox15.Size = new System.Drawing.Size(68, 14);
+            this.pictureBox15.Size = new System.Drawing.Size(125, 25);
             this.pictureBox15.TabIndex = 47;
             this.pictureBox15.TabStop = false;
             this.pictureBox15.Tag = "Wall";
@@ -660,10 +671,10 @@ namespace Quoridor
             // pictureBox16
             // 
             this.pictureBox16.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pictureBox16.Location = new System.Drawing.Point(14, 54);
-            this.pictureBox16.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox16.Location = new System.Drawing.Point(25, 100);
+            this.pictureBox16.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox16.Name = "pictureBox16";
-            this.pictureBox16.Size = new System.Drawing.Size(27, 27);
+            this.pictureBox16.Size = new System.Drawing.Size(50, 50);
             this.pictureBox16.TabIndex = 45;
             this.pictureBox16.TabStop = false;
             this.pictureBox16.Tag = "Cell";
@@ -671,10 +682,10 @@ namespace Quoridor
             // pictureBox17
             // 
             this.pictureBox17.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pictureBox17.Location = new System.Drawing.Point(14, 81);
-            this.pictureBox17.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox17.Location = new System.Drawing.Point(25, 150);
+            this.pictureBox17.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox17.Name = "pictureBox17";
-            this.pictureBox17.Size = new System.Drawing.Size(68, 14);
+            this.pictureBox17.Size = new System.Drawing.Size(125, 25);
             this.pictureBox17.TabIndex = 47;
             this.pictureBox17.TabStop = false;
             this.pictureBox17.Tag = "Wall";
@@ -682,10 +693,10 @@ namespace Quoridor
             // pictureBox18
             // 
             this.pictureBox18.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pictureBox18.Location = new System.Drawing.Point(14, 95);
-            this.pictureBox18.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox18.Location = new System.Drawing.Point(25, 175);
+            this.pictureBox18.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox18.Name = "pictureBox18";
-            this.pictureBox18.Size = new System.Drawing.Size(27, 27);
+            this.pictureBox18.Size = new System.Drawing.Size(50, 50);
             this.pictureBox18.TabIndex = 45;
             this.pictureBox18.TabStop = false;
             this.pictureBox18.Tag = "Cell";
@@ -693,10 +704,10 @@ namespace Quoridor
             // pictureBox19
             // 
             this.pictureBox19.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pictureBox19.Location = new System.Drawing.Point(14, 122);
-            this.pictureBox19.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox19.Location = new System.Drawing.Point(25, 225);
+            this.pictureBox19.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox19.Name = "pictureBox19";
-            this.pictureBox19.Size = new System.Drawing.Size(68, 14);
+            this.pictureBox19.Size = new System.Drawing.Size(125, 25);
             this.pictureBox19.TabIndex = 47;
             this.pictureBox19.TabStop = false;
             this.pictureBox19.Tag = "Wall";
@@ -704,10 +715,10 @@ namespace Quoridor
             // pictureBox20
             // 
             this.pictureBox20.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pictureBox20.Location = new System.Drawing.Point(14, 135);
-            this.pictureBox20.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox20.Location = new System.Drawing.Point(25, 250);
+            this.pictureBox20.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox20.Name = "pictureBox20";
-            this.pictureBox20.Size = new System.Drawing.Size(27, 27);
+            this.pictureBox20.Size = new System.Drawing.Size(50, 50);
             this.pictureBox20.TabIndex = 45;
             this.pictureBox20.TabStop = false;
             this.pictureBox20.Tag = "Cell";
@@ -715,10 +726,10 @@ namespace Quoridor
             // pictureBox21
             // 
             this.pictureBox21.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pictureBox21.Location = new System.Drawing.Point(14, 163);
-            this.pictureBox21.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox21.Location = new System.Drawing.Point(25, 300);
+            this.pictureBox21.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox21.Name = "pictureBox21";
-            this.pictureBox21.Size = new System.Drawing.Size(68, 14);
+            this.pictureBox21.Size = new System.Drawing.Size(125, 25);
             this.pictureBox21.TabIndex = 47;
             this.pictureBox21.TabStop = false;
             this.pictureBox21.Tag = "Wall";
@@ -726,10 +737,10 @@ namespace Quoridor
             // pictureBox22
             // 
             this.pictureBox22.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pictureBox22.Location = new System.Drawing.Point(14, 176);
-            this.pictureBox22.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox22.Location = new System.Drawing.Point(25, 325);
+            this.pictureBox22.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox22.Name = "pictureBox22";
-            this.pictureBox22.Size = new System.Drawing.Size(27, 27);
+            this.pictureBox22.Size = new System.Drawing.Size(50, 50);
             this.pictureBox22.TabIndex = 45;
             this.pictureBox22.TabStop = false;
             this.pictureBox22.Tag = "Cell";
@@ -737,10 +748,10 @@ namespace Quoridor
             // pictureBox23
             // 
             this.pictureBox23.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pictureBox23.Location = new System.Drawing.Point(14, 203);
-            this.pictureBox23.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox23.Location = new System.Drawing.Point(25, 375);
+            this.pictureBox23.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox23.Name = "pictureBox23";
-            this.pictureBox23.Size = new System.Drawing.Size(68, 14);
+            this.pictureBox23.Size = new System.Drawing.Size(125, 25);
             this.pictureBox23.TabIndex = 47;
             this.pictureBox23.TabStop = false;
             this.pictureBox23.Tag = "Wall";
@@ -748,10 +759,10 @@ namespace Quoridor
             // pictureBox24
             // 
             this.pictureBox24.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pictureBox24.Location = new System.Drawing.Point(14, 217);
-            this.pictureBox24.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox24.Location = new System.Drawing.Point(25, 400);
+            this.pictureBox24.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox24.Name = "pictureBox24";
-            this.pictureBox24.Size = new System.Drawing.Size(27, 27);
+            this.pictureBox24.Size = new System.Drawing.Size(50, 50);
             this.pictureBox24.TabIndex = 45;
             this.pictureBox24.TabStop = false;
             this.pictureBox24.Tag = "Cell";
@@ -759,10 +770,10 @@ namespace Quoridor
             // pictureBox25
             // 
             this.pictureBox25.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pictureBox25.Location = new System.Drawing.Point(14, 244);
-            this.pictureBox25.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox25.Location = new System.Drawing.Point(25, 450);
+            this.pictureBox25.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox25.Name = "pictureBox25";
-            this.pictureBox25.Size = new System.Drawing.Size(68, 14);
+            this.pictureBox25.Size = new System.Drawing.Size(125, 25);
             this.pictureBox25.TabIndex = 47;
             this.pictureBox25.TabStop = false;
             this.pictureBox25.Tag = "Wall";
@@ -770,10 +781,10 @@ namespace Quoridor
             // pictureBox26
             // 
             this.pictureBox26.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pictureBox26.Location = new System.Drawing.Point(14, 257);
-            this.pictureBox26.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox26.Location = new System.Drawing.Point(25, 475);
+            this.pictureBox26.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox26.Name = "pictureBox26";
-            this.pictureBox26.Size = new System.Drawing.Size(27, 27);
+            this.pictureBox26.Size = new System.Drawing.Size(50, 50);
             this.pictureBox26.TabIndex = 45;
             this.pictureBox26.TabStop = false;
             this.pictureBox26.Tag = "Cell";
@@ -781,10 +792,10 @@ namespace Quoridor
             // pictureBox27
             // 
             this.pictureBox27.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pictureBox27.Location = new System.Drawing.Point(14, 284);
-            this.pictureBox27.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox27.Location = new System.Drawing.Point(25, 525);
+            this.pictureBox27.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox27.Name = "pictureBox27";
-            this.pictureBox27.Size = new System.Drawing.Size(68, 14);
+            this.pictureBox27.Size = new System.Drawing.Size(125, 25);
             this.pictureBox27.TabIndex = 47;
             this.pictureBox27.TabStop = false;
             this.pictureBox27.Tag = "Wall";
@@ -792,10 +803,10 @@ namespace Quoridor
             // pictureBox28
             // 
             this.pictureBox28.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pictureBox28.Location = new System.Drawing.Point(14, 298);
-            this.pictureBox28.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox28.Location = new System.Drawing.Point(25, 550);
+            this.pictureBox28.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox28.Name = "pictureBox28";
-            this.pictureBox28.Size = new System.Drawing.Size(27, 27);
+            this.pictureBox28.Size = new System.Drawing.Size(50, 50);
             this.pictureBox28.TabIndex = 45;
             this.pictureBox28.TabStop = false;
             this.pictureBox28.Tag = "Cell";
@@ -803,10 +814,10 @@ namespace Quoridor
             // pictureBox29
             // 
             this.pictureBox29.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pictureBox29.Location = new System.Drawing.Point(14, 325);
-            this.pictureBox29.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox29.Location = new System.Drawing.Point(25, 600);
+            this.pictureBox29.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox29.Name = "pictureBox29";
-            this.pictureBox29.Size = new System.Drawing.Size(68, 14);
+            this.pictureBox29.Size = new System.Drawing.Size(125, 25);
             this.pictureBox29.TabIndex = 47;
             this.pictureBox29.TabStop = false;
             this.pictureBox29.Tag = "Wall";
@@ -814,10 +825,10 @@ namespace Quoridor
             // pictureBox30
             // 
             this.pictureBox30.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pictureBox30.Location = new System.Drawing.Point(14, 339);
-            this.pictureBox30.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox30.Location = new System.Drawing.Point(25, 625);
+            this.pictureBox30.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox30.Name = "pictureBox30";
-            this.pictureBox30.Size = new System.Drawing.Size(27, 27);
+            this.pictureBox30.Size = new System.Drawing.Size(50, 50);
             this.pictureBox30.TabIndex = 45;
             this.pictureBox30.TabStop = false;
             this.pictureBox30.Tag = "Cell";
@@ -825,10 +836,10 @@ namespace Quoridor
             // pictureBox31
             // 
             this.pictureBox31.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pictureBox31.Location = new System.Drawing.Point(55, 54);
-            this.pictureBox31.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox31.Location = new System.Drawing.Point(100, 100);
+            this.pictureBox31.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox31.Name = "pictureBox31";
-            this.pictureBox31.Size = new System.Drawing.Size(27, 27);
+            this.pictureBox31.Size = new System.Drawing.Size(50, 50);
             this.pictureBox31.TabIndex = 45;
             this.pictureBox31.TabStop = false;
             this.pictureBox31.Tag = "Cell";
@@ -836,10 +847,10 @@ namespace Quoridor
             // pictureBox32
             // 
             this.pictureBox32.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pictureBox32.Location = new System.Drawing.Point(95, 54);
-            this.pictureBox32.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox32.Location = new System.Drawing.Point(175, 100);
+            this.pictureBox32.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox32.Name = "pictureBox32";
-            this.pictureBox32.Size = new System.Drawing.Size(27, 27);
+            this.pictureBox32.Size = new System.Drawing.Size(50, 50);
             this.pictureBox32.TabIndex = 45;
             this.pictureBox32.TabStop = false;
             this.pictureBox32.Tag = "Cell";
@@ -847,10 +858,10 @@ namespace Quoridor
             // pictureBox33
             // 
             this.pictureBox33.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pictureBox33.Location = new System.Drawing.Point(136, 54);
-            this.pictureBox33.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox33.Location = new System.Drawing.Point(250, 100);
+            this.pictureBox33.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox33.Name = "pictureBox33";
-            this.pictureBox33.Size = new System.Drawing.Size(27, 27);
+            this.pictureBox33.Size = new System.Drawing.Size(50, 50);
             this.pictureBox33.TabIndex = 45;
             this.pictureBox33.TabStop = false;
             this.pictureBox33.Tag = "Cell";
@@ -858,10 +869,10 @@ namespace Quoridor
             // pictureBox34
             // 
             this.pictureBox34.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pictureBox34.Location = new System.Drawing.Point(177, 54);
-            this.pictureBox34.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox34.Location = new System.Drawing.Point(325, 100);
+            this.pictureBox34.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox34.Name = "pictureBox34";
-            this.pictureBox34.Size = new System.Drawing.Size(27, 27);
+            this.pictureBox34.Size = new System.Drawing.Size(50, 50);
             this.pictureBox34.TabIndex = 45;
             this.pictureBox34.TabStop = false;
             this.pictureBox34.Tag = "Cell";
@@ -869,10 +880,10 @@ namespace Quoridor
             // pictureBox35
             // 
             this.pictureBox35.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pictureBox35.Location = new System.Drawing.Point(218, 54);
-            this.pictureBox35.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox35.Location = new System.Drawing.Point(400, 100);
+            this.pictureBox35.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox35.Name = "pictureBox35";
-            this.pictureBox35.Size = new System.Drawing.Size(27, 27);
+            this.pictureBox35.Size = new System.Drawing.Size(50, 50);
             this.pictureBox35.TabIndex = 45;
             this.pictureBox35.TabStop = false;
             this.pictureBox35.Tag = "Cell";
@@ -880,10 +891,10 @@ namespace Quoridor
             // pictureBox36
             // 
             this.pictureBox36.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pictureBox36.Location = new System.Drawing.Point(259, 54);
-            this.pictureBox36.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox36.Location = new System.Drawing.Point(475, 100);
+            this.pictureBox36.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox36.Name = "pictureBox36";
-            this.pictureBox36.Size = new System.Drawing.Size(27, 27);
+            this.pictureBox36.Size = new System.Drawing.Size(50, 50);
             this.pictureBox36.TabIndex = 45;
             this.pictureBox36.TabStop = false;
             this.pictureBox36.Tag = "Cell";
@@ -891,10 +902,10 @@ namespace Quoridor
             // pictureBox37
             // 
             this.pictureBox37.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pictureBox37.Location = new System.Drawing.Point(300, 54);
-            this.pictureBox37.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox37.Location = new System.Drawing.Point(550, 100);
+            this.pictureBox37.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox37.Name = "pictureBox37";
-            this.pictureBox37.Size = new System.Drawing.Size(27, 27);
+            this.pictureBox37.Size = new System.Drawing.Size(50, 50);
             this.pictureBox37.TabIndex = 45;
             this.pictureBox37.TabStop = false;
             this.pictureBox37.Tag = "Cell";
@@ -902,10 +913,10 @@ namespace Quoridor
             // pictureBox38
             // 
             this.pictureBox38.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pictureBox38.Location = new System.Drawing.Point(341, 54);
-            this.pictureBox38.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox38.Location = new System.Drawing.Point(625, 100);
+            this.pictureBox38.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox38.Name = "pictureBox38";
-            this.pictureBox38.Size = new System.Drawing.Size(27, 27);
+            this.pictureBox38.Size = new System.Drawing.Size(50, 50);
             this.pictureBox38.TabIndex = 45;
             this.pictureBox38.TabStop = false;
             this.pictureBox38.Tag = "Cell";
@@ -913,10 +924,10 @@ namespace Quoridor
             // pictureBox39
             // 
             this.pictureBox39.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pictureBox39.Location = new System.Drawing.Point(55, 95);
-            this.pictureBox39.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox39.Location = new System.Drawing.Point(100, 175);
+            this.pictureBox39.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox39.Name = "pictureBox39";
-            this.pictureBox39.Size = new System.Drawing.Size(27, 27);
+            this.pictureBox39.Size = new System.Drawing.Size(50, 50);
             this.pictureBox39.TabIndex = 45;
             this.pictureBox39.TabStop = false;
             this.pictureBox39.Tag = "Cell";
@@ -924,10 +935,10 @@ namespace Quoridor
             // pictureBox40
             // 
             this.pictureBox40.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pictureBox40.Location = new System.Drawing.Point(95, 95);
-            this.pictureBox40.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox40.Location = new System.Drawing.Point(175, 175);
+            this.pictureBox40.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox40.Name = "pictureBox40";
-            this.pictureBox40.Size = new System.Drawing.Size(27, 27);
+            this.pictureBox40.Size = new System.Drawing.Size(50, 50);
             this.pictureBox40.TabIndex = 45;
             this.pictureBox40.TabStop = false;
             this.pictureBox40.Tag = "Cell";
@@ -935,10 +946,10 @@ namespace Quoridor
             // pictureBox41
             // 
             this.pictureBox41.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pictureBox41.Location = new System.Drawing.Point(136, 95);
-            this.pictureBox41.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox41.Location = new System.Drawing.Point(250, 175);
+            this.pictureBox41.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox41.Name = "pictureBox41";
-            this.pictureBox41.Size = new System.Drawing.Size(27, 27);
+            this.pictureBox41.Size = new System.Drawing.Size(50, 50);
             this.pictureBox41.TabIndex = 45;
             this.pictureBox41.TabStop = false;
             this.pictureBox41.Tag = "Cell";
@@ -946,10 +957,10 @@ namespace Quoridor
             // pictureBox42
             // 
             this.pictureBox42.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pictureBox42.Location = new System.Drawing.Point(177, 95);
-            this.pictureBox42.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox42.Location = new System.Drawing.Point(325, 175);
+            this.pictureBox42.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox42.Name = "pictureBox42";
-            this.pictureBox42.Size = new System.Drawing.Size(27, 27);
+            this.pictureBox42.Size = new System.Drawing.Size(50, 50);
             this.pictureBox42.TabIndex = 45;
             this.pictureBox42.TabStop = false;
             this.pictureBox42.Tag = "Cell";
@@ -957,10 +968,10 @@ namespace Quoridor
             // pictureBox43
             // 
             this.pictureBox43.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pictureBox43.Location = new System.Drawing.Point(218, 95);
-            this.pictureBox43.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox43.Location = new System.Drawing.Point(400, 175);
+            this.pictureBox43.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox43.Name = "pictureBox43";
-            this.pictureBox43.Size = new System.Drawing.Size(27, 27);
+            this.pictureBox43.Size = new System.Drawing.Size(50, 50);
             this.pictureBox43.TabIndex = 45;
             this.pictureBox43.TabStop = false;
             this.pictureBox43.Tag = "Cell";
@@ -968,10 +979,10 @@ namespace Quoridor
             // pictureBox44
             // 
             this.pictureBox44.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pictureBox44.Location = new System.Drawing.Point(259, 95);
-            this.pictureBox44.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox44.Location = new System.Drawing.Point(475, 175);
+            this.pictureBox44.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox44.Name = "pictureBox44";
-            this.pictureBox44.Size = new System.Drawing.Size(27, 27);
+            this.pictureBox44.Size = new System.Drawing.Size(50, 50);
             this.pictureBox44.TabIndex = 45;
             this.pictureBox44.TabStop = false;
             this.pictureBox44.Tag = "Cell";
@@ -979,10 +990,10 @@ namespace Quoridor
             // pictureBox45
             // 
             this.pictureBox45.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pictureBox45.Location = new System.Drawing.Point(300, 95);
-            this.pictureBox45.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox45.Location = new System.Drawing.Point(550, 175);
+            this.pictureBox45.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox45.Name = "pictureBox45";
-            this.pictureBox45.Size = new System.Drawing.Size(27, 27);
+            this.pictureBox45.Size = new System.Drawing.Size(50, 50);
             this.pictureBox45.TabIndex = 45;
             this.pictureBox45.TabStop = false;
             this.pictureBox45.Tag = "Cell";
@@ -990,10 +1001,10 @@ namespace Quoridor
             // pictureBox46
             // 
             this.pictureBox46.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pictureBox46.Location = new System.Drawing.Point(341, 95);
-            this.pictureBox46.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox46.Location = new System.Drawing.Point(625, 175);
+            this.pictureBox46.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox46.Name = "pictureBox46";
-            this.pictureBox46.Size = new System.Drawing.Size(27, 27);
+            this.pictureBox46.Size = new System.Drawing.Size(50, 50);
             this.pictureBox46.TabIndex = 45;
             this.pictureBox46.TabStop = false;
             this.pictureBox46.Tag = "Cell";
@@ -1001,10 +1012,10 @@ namespace Quoridor
             // pictureBox47
             // 
             this.pictureBox47.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pictureBox47.Location = new System.Drawing.Point(55, 135);
-            this.pictureBox47.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox47.Location = new System.Drawing.Point(100, 250);
+            this.pictureBox47.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox47.Name = "pictureBox47";
-            this.pictureBox47.Size = new System.Drawing.Size(27, 27);
+            this.pictureBox47.Size = new System.Drawing.Size(50, 50);
             this.pictureBox47.TabIndex = 45;
             this.pictureBox47.TabStop = false;
             this.pictureBox47.Tag = "Cell";
@@ -1012,10 +1023,10 @@ namespace Quoridor
             // pictureBox48
             // 
             this.pictureBox48.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pictureBox48.Location = new System.Drawing.Point(95, 135);
-            this.pictureBox48.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox48.Location = new System.Drawing.Point(175, 250);
+            this.pictureBox48.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox48.Name = "pictureBox48";
-            this.pictureBox48.Size = new System.Drawing.Size(27, 27);
+            this.pictureBox48.Size = new System.Drawing.Size(50, 50);
             this.pictureBox48.TabIndex = 45;
             this.pictureBox48.TabStop = false;
             this.pictureBox48.Tag = "Cell";
@@ -1023,10 +1034,10 @@ namespace Quoridor
             // pictureBox49
             // 
             this.pictureBox49.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pictureBox49.Location = new System.Drawing.Point(136, 135);
-            this.pictureBox49.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox49.Location = new System.Drawing.Point(250, 250);
+            this.pictureBox49.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox49.Name = "pictureBox49";
-            this.pictureBox49.Size = new System.Drawing.Size(28, 27);
+            this.pictureBox49.Size = new System.Drawing.Size(51, 50);
             this.pictureBox49.TabIndex = 45;
             this.pictureBox49.TabStop = false;
             this.pictureBox49.Tag = "Cell";
@@ -1034,10 +1045,10 @@ namespace Quoridor
             // pictureBox50
             // 
             this.pictureBox50.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pictureBox50.Location = new System.Drawing.Point(177, 135);
-            this.pictureBox50.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox50.Location = new System.Drawing.Point(325, 250);
+            this.pictureBox50.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox50.Name = "pictureBox50";
-            this.pictureBox50.Size = new System.Drawing.Size(27, 27);
+            this.pictureBox50.Size = new System.Drawing.Size(50, 50);
             this.pictureBox50.TabIndex = 45;
             this.pictureBox50.TabStop = false;
             this.pictureBox50.Tag = "Cell";
@@ -1045,10 +1056,10 @@ namespace Quoridor
             // pictureBox51
             // 
             this.pictureBox51.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pictureBox51.Location = new System.Drawing.Point(218, 135);
-            this.pictureBox51.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox51.Location = new System.Drawing.Point(400, 250);
+            this.pictureBox51.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox51.Name = "pictureBox51";
-            this.pictureBox51.Size = new System.Drawing.Size(27, 27);
+            this.pictureBox51.Size = new System.Drawing.Size(50, 50);
             this.pictureBox51.TabIndex = 45;
             this.pictureBox51.TabStop = false;
             this.pictureBox51.Tag = "Cell";
@@ -1056,10 +1067,10 @@ namespace Quoridor
             // pictureBox52
             // 
             this.pictureBox52.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pictureBox52.Location = new System.Drawing.Point(259, 135);
-            this.pictureBox52.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox52.Location = new System.Drawing.Point(475, 250);
+            this.pictureBox52.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox52.Name = "pictureBox52";
-            this.pictureBox52.Size = new System.Drawing.Size(27, 27);
+            this.pictureBox52.Size = new System.Drawing.Size(50, 50);
             this.pictureBox52.TabIndex = 45;
             this.pictureBox52.TabStop = false;
             this.pictureBox52.Tag = "Cell";
@@ -1067,10 +1078,10 @@ namespace Quoridor
             // pictureBox53
             // 
             this.pictureBox53.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pictureBox53.Location = new System.Drawing.Point(300, 135);
-            this.pictureBox53.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox53.Location = new System.Drawing.Point(550, 250);
+            this.pictureBox53.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox53.Name = "pictureBox53";
-            this.pictureBox53.Size = new System.Drawing.Size(27, 27);
+            this.pictureBox53.Size = new System.Drawing.Size(50, 50);
             this.pictureBox53.TabIndex = 45;
             this.pictureBox53.TabStop = false;
             this.pictureBox53.Tag = "Cell";
@@ -1078,10 +1089,10 @@ namespace Quoridor
             // pictureBox54
             // 
             this.pictureBox54.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pictureBox54.Location = new System.Drawing.Point(341, 135);
-            this.pictureBox54.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox54.Location = new System.Drawing.Point(625, 250);
+            this.pictureBox54.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox54.Name = "pictureBox54";
-            this.pictureBox54.Size = new System.Drawing.Size(27, 27);
+            this.pictureBox54.Size = new System.Drawing.Size(50, 50);
             this.pictureBox54.TabIndex = 45;
             this.pictureBox54.TabStop = false;
             this.pictureBox54.Tag = "Cell";
@@ -1089,10 +1100,10 @@ namespace Quoridor
             // pictureBox55
             // 
             this.pictureBox55.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pictureBox55.Location = new System.Drawing.Point(55, 176);
-            this.pictureBox55.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox55.Location = new System.Drawing.Point(100, 325);
+            this.pictureBox55.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox55.Name = "pictureBox55";
-            this.pictureBox55.Size = new System.Drawing.Size(27, 27);
+            this.pictureBox55.Size = new System.Drawing.Size(50, 50);
             this.pictureBox55.TabIndex = 45;
             this.pictureBox55.TabStop = false;
             this.pictureBox55.Tag = "Cell";
@@ -1100,10 +1111,10 @@ namespace Quoridor
             // pictureBox56
             // 
             this.pictureBox56.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pictureBox56.Location = new System.Drawing.Point(95, 176);
-            this.pictureBox56.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox56.Location = new System.Drawing.Point(175, 325);
+            this.pictureBox56.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox56.Name = "pictureBox56";
-            this.pictureBox56.Size = new System.Drawing.Size(27, 27);
+            this.pictureBox56.Size = new System.Drawing.Size(50, 50);
             this.pictureBox56.TabIndex = 45;
             this.pictureBox56.TabStop = false;
             this.pictureBox56.Tag = "Cell";
@@ -1111,10 +1122,10 @@ namespace Quoridor
             // pictureBox57
             // 
             this.pictureBox57.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pictureBox57.Location = new System.Drawing.Point(136, 176);
-            this.pictureBox57.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox57.Location = new System.Drawing.Point(250, 325);
+            this.pictureBox57.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox57.Name = "pictureBox57";
-            this.pictureBox57.Size = new System.Drawing.Size(27, 27);
+            this.pictureBox57.Size = new System.Drawing.Size(50, 50);
             this.pictureBox57.TabIndex = 45;
             this.pictureBox57.TabStop = false;
             this.pictureBox57.Tag = "Cell";
@@ -1122,10 +1133,10 @@ namespace Quoridor
             // pictureBox58
             // 
             this.pictureBox58.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pictureBox58.Location = new System.Drawing.Point(177, 176);
-            this.pictureBox58.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox58.Location = new System.Drawing.Point(325, 325);
+            this.pictureBox58.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox58.Name = "pictureBox58";
-            this.pictureBox58.Size = new System.Drawing.Size(27, 27);
+            this.pictureBox58.Size = new System.Drawing.Size(50, 50);
             this.pictureBox58.TabIndex = 45;
             this.pictureBox58.TabStop = false;
             this.pictureBox58.Tag = "Cell";
@@ -1133,10 +1144,10 @@ namespace Quoridor
             // pictureBox59
             // 
             this.pictureBox59.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pictureBox59.Location = new System.Drawing.Point(218, 176);
-            this.pictureBox59.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox59.Location = new System.Drawing.Point(400, 325);
+            this.pictureBox59.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox59.Name = "pictureBox59";
-            this.pictureBox59.Size = new System.Drawing.Size(27, 27);
+            this.pictureBox59.Size = new System.Drawing.Size(50, 50);
             this.pictureBox59.TabIndex = 45;
             this.pictureBox59.TabStop = false;
             this.pictureBox59.Tag = "Cell";
@@ -1144,10 +1155,10 @@ namespace Quoridor
             // pictureBox60
             // 
             this.pictureBox60.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pictureBox60.Location = new System.Drawing.Point(259, 176);
-            this.pictureBox60.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox60.Location = new System.Drawing.Point(475, 325);
+            this.pictureBox60.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox60.Name = "pictureBox60";
-            this.pictureBox60.Size = new System.Drawing.Size(27, 27);
+            this.pictureBox60.Size = new System.Drawing.Size(50, 50);
             this.pictureBox60.TabIndex = 45;
             this.pictureBox60.TabStop = false;
             this.pictureBox60.Tag = "Cell";
@@ -1155,10 +1166,10 @@ namespace Quoridor
             // pictureBox61
             // 
             this.pictureBox61.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pictureBox61.Location = new System.Drawing.Point(300, 176);
-            this.pictureBox61.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox61.Location = new System.Drawing.Point(550, 325);
+            this.pictureBox61.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox61.Name = "pictureBox61";
-            this.pictureBox61.Size = new System.Drawing.Size(27, 27);
+            this.pictureBox61.Size = new System.Drawing.Size(50, 50);
             this.pictureBox61.TabIndex = 45;
             this.pictureBox61.TabStop = false;
             this.pictureBox61.Tag = "Cell";
@@ -1166,10 +1177,10 @@ namespace Quoridor
             // pictureBox62
             // 
             this.pictureBox62.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pictureBox62.Location = new System.Drawing.Point(341, 176);
-            this.pictureBox62.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox62.Location = new System.Drawing.Point(625, 325);
+            this.pictureBox62.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox62.Name = "pictureBox62";
-            this.pictureBox62.Size = new System.Drawing.Size(27, 27);
+            this.pictureBox62.Size = new System.Drawing.Size(50, 50);
             this.pictureBox62.TabIndex = 45;
             this.pictureBox62.TabStop = false;
             this.pictureBox62.Tag = "Cell";
@@ -1177,10 +1188,10 @@ namespace Quoridor
             // pictureBox63
             // 
             this.pictureBox63.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pictureBox63.Location = new System.Drawing.Point(55, 217);
-            this.pictureBox63.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox63.Location = new System.Drawing.Point(100, 400);
+            this.pictureBox63.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox63.Name = "pictureBox63";
-            this.pictureBox63.Size = new System.Drawing.Size(27, 27);
+            this.pictureBox63.Size = new System.Drawing.Size(50, 50);
             this.pictureBox63.TabIndex = 45;
             this.pictureBox63.TabStop = false;
             this.pictureBox63.Tag = "Cell";
@@ -1188,10 +1199,10 @@ namespace Quoridor
             // pictureBox64
             // 
             this.pictureBox64.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pictureBox64.Location = new System.Drawing.Point(95, 217);
-            this.pictureBox64.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox64.Location = new System.Drawing.Point(175, 400);
+            this.pictureBox64.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox64.Name = "pictureBox64";
-            this.pictureBox64.Size = new System.Drawing.Size(27, 27);
+            this.pictureBox64.Size = new System.Drawing.Size(50, 50);
             this.pictureBox64.TabIndex = 45;
             this.pictureBox64.TabStop = false;
             this.pictureBox64.Tag = "Cell";
@@ -1199,10 +1210,10 @@ namespace Quoridor
             // pictureBox65
             // 
             this.pictureBox65.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pictureBox65.Location = new System.Drawing.Point(136, 217);
-            this.pictureBox65.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox65.Location = new System.Drawing.Point(250, 400);
+            this.pictureBox65.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox65.Name = "pictureBox65";
-            this.pictureBox65.Size = new System.Drawing.Size(27, 27);
+            this.pictureBox65.Size = new System.Drawing.Size(50, 50);
             this.pictureBox65.TabIndex = 45;
             this.pictureBox65.TabStop = false;
             this.pictureBox65.Tag = "Cell";
@@ -1210,10 +1221,10 @@ namespace Quoridor
             // pictureBox66
             // 
             this.pictureBox66.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pictureBox66.Location = new System.Drawing.Point(177, 217);
-            this.pictureBox66.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox66.Location = new System.Drawing.Point(325, 400);
+            this.pictureBox66.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox66.Name = "pictureBox66";
-            this.pictureBox66.Size = new System.Drawing.Size(27, 27);
+            this.pictureBox66.Size = new System.Drawing.Size(50, 50);
             this.pictureBox66.TabIndex = 45;
             this.pictureBox66.TabStop = false;
             this.pictureBox66.Tag = "Cell";
@@ -1221,10 +1232,10 @@ namespace Quoridor
             // pictureBox67
             // 
             this.pictureBox67.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pictureBox67.Location = new System.Drawing.Point(218, 217);
-            this.pictureBox67.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox67.Location = new System.Drawing.Point(400, 400);
+            this.pictureBox67.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox67.Name = "pictureBox67";
-            this.pictureBox67.Size = new System.Drawing.Size(27, 27);
+            this.pictureBox67.Size = new System.Drawing.Size(50, 50);
             this.pictureBox67.TabIndex = 45;
             this.pictureBox67.TabStop = false;
             this.pictureBox67.Tag = "Cell";
@@ -1232,10 +1243,10 @@ namespace Quoridor
             // pictureBox68
             // 
             this.pictureBox68.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pictureBox68.Location = new System.Drawing.Point(259, 217);
-            this.pictureBox68.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox68.Location = new System.Drawing.Point(475, 400);
+            this.pictureBox68.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox68.Name = "pictureBox68";
-            this.pictureBox68.Size = new System.Drawing.Size(27, 27);
+            this.pictureBox68.Size = new System.Drawing.Size(50, 50);
             this.pictureBox68.TabIndex = 45;
             this.pictureBox68.TabStop = false;
             this.pictureBox68.Tag = "Cell";
@@ -1243,10 +1254,10 @@ namespace Quoridor
             // pictureBox69
             // 
             this.pictureBox69.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pictureBox69.Location = new System.Drawing.Point(300, 217);
-            this.pictureBox69.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox69.Location = new System.Drawing.Point(550, 400);
+            this.pictureBox69.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox69.Name = "pictureBox69";
-            this.pictureBox69.Size = new System.Drawing.Size(27, 27);
+            this.pictureBox69.Size = new System.Drawing.Size(50, 50);
             this.pictureBox69.TabIndex = 45;
             this.pictureBox69.TabStop = false;
             this.pictureBox69.Tag = "Cell";
@@ -1254,10 +1265,10 @@ namespace Quoridor
             // pictureBox70
             // 
             this.pictureBox70.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pictureBox70.Location = new System.Drawing.Point(341, 217);
-            this.pictureBox70.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox70.Location = new System.Drawing.Point(625, 400);
+            this.pictureBox70.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox70.Name = "pictureBox70";
-            this.pictureBox70.Size = new System.Drawing.Size(27, 27);
+            this.pictureBox70.Size = new System.Drawing.Size(50, 50);
             this.pictureBox70.TabIndex = 45;
             this.pictureBox70.TabStop = false;
             this.pictureBox70.Tag = "Cell";
@@ -1265,10 +1276,10 @@ namespace Quoridor
             // pictureBox71
             // 
             this.pictureBox71.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pictureBox71.Location = new System.Drawing.Point(55, 257);
-            this.pictureBox71.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox71.Location = new System.Drawing.Point(100, 475);
+            this.pictureBox71.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox71.Name = "pictureBox71";
-            this.pictureBox71.Size = new System.Drawing.Size(27, 27);
+            this.pictureBox71.Size = new System.Drawing.Size(50, 50);
             this.pictureBox71.TabIndex = 45;
             this.pictureBox71.TabStop = false;
             this.pictureBox71.Tag = "Cell";
@@ -1276,10 +1287,10 @@ namespace Quoridor
             // pictureBox72
             // 
             this.pictureBox72.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pictureBox72.Location = new System.Drawing.Point(95, 257);
-            this.pictureBox72.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox72.Location = new System.Drawing.Point(175, 475);
+            this.pictureBox72.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox72.Name = "pictureBox72";
-            this.pictureBox72.Size = new System.Drawing.Size(27, 27);
+            this.pictureBox72.Size = new System.Drawing.Size(50, 50);
             this.pictureBox72.TabIndex = 45;
             this.pictureBox72.TabStop = false;
             this.pictureBox72.Tag = "Cell";
@@ -1287,10 +1298,10 @@ namespace Quoridor
             // pictureBox73
             // 
             this.pictureBox73.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pictureBox73.Location = new System.Drawing.Point(136, 257);
-            this.pictureBox73.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox73.Location = new System.Drawing.Point(250, 475);
+            this.pictureBox73.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox73.Name = "pictureBox73";
-            this.pictureBox73.Size = new System.Drawing.Size(27, 27);
+            this.pictureBox73.Size = new System.Drawing.Size(50, 50);
             this.pictureBox73.TabIndex = 45;
             this.pictureBox73.TabStop = false;
             this.pictureBox73.Tag = "Cell";
@@ -1298,10 +1309,10 @@ namespace Quoridor
             // pictureBox74
             // 
             this.pictureBox74.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pictureBox74.Location = new System.Drawing.Point(177, 257);
-            this.pictureBox74.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox74.Location = new System.Drawing.Point(325, 475);
+            this.pictureBox74.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox74.Name = "pictureBox74";
-            this.pictureBox74.Size = new System.Drawing.Size(27, 27);
+            this.pictureBox74.Size = new System.Drawing.Size(50, 50);
             this.pictureBox74.TabIndex = 45;
             this.pictureBox74.TabStop = false;
             this.pictureBox74.Tag = "Cell";
@@ -1309,10 +1320,10 @@ namespace Quoridor
             // pictureBox75
             // 
             this.pictureBox75.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pictureBox75.Location = new System.Drawing.Point(218, 257);
-            this.pictureBox75.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox75.Location = new System.Drawing.Point(400, 475);
+            this.pictureBox75.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox75.Name = "pictureBox75";
-            this.pictureBox75.Size = new System.Drawing.Size(27, 27);
+            this.pictureBox75.Size = new System.Drawing.Size(50, 50);
             this.pictureBox75.TabIndex = 45;
             this.pictureBox75.TabStop = false;
             this.pictureBox75.Tag = "Cell";
@@ -1320,10 +1331,10 @@ namespace Quoridor
             // pictureBox76
             // 
             this.pictureBox76.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pictureBox76.Location = new System.Drawing.Point(259, 257);
-            this.pictureBox76.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox76.Location = new System.Drawing.Point(475, 475);
+            this.pictureBox76.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox76.Name = "pictureBox76";
-            this.pictureBox76.Size = new System.Drawing.Size(27, 27);
+            this.pictureBox76.Size = new System.Drawing.Size(50, 50);
             this.pictureBox76.TabIndex = 45;
             this.pictureBox76.TabStop = false;
             this.pictureBox76.Tag = "Cell";
@@ -1331,10 +1342,10 @@ namespace Quoridor
             // pictureBox77
             // 
             this.pictureBox77.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pictureBox77.Location = new System.Drawing.Point(300, 257);
-            this.pictureBox77.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox77.Location = new System.Drawing.Point(550, 475);
+            this.pictureBox77.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox77.Name = "pictureBox77";
-            this.pictureBox77.Size = new System.Drawing.Size(27, 27);
+            this.pictureBox77.Size = new System.Drawing.Size(50, 50);
             this.pictureBox77.TabIndex = 45;
             this.pictureBox77.TabStop = false;
             this.pictureBox77.Tag = "Cell";
@@ -1342,10 +1353,10 @@ namespace Quoridor
             // pictureBox78
             // 
             this.pictureBox78.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pictureBox78.Location = new System.Drawing.Point(341, 257);
-            this.pictureBox78.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox78.Location = new System.Drawing.Point(625, 475);
+            this.pictureBox78.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox78.Name = "pictureBox78";
-            this.pictureBox78.Size = new System.Drawing.Size(27, 27);
+            this.pictureBox78.Size = new System.Drawing.Size(50, 50);
             this.pictureBox78.TabIndex = 45;
             this.pictureBox78.TabStop = false;
             this.pictureBox78.Tag = "Cell";
@@ -1353,10 +1364,10 @@ namespace Quoridor
             // pictureBox79
             // 
             this.pictureBox79.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pictureBox79.Location = new System.Drawing.Point(55, 298);
-            this.pictureBox79.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox79.Location = new System.Drawing.Point(100, 550);
+            this.pictureBox79.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox79.Name = "pictureBox79";
-            this.pictureBox79.Size = new System.Drawing.Size(27, 27);
+            this.pictureBox79.Size = new System.Drawing.Size(50, 50);
             this.pictureBox79.TabIndex = 45;
             this.pictureBox79.TabStop = false;
             this.pictureBox79.Tag = "Cell";
@@ -1364,10 +1375,10 @@ namespace Quoridor
             // pictureBox80
             // 
             this.pictureBox80.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pictureBox80.Location = new System.Drawing.Point(95, 298);
-            this.pictureBox80.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox80.Location = new System.Drawing.Point(175, 550);
+            this.pictureBox80.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox80.Name = "pictureBox80";
-            this.pictureBox80.Size = new System.Drawing.Size(27, 27);
+            this.pictureBox80.Size = new System.Drawing.Size(50, 50);
             this.pictureBox80.TabIndex = 45;
             this.pictureBox80.TabStop = false;
             this.pictureBox80.Tag = "Cell";
@@ -1375,10 +1386,10 @@ namespace Quoridor
             // pictureBox81
             // 
             this.pictureBox81.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pictureBox81.Location = new System.Drawing.Point(136, 298);
-            this.pictureBox81.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox81.Location = new System.Drawing.Point(250, 550);
+            this.pictureBox81.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox81.Name = "pictureBox81";
-            this.pictureBox81.Size = new System.Drawing.Size(27, 27);
+            this.pictureBox81.Size = new System.Drawing.Size(50, 50);
             this.pictureBox81.TabIndex = 45;
             this.pictureBox81.TabStop = false;
             this.pictureBox81.Tag = "Cell";
@@ -1386,10 +1397,10 @@ namespace Quoridor
             // pictureBox82
             // 
             this.pictureBox82.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pictureBox82.Location = new System.Drawing.Point(177, 298);
-            this.pictureBox82.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox82.Location = new System.Drawing.Point(325, 550);
+            this.pictureBox82.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox82.Name = "pictureBox82";
-            this.pictureBox82.Size = new System.Drawing.Size(27, 27);
+            this.pictureBox82.Size = new System.Drawing.Size(50, 50);
             this.pictureBox82.TabIndex = 45;
             this.pictureBox82.TabStop = false;
             this.pictureBox82.Tag = "Cell";
@@ -1397,10 +1408,10 @@ namespace Quoridor
             // pictureBox83
             // 
             this.pictureBox83.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pictureBox83.Location = new System.Drawing.Point(218, 298);
-            this.pictureBox83.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox83.Location = new System.Drawing.Point(400, 550);
+            this.pictureBox83.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox83.Name = "pictureBox83";
-            this.pictureBox83.Size = new System.Drawing.Size(27, 27);
+            this.pictureBox83.Size = new System.Drawing.Size(50, 50);
             this.pictureBox83.TabIndex = 45;
             this.pictureBox83.TabStop = false;
             this.pictureBox83.Tag = "Cell";
@@ -1408,10 +1419,10 @@ namespace Quoridor
             // pictureBox84
             // 
             this.pictureBox84.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pictureBox84.Location = new System.Drawing.Point(259, 298);
-            this.pictureBox84.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox84.Location = new System.Drawing.Point(475, 550);
+            this.pictureBox84.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox84.Name = "pictureBox84";
-            this.pictureBox84.Size = new System.Drawing.Size(27, 27);
+            this.pictureBox84.Size = new System.Drawing.Size(50, 50);
             this.pictureBox84.TabIndex = 45;
             this.pictureBox84.TabStop = false;
             this.pictureBox84.Tag = "Cell";
@@ -1419,10 +1430,10 @@ namespace Quoridor
             // pictureBox85
             // 
             this.pictureBox85.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pictureBox85.Location = new System.Drawing.Point(300, 298);
-            this.pictureBox85.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox85.Location = new System.Drawing.Point(550, 550);
+            this.pictureBox85.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox85.Name = "pictureBox85";
-            this.pictureBox85.Size = new System.Drawing.Size(27, 27);
+            this.pictureBox85.Size = new System.Drawing.Size(50, 50);
             this.pictureBox85.TabIndex = 45;
             this.pictureBox85.TabStop = false;
             this.pictureBox85.Tag = "Cell";
@@ -1430,10 +1441,10 @@ namespace Quoridor
             // pictureBox86
             // 
             this.pictureBox86.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pictureBox86.Location = new System.Drawing.Point(341, 298);
-            this.pictureBox86.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox86.Location = new System.Drawing.Point(625, 550);
+            this.pictureBox86.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox86.Name = "pictureBox86";
-            this.pictureBox86.Size = new System.Drawing.Size(27, 27);
+            this.pictureBox86.Size = new System.Drawing.Size(50, 50);
             this.pictureBox86.TabIndex = 45;
             this.pictureBox86.TabStop = false;
             this.pictureBox86.Tag = "Cell";
@@ -1441,10 +1452,10 @@ namespace Quoridor
             // pictureBox87
             // 
             this.pictureBox87.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pictureBox87.Location = new System.Drawing.Point(55, 339);
-            this.pictureBox87.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox87.Location = new System.Drawing.Point(100, 625);
+            this.pictureBox87.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox87.Name = "pictureBox87";
-            this.pictureBox87.Size = new System.Drawing.Size(27, 27);
+            this.pictureBox87.Size = new System.Drawing.Size(50, 50);
             this.pictureBox87.TabIndex = 45;
             this.pictureBox87.TabStop = false;
             this.pictureBox87.Tag = "Cell";
@@ -1452,10 +1463,10 @@ namespace Quoridor
             // pictureBox88
             // 
             this.pictureBox88.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pictureBox88.Location = new System.Drawing.Point(95, 339);
-            this.pictureBox88.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox88.Location = new System.Drawing.Point(175, 625);
+            this.pictureBox88.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox88.Name = "pictureBox88";
-            this.pictureBox88.Size = new System.Drawing.Size(27, 27);
+            this.pictureBox88.Size = new System.Drawing.Size(50, 50);
             this.pictureBox88.TabIndex = 45;
             this.pictureBox88.TabStop = false;
             this.pictureBox88.Tag = "Cell";
@@ -1463,10 +1474,10 @@ namespace Quoridor
             // pictureBox89
             // 
             this.pictureBox89.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pictureBox89.Location = new System.Drawing.Point(136, 339);
-            this.pictureBox89.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox89.Location = new System.Drawing.Point(250, 625);
+            this.pictureBox89.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox89.Name = "pictureBox89";
-            this.pictureBox89.Size = new System.Drawing.Size(27, 27);
+            this.pictureBox89.Size = new System.Drawing.Size(50, 50);
             this.pictureBox89.TabIndex = 45;
             this.pictureBox89.TabStop = false;
             this.pictureBox89.Tag = "Cell";
@@ -1474,10 +1485,10 @@ namespace Quoridor
             // pictureBox90
             // 
             this.pictureBox90.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pictureBox90.Location = new System.Drawing.Point(177, 339);
-            this.pictureBox90.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox90.Location = new System.Drawing.Point(325, 625);
+            this.pictureBox90.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox90.Name = "pictureBox90";
-            this.pictureBox90.Size = new System.Drawing.Size(27, 27);
+            this.pictureBox90.Size = new System.Drawing.Size(50, 50);
             this.pictureBox90.TabIndex = 45;
             this.pictureBox90.TabStop = false;
             this.pictureBox90.Tag = "Cell";
@@ -1485,10 +1496,10 @@ namespace Quoridor
             // pictureBox91
             // 
             this.pictureBox91.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pictureBox91.Location = new System.Drawing.Point(218, 339);
-            this.pictureBox91.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox91.Location = new System.Drawing.Point(400, 625);
+            this.pictureBox91.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox91.Name = "pictureBox91";
-            this.pictureBox91.Size = new System.Drawing.Size(27, 27);
+            this.pictureBox91.Size = new System.Drawing.Size(50, 50);
             this.pictureBox91.TabIndex = 45;
             this.pictureBox91.TabStop = false;
             this.pictureBox91.Tag = "Cell";
@@ -1496,10 +1507,10 @@ namespace Quoridor
             // pictureBox92
             // 
             this.pictureBox92.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pictureBox92.Location = new System.Drawing.Point(259, 339);
-            this.pictureBox92.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox92.Location = new System.Drawing.Point(475, 625);
+            this.pictureBox92.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox92.Name = "pictureBox92";
-            this.pictureBox92.Size = new System.Drawing.Size(27, 27);
+            this.pictureBox92.Size = new System.Drawing.Size(50, 50);
             this.pictureBox92.TabIndex = 45;
             this.pictureBox92.TabStop = false;
             this.pictureBox92.Tag = "Cell";
@@ -1507,10 +1518,10 @@ namespace Quoridor
             // pictureBox93
             // 
             this.pictureBox93.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pictureBox93.Location = new System.Drawing.Point(300, 339);
-            this.pictureBox93.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox93.Location = new System.Drawing.Point(550, 625);
+            this.pictureBox93.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox93.Name = "pictureBox93";
-            this.pictureBox93.Size = new System.Drawing.Size(27, 27);
+            this.pictureBox93.Size = new System.Drawing.Size(50, 50);
             this.pictureBox93.TabIndex = 45;
             this.pictureBox93.TabStop = false;
             this.pictureBox93.Tag = "Cell";
@@ -1518,10 +1529,10 @@ namespace Quoridor
             // pictureBox94
             // 
             this.pictureBox94.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pictureBox94.Location = new System.Drawing.Point(341, 339);
-            this.pictureBox94.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox94.Location = new System.Drawing.Point(625, 625);
+            this.pictureBox94.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox94.Name = "pictureBox94";
-            this.pictureBox94.Size = new System.Drawing.Size(27, 27);
+            this.pictureBox94.Size = new System.Drawing.Size(50, 50);
             this.pictureBox94.TabIndex = 45;
             this.pictureBox94.TabStop = false;
             this.pictureBox94.Tag = "Cell";
@@ -1529,10 +1540,10 @@ namespace Quoridor
             // pictureBox95
             // 
             this.pictureBox95.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pictureBox95.Location = new System.Drawing.Point(368, 0);
-            this.pictureBox95.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox95.Location = new System.Drawing.Point(675, 0);
+            this.pictureBox95.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox95.Name = "pictureBox95";
-            this.pictureBox95.Size = new System.Drawing.Size(14, 379);
+            this.pictureBox95.Size = new System.Drawing.Size(25, 700);
             this.pictureBox95.TabIndex = 2;
             this.pictureBox95.TabStop = false;
             this.pictureBox95.Tag = "Map";
@@ -1540,10 +1551,10 @@ namespace Quoridor
             // pictureBox96
             // 
             this.pictureBox96.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pictureBox96.Location = new System.Drawing.Point(55, 41);
-            this.pictureBox96.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox96.Location = new System.Drawing.Point(100, 75);
+            this.pictureBox96.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox96.Name = "pictureBox96";
-            this.pictureBox96.Size = new System.Drawing.Size(68, 14);
+            this.pictureBox96.Size = new System.Drawing.Size(125, 25);
             this.pictureBox96.TabIndex = 47;
             this.pictureBox96.TabStop = false;
             this.pictureBox96.Tag = "Wall";
@@ -1551,10 +1562,10 @@ namespace Quoridor
             // pictureBox97
             // 
             this.pictureBox97.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pictureBox97.Location = new System.Drawing.Point(55, 81);
-            this.pictureBox97.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox97.Location = new System.Drawing.Point(100, 150);
+            this.pictureBox97.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox97.Name = "pictureBox97";
-            this.pictureBox97.Size = new System.Drawing.Size(68, 14);
+            this.pictureBox97.Size = new System.Drawing.Size(125, 25);
             this.pictureBox97.TabIndex = 47;
             this.pictureBox97.TabStop = false;
             this.pictureBox97.Tag = "Wall";
@@ -1562,10 +1573,10 @@ namespace Quoridor
             // pictureBox98
             // 
             this.pictureBox98.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pictureBox98.Location = new System.Drawing.Point(55, 122);
-            this.pictureBox98.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox98.Location = new System.Drawing.Point(100, 225);
+            this.pictureBox98.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox98.Name = "pictureBox98";
-            this.pictureBox98.Size = new System.Drawing.Size(68, 14);
+            this.pictureBox98.Size = new System.Drawing.Size(125, 25);
             this.pictureBox98.TabIndex = 47;
             this.pictureBox98.TabStop = false;
             this.pictureBox98.Tag = "Wall";
@@ -1573,10 +1584,10 @@ namespace Quoridor
             // pictureBox99
             // 
             this.pictureBox99.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pictureBox99.Location = new System.Drawing.Point(55, 163);
-            this.pictureBox99.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox99.Location = new System.Drawing.Point(100, 300);
+            this.pictureBox99.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox99.Name = "pictureBox99";
-            this.pictureBox99.Size = new System.Drawing.Size(68, 14);
+            this.pictureBox99.Size = new System.Drawing.Size(125, 25);
             this.pictureBox99.TabIndex = 47;
             this.pictureBox99.TabStop = false;
             this.pictureBox99.Tag = "Wall";
@@ -1584,10 +1595,10 @@ namespace Quoridor
             // pictureBox100
             // 
             this.pictureBox100.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pictureBox100.Location = new System.Drawing.Point(55, 203);
-            this.pictureBox100.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox100.Location = new System.Drawing.Point(100, 375);
+            this.pictureBox100.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox100.Name = "pictureBox100";
-            this.pictureBox100.Size = new System.Drawing.Size(68, 14);
+            this.pictureBox100.Size = new System.Drawing.Size(125, 25);
             this.pictureBox100.TabIndex = 47;
             this.pictureBox100.TabStop = false;
             this.pictureBox100.Tag = "Wall";
@@ -1595,10 +1606,10 @@ namespace Quoridor
             // pictureBox101
             // 
             this.pictureBox101.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pictureBox101.Location = new System.Drawing.Point(55, 244);
-            this.pictureBox101.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox101.Location = new System.Drawing.Point(100, 450);
+            this.pictureBox101.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox101.Name = "pictureBox101";
-            this.pictureBox101.Size = new System.Drawing.Size(68, 14);
+            this.pictureBox101.Size = new System.Drawing.Size(125, 25);
             this.pictureBox101.TabIndex = 47;
             this.pictureBox101.TabStop = false;
             this.pictureBox101.Tag = "Wall";
@@ -1606,10 +1617,10 @@ namespace Quoridor
             // pictureBox102
             // 
             this.pictureBox102.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pictureBox102.Location = new System.Drawing.Point(55, 284);
-            this.pictureBox102.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox102.Location = new System.Drawing.Point(100, 525);
+            this.pictureBox102.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox102.Name = "pictureBox102";
-            this.pictureBox102.Size = new System.Drawing.Size(68, 14);
+            this.pictureBox102.Size = new System.Drawing.Size(125, 25);
             this.pictureBox102.TabIndex = 47;
             this.pictureBox102.TabStop = false;
             this.pictureBox102.Tag = "Wall";
@@ -1617,10 +1628,10 @@ namespace Quoridor
             // pictureBox103
             // 
             this.pictureBox103.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pictureBox103.Location = new System.Drawing.Point(55, 325);
-            this.pictureBox103.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox103.Location = new System.Drawing.Point(100, 600);
+            this.pictureBox103.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox103.Name = "pictureBox103";
-            this.pictureBox103.Size = new System.Drawing.Size(68, 14);
+            this.pictureBox103.Size = new System.Drawing.Size(125, 25);
             this.pictureBox103.TabIndex = 47;
             this.pictureBox103.TabStop = false;
             this.pictureBox103.Tag = "Wall";
@@ -1628,10 +1639,10 @@ namespace Quoridor
             // pictureBox104
             // 
             this.pictureBox104.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pictureBox104.Location = new System.Drawing.Point(95, 41);
-            this.pictureBox104.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox104.Location = new System.Drawing.Point(175, 75);
+            this.pictureBox104.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox104.Name = "pictureBox104";
-            this.pictureBox104.Size = new System.Drawing.Size(68, 14);
+            this.pictureBox104.Size = new System.Drawing.Size(125, 25);
             this.pictureBox104.TabIndex = 47;
             this.pictureBox104.TabStop = false;
             this.pictureBox104.Tag = "Wall";
@@ -1639,10 +1650,10 @@ namespace Quoridor
             // pictureBox105
             // 
             this.pictureBox105.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pictureBox105.Location = new System.Drawing.Point(95, 81);
-            this.pictureBox105.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox105.Location = new System.Drawing.Point(175, 150);
+            this.pictureBox105.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox105.Name = "pictureBox105";
-            this.pictureBox105.Size = new System.Drawing.Size(68, 14);
+            this.pictureBox105.Size = new System.Drawing.Size(125, 25);
             this.pictureBox105.TabIndex = 47;
             this.pictureBox105.TabStop = false;
             this.pictureBox105.Tag = "Wall";
@@ -1650,10 +1661,10 @@ namespace Quoridor
             // pictureBox106
             // 
             this.pictureBox106.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pictureBox106.Location = new System.Drawing.Point(95, 122);
-            this.pictureBox106.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox106.Location = new System.Drawing.Point(175, 225);
+            this.pictureBox106.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox106.Name = "pictureBox106";
-            this.pictureBox106.Size = new System.Drawing.Size(68, 14);
+            this.pictureBox106.Size = new System.Drawing.Size(125, 25);
             this.pictureBox106.TabIndex = 47;
             this.pictureBox106.TabStop = false;
             this.pictureBox106.Tag = "Wall";
@@ -1661,10 +1672,10 @@ namespace Quoridor
             // pictureBox107
             // 
             this.pictureBox107.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pictureBox107.Location = new System.Drawing.Point(95, 163);
-            this.pictureBox107.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox107.Location = new System.Drawing.Point(175, 300);
+            this.pictureBox107.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox107.Name = "pictureBox107";
-            this.pictureBox107.Size = new System.Drawing.Size(68, 14);
+            this.pictureBox107.Size = new System.Drawing.Size(125, 25);
             this.pictureBox107.TabIndex = 47;
             this.pictureBox107.TabStop = false;
             this.pictureBox107.Tag = "Wall";
@@ -1672,10 +1683,10 @@ namespace Quoridor
             // pictureBox108
             // 
             this.pictureBox108.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pictureBox108.Location = new System.Drawing.Point(95, 203);
-            this.pictureBox108.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox108.Location = new System.Drawing.Point(175, 375);
+            this.pictureBox108.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox108.Name = "pictureBox108";
-            this.pictureBox108.Size = new System.Drawing.Size(68, 14);
+            this.pictureBox108.Size = new System.Drawing.Size(125, 25);
             this.pictureBox108.TabIndex = 47;
             this.pictureBox108.TabStop = false;
             this.pictureBox108.Tag = "Wall";
@@ -1683,10 +1694,10 @@ namespace Quoridor
             // pictureBox109
             // 
             this.pictureBox109.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pictureBox109.Location = new System.Drawing.Point(95, 244);
-            this.pictureBox109.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox109.Location = new System.Drawing.Point(175, 450);
+            this.pictureBox109.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox109.Name = "pictureBox109";
-            this.pictureBox109.Size = new System.Drawing.Size(68, 14);
+            this.pictureBox109.Size = new System.Drawing.Size(125, 25);
             this.pictureBox109.TabIndex = 47;
             this.pictureBox109.TabStop = false;
             this.pictureBox109.Tag = "Wall";
@@ -1694,10 +1705,10 @@ namespace Quoridor
             // pictureBox110
             // 
             this.pictureBox110.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pictureBox110.Location = new System.Drawing.Point(95, 284);
-            this.pictureBox110.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox110.Location = new System.Drawing.Point(175, 525);
+            this.pictureBox110.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox110.Name = "pictureBox110";
-            this.pictureBox110.Size = new System.Drawing.Size(68, 14);
+            this.pictureBox110.Size = new System.Drawing.Size(125, 25);
             this.pictureBox110.TabIndex = 47;
             this.pictureBox110.TabStop = false;
             this.pictureBox110.Tag = "Wall";
@@ -1705,10 +1716,10 @@ namespace Quoridor
             // pictureBox111
             // 
             this.pictureBox111.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pictureBox111.Location = new System.Drawing.Point(95, 325);
-            this.pictureBox111.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox111.Location = new System.Drawing.Point(175, 600);
+            this.pictureBox111.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox111.Name = "pictureBox111";
-            this.pictureBox111.Size = new System.Drawing.Size(68, 14);
+            this.pictureBox111.Size = new System.Drawing.Size(125, 25);
             this.pictureBox111.TabIndex = 47;
             this.pictureBox111.TabStop = false;
             this.pictureBox111.Tag = "Wall";
@@ -1716,10 +1727,10 @@ namespace Quoridor
             // pictureBox112
             // 
             this.pictureBox112.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pictureBox112.Location = new System.Drawing.Point(136, 41);
-            this.pictureBox112.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox112.Location = new System.Drawing.Point(250, 75);
+            this.pictureBox112.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox112.Name = "pictureBox112";
-            this.pictureBox112.Size = new System.Drawing.Size(68, 14);
+            this.pictureBox112.Size = new System.Drawing.Size(125, 25);
             this.pictureBox112.TabIndex = 47;
             this.pictureBox112.TabStop = false;
             this.pictureBox112.Tag = "Wall";
@@ -1727,10 +1738,10 @@ namespace Quoridor
             // pictureBox113
             // 
             this.pictureBox113.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pictureBox113.Location = new System.Drawing.Point(136, 81);
-            this.pictureBox113.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox113.Location = new System.Drawing.Point(250, 150);
+            this.pictureBox113.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox113.Name = "pictureBox113";
-            this.pictureBox113.Size = new System.Drawing.Size(68, 14);
+            this.pictureBox113.Size = new System.Drawing.Size(125, 25);
             this.pictureBox113.TabIndex = 47;
             this.pictureBox113.TabStop = false;
             this.pictureBox113.Tag = "Wall";
@@ -1738,10 +1749,10 @@ namespace Quoridor
             // pictureBox114
             // 
             this.pictureBox114.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pictureBox114.Location = new System.Drawing.Point(136, 122);
-            this.pictureBox114.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox114.Location = new System.Drawing.Point(250, 225);
+            this.pictureBox114.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox114.Name = "pictureBox114";
-            this.pictureBox114.Size = new System.Drawing.Size(68, 14);
+            this.pictureBox114.Size = new System.Drawing.Size(125, 25);
             this.pictureBox114.TabIndex = 47;
             this.pictureBox114.TabStop = false;
             this.pictureBox114.Tag = "Wall";
@@ -1749,10 +1760,10 @@ namespace Quoridor
             // pictureBox115
             // 
             this.pictureBox115.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pictureBox115.Location = new System.Drawing.Point(136, 163);
-            this.pictureBox115.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox115.Location = new System.Drawing.Point(250, 300);
+            this.pictureBox115.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox115.Name = "pictureBox115";
-            this.pictureBox115.Size = new System.Drawing.Size(68, 14);
+            this.pictureBox115.Size = new System.Drawing.Size(125, 25);
             this.pictureBox115.TabIndex = 47;
             this.pictureBox115.TabStop = false;
             this.pictureBox115.Tag = "Wall";
@@ -1760,10 +1771,10 @@ namespace Quoridor
             // pictureBox116
             // 
             this.pictureBox116.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pictureBox116.Location = new System.Drawing.Point(136, 203);
-            this.pictureBox116.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox116.Location = new System.Drawing.Point(250, 375);
+            this.pictureBox116.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox116.Name = "pictureBox116";
-            this.pictureBox116.Size = new System.Drawing.Size(68, 14);
+            this.pictureBox116.Size = new System.Drawing.Size(125, 25);
             this.pictureBox116.TabIndex = 47;
             this.pictureBox116.TabStop = false;
             this.pictureBox116.Tag = "Wall";
@@ -1771,10 +1782,10 @@ namespace Quoridor
             // pictureBox117
             // 
             this.pictureBox117.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pictureBox117.Location = new System.Drawing.Point(136, 244);
-            this.pictureBox117.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox117.Location = new System.Drawing.Point(250, 450);
+            this.pictureBox117.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox117.Name = "pictureBox117";
-            this.pictureBox117.Size = new System.Drawing.Size(68, 14);
+            this.pictureBox117.Size = new System.Drawing.Size(125, 25);
             this.pictureBox117.TabIndex = 47;
             this.pictureBox117.TabStop = false;
             this.pictureBox117.Tag = "Wall";
@@ -1782,10 +1793,10 @@ namespace Quoridor
             // pictureBox118
             // 
             this.pictureBox118.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pictureBox118.Location = new System.Drawing.Point(136, 284);
-            this.pictureBox118.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox118.Location = new System.Drawing.Point(250, 525);
+            this.pictureBox118.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox118.Name = "pictureBox118";
-            this.pictureBox118.Size = new System.Drawing.Size(68, 14);
+            this.pictureBox118.Size = new System.Drawing.Size(125, 25);
             this.pictureBox118.TabIndex = 47;
             this.pictureBox118.TabStop = false;
             this.pictureBox118.Tag = "Wall";
@@ -1793,10 +1804,10 @@ namespace Quoridor
             // pictureBox119
             // 
             this.pictureBox119.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pictureBox119.Location = new System.Drawing.Point(136, 325);
-            this.pictureBox119.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox119.Location = new System.Drawing.Point(250, 600);
+            this.pictureBox119.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox119.Name = "pictureBox119";
-            this.pictureBox119.Size = new System.Drawing.Size(68, 14);
+            this.pictureBox119.Size = new System.Drawing.Size(125, 25);
             this.pictureBox119.TabIndex = 47;
             this.pictureBox119.TabStop = false;
             this.pictureBox119.Tag = "Wall";
@@ -1804,10 +1815,10 @@ namespace Quoridor
             // pictureBox120
             // 
             this.pictureBox120.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pictureBox120.Location = new System.Drawing.Point(177, 41);
-            this.pictureBox120.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox120.Location = new System.Drawing.Point(325, 75);
+            this.pictureBox120.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox120.Name = "pictureBox120";
-            this.pictureBox120.Size = new System.Drawing.Size(68, 14);
+            this.pictureBox120.Size = new System.Drawing.Size(125, 25);
             this.pictureBox120.TabIndex = 47;
             this.pictureBox120.TabStop = false;
             this.pictureBox120.Tag = "Wall";
@@ -1815,10 +1826,10 @@ namespace Quoridor
             // pictureBox121
             // 
             this.pictureBox121.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pictureBox121.Location = new System.Drawing.Point(177, 81);
-            this.pictureBox121.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox121.Location = new System.Drawing.Point(325, 150);
+            this.pictureBox121.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox121.Name = "pictureBox121";
-            this.pictureBox121.Size = new System.Drawing.Size(68, 14);
+            this.pictureBox121.Size = new System.Drawing.Size(125, 25);
             this.pictureBox121.TabIndex = 47;
             this.pictureBox121.TabStop = false;
             this.pictureBox121.Tag = "Wall";
@@ -1826,10 +1837,10 @@ namespace Quoridor
             // pictureBox122
             // 
             this.pictureBox122.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pictureBox122.Location = new System.Drawing.Point(177, 122);
-            this.pictureBox122.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox122.Location = new System.Drawing.Point(325, 225);
+            this.pictureBox122.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox122.Name = "pictureBox122";
-            this.pictureBox122.Size = new System.Drawing.Size(68, 14);
+            this.pictureBox122.Size = new System.Drawing.Size(125, 25);
             this.pictureBox122.TabIndex = 47;
             this.pictureBox122.TabStop = false;
             this.pictureBox122.Tag = "Wall";
@@ -1837,10 +1848,10 @@ namespace Quoridor
             // pictureBox123
             // 
             this.pictureBox123.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pictureBox123.Location = new System.Drawing.Point(177, 163);
-            this.pictureBox123.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox123.Location = new System.Drawing.Point(325, 300);
+            this.pictureBox123.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox123.Name = "pictureBox123";
-            this.pictureBox123.Size = new System.Drawing.Size(68, 14);
+            this.pictureBox123.Size = new System.Drawing.Size(125, 25);
             this.pictureBox123.TabIndex = 47;
             this.pictureBox123.TabStop = false;
             this.pictureBox123.Tag = "Wall";
@@ -1848,10 +1859,10 @@ namespace Quoridor
             // pictureBox124
             // 
             this.pictureBox124.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pictureBox124.Location = new System.Drawing.Point(177, 203);
-            this.pictureBox124.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox124.Location = new System.Drawing.Point(325, 375);
+            this.pictureBox124.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox124.Name = "pictureBox124";
-            this.pictureBox124.Size = new System.Drawing.Size(68, 14);
+            this.pictureBox124.Size = new System.Drawing.Size(125, 25);
             this.pictureBox124.TabIndex = 47;
             this.pictureBox124.TabStop = false;
             this.pictureBox124.Tag = "Wall";
@@ -1859,10 +1870,10 @@ namespace Quoridor
             // pictureBox125
             // 
             this.pictureBox125.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pictureBox125.Location = new System.Drawing.Point(177, 244);
-            this.pictureBox125.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox125.Location = new System.Drawing.Point(325, 450);
+            this.pictureBox125.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox125.Name = "pictureBox125";
-            this.pictureBox125.Size = new System.Drawing.Size(68, 14);
+            this.pictureBox125.Size = new System.Drawing.Size(125, 25);
             this.pictureBox125.TabIndex = 47;
             this.pictureBox125.TabStop = false;
             this.pictureBox125.Tag = "Wall";
@@ -1870,10 +1881,10 @@ namespace Quoridor
             // pictureBox126
             // 
             this.pictureBox126.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pictureBox126.Location = new System.Drawing.Point(177, 284);
-            this.pictureBox126.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox126.Location = new System.Drawing.Point(325, 525);
+            this.pictureBox126.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox126.Name = "pictureBox126";
-            this.pictureBox126.Size = new System.Drawing.Size(68, 14);
+            this.pictureBox126.Size = new System.Drawing.Size(125, 25);
             this.pictureBox126.TabIndex = 47;
             this.pictureBox126.TabStop = false;
             this.pictureBox126.Tag = "Wall";
@@ -1881,10 +1892,10 @@ namespace Quoridor
             // pictureBox127
             // 
             this.pictureBox127.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pictureBox127.Location = new System.Drawing.Point(177, 325);
-            this.pictureBox127.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox127.Location = new System.Drawing.Point(325, 600);
+            this.pictureBox127.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox127.Name = "pictureBox127";
-            this.pictureBox127.Size = new System.Drawing.Size(68, 14);
+            this.pictureBox127.Size = new System.Drawing.Size(125, 25);
             this.pictureBox127.TabIndex = 47;
             this.pictureBox127.TabStop = false;
             this.pictureBox127.Tag = "Wall";
@@ -1892,10 +1903,10 @@ namespace Quoridor
             // pictureBox128
             // 
             this.pictureBox128.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pictureBox128.Location = new System.Drawing.Point(218, 41);
-            this.pictureBox128.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox128.Location = new System.Drawing.Point(400, 75);
+            this.pictureBox128.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox128.Name = "pictureBox128";
-            this.pictureBox128.Size = new System.Drawing.Size(68, 14);
+            this.pictureBox128.Size = new System.Drawing.Size(125, 25);
             this.pictureBox128.TabIndex = 47;
             this.pictureBox128.TabStop = false;
             this.pictureBox128.Tag = "Wall";
@@ -1903,10 +1914,10 @@ namespace Quoridor
             // pictureBox129
             // 
             this.pictureBox129.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pictureBox129.Location = new System.Drawing.Point(218, 81);
-            this.pictureBox129.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox129.Location = new System.Drawing.Point(400, 150);
+            this.pictureBox129.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox129.Name = "pictureBox129";
-            this.pictureBox129.Size = new System.Drawing.Size(68, 14);
+            this.pictureBox129.Size = new System.Drawing.Size(125, 25);
             this.pictureBox129.TabIndex = 47;
             this.pictureBox129.TabStop = false;
             this.pictureBox129.Tag = "Wall";
@@ -1914,10 +1925,10 @@ namespace Quoridor
             // pictureBox130
             // 
             this.pictureBox130.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pictureBox130.Location = new System.Drawing.Point(218, 122);
-            this.pictureBox130.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox130.Location = new System.Drawing.Point(400, 225);
+            this.pictureBox130.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox130.Name = "pictureBox130";
-            this.pictureBox130.Size = new System.Drawing.Size(68, 14);
+            this.pictureBox130.Size = new System.Drawing.Size(125, 25);
             this.pictureBox130.TabIndex = 47;
             this.pictureBox130.TabStop = false;
             this.pictureBox130.Tag = "Wall";
@@ -1925,10 +1936,10 @@ namespace Quoridor
             // pictureBox131
             // 
             this.pictureBox131.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pictureBox131.Location = new System.Drawing.Point(218, 163);
-            this.pictureBox131.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox131.Location = new System.Drawing.Point(400, 300);
+            this.pictureBox131.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox131.Name = "pictureBox131";
-            this.pictureBox131.Size = new System.Drawing.Size(68, 14);
+            this.pictureBox131.Size = new System.Drawing.Size(125, 25);
             this.pictureBox131.TabIndex = 47;
             this.pictureBox131.TabStop = false;
             this.pictureBox131.Tag = "Wall";
@@ -1936,10 +1947,10 @@ namespace Quoridor
             // pictureBox132
             // 
             this.pictureBox132.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pictureBox132.Location = new System.Drawing.Point(218, 203);
-            this.pictureBox132.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox132.Location = new System.Drawing.Point(400, 375);
+            this.pictureBox132.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox132.Name = "pictureBox132";
-            this.pictureBox132.Size = new System.Drawing.Size(68, 14);
+            this.pictureBox132.Size = new System.Drawing.Size(125, 25);
             this.pictureBox132.TabIndex = 47;
             this.pictureBox132.TabStop = false;
             this.pictureBox132.Tag = "Wall";
@@ -1947,10 +1958,10 @@ namespace Quoridor
             // pictureBox133
             // 
             this.pictureBox133.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pictureBox133.Location = new System.Drawing.Point(218, 244);
-            this.pictureBox133.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox133.Location = new System.Drawing.Point(400, 450);
+            this.pictureBox133.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox133.Name = "pictureBox133";
-            this.pictureBox133.Size = new System.Drawing.Size(68, 14);
+            this.pictureBox133.Size = new System.Drawing.Size(125, 25);
             this.pictureBox133.TabIndex = 47;
             this.pictureBox133.TabStop = false;
             this.pictureBox133.Tag = "Wall";
@@ -1958,10 +1969,10 @@ namespace Quoridor
             // pictureBox134
             // 
             this.pictureBox134.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pictureBox134.Location = new System.Drawing.Point(218, 284);
-            this.pictureBox134.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox134.Location = new System.Drawing.Point(400, 525);
+            this.pictureBox134.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox134.Name = "pictureBox134";
-            this.pictureBox134.Size = new System.Drawing.Size(68, 14);
+            this.pictureBox134.Size = new System.Drawing.Size(125, 25);
             this.pictureBox134.TabIndex = 47;
             this.pictureBox134.TabStop = false;
             this.pictureBox134.Tag = "Wall";
@@ -1969,10 +1980,10 @@ namespace Quoridor
             // pictureBox135
             // 
             this.pictureBox135.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pictureBox135.Location = new System.Drawing.Point(218, 325);
-            this.pictureBox135.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox135.Location = new System.Drawing.Point(400, 600);
+            this.pictureBox135.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox135.Name = "pictureBox135";
-            this.pictureBox135.Size = new System.Drawing.Size(68, 14);
+            this.pictureBox135.Size = new System.Drawing.Size(125, 25);
             this.pictureBox135.TabIndex = 47;
             this.pictureBox135.TabStop = false;
             this.pictureBox135.Tag = "Wall";
@@ -1980,10 +1991,10 @@ namespace Quoridor
             // pictureBox136
             // 
             this.pictureBox136.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pictureBox136.Location = new System.Drawing.Point(259, 41);
-            this.pictureBox136.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox136.Location = new System.Drawing.Point(475, 75);
+            this.pictureBox136.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox136.Name = "pictureBox136";
-            this.pictureBox136.Size = new System.Drawing.Size(68, 14);
+            this.pictureBox136.Size = new System.Drawing.Size(125, 25);
             this.pictureBox136.TabIndex = 47;
             this.pictureBox136.TabStop = false;
             this.pictureBox136.Tag = "Wall";
@@ -1991,10 +2002,10 @@ namespace Quoridor
             // pictureBox137
             // 
             this.pictureBox137.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pictureBox137.Location = new System.Drawing.Point(259, 81);
-            this.pictureBox137.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox137.Location = new System.Drawing.Point(475, 150);
+            this.pictureBox137.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox137.Name = "pictureBox137";
-            this.pictureBox137.Size = new System.Drawing.Size(68, 14);
+            this.pictureBox137.Size = new System.Drawing.Size(125, 25);
             this.pictureBox137.TabIndex = 47;
             this.pictureBox137.TabStop = false;
             this.pictureBox137.Tag = "Wall";
@@ -2002,10 +2013,10 @@ namespace Quoridor
             // pictureBox138
             // 
             this.pictureBox138.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pictureBox138.Location = new System.Drawing.Point(259, 122);
-            this.pictureBox138.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox138.Location = new System.Drawing.Point(475, 225);
+            this.pictureBox138.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox138.Name = "pictureBox138";
-            this.pictureBox138.Size = new System.Drawing.Size(68, 14);
+            this.pictureBox138.Size = new System.Drawing.Size(125, 25);
             this.pictureBox138.TabIndex = 47;
             this.pictureBox138.TabStop = false;
             this.pictureBox138.Tag = "Wall";
@@ -2013,10 +2024,10 @@ namespace Quoridor
             // pictureBox139
             // 
             this.pictureBox139.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pictureBox139.Location = new System.Drawing.Point(259, 163);
-            this.pictureBox139.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox139.Location = new System.Drawing.Point(475, 300);
+            this.pictureBox139.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox139.Name = "pictureBox139";
-            this.pictureBox139.Size = new System.Drawing.Size(68, 14);
+            this.pictureBox139.Size = new System.Drawing.Size(125, 25);
             this.pictureBox139.TabIndex = 47;
             this.pictureBox139.TabStop = false;
             this.pictureBox139.Tag = "Wall";
@@ -2024,10 +2035,10 @@ namespace Quoridor
             // pictureBox140
             // 
             this.pictureBox140.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pictureBox140.Location = new System.Drawing.Point(259, 203);
-            this.pictureBox140.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox140.Location = new System.Drawing.Point(475, 375);
+            this.pictureBox140.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox140.Name = "pictureBox140";
-            this.pictureBox140.Size = new System.Drawing.Size(68, 14);
+            this.pictureBox140.Size = new System.Drawing.Size(125, 25);
             this.pictureBox140.TabIndex = 47;
             this.pictureBox140.TabStop = false;
             this.pictureBox140.Tag = "Wall";
@@ -2035,10 +2046,10 @@ namespace Quoridor
             // pictureBox141
             // 
             this.pictureBox141.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pictureBox141.Location = new System.Drawing.Point(259, 244);
-            this.pictureBox141.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox141.Location = new System.Drawing.Point(475, 450);
+            this.pictureBox141.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox141.Name = "pictureBox141";
-            this.pictureBox141.Size = new System.Drawing.Size(68, 14);
+            this.pictureBox141.Size = new System.Drawing.Size(125, 25);
             this.pictureBox141.TabIndex = 47;
             this.pictureBox141.TabStop = false;
             this.pictureBox141.Tag = "Wall";
@@ -2046,10 +2057,10 @@ namespace Quoridor
             // pictureBox142
             // 
             this.pictureBox142.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pictureBox142.Location = new System.Drawing.Point(259, 284);
-            this.pictureBox142.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox142.Location = new System.Drawing.Point(475, 525);
+            this.pictureBox142.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox142.Name = "pictureBox142";
-            this.pictureBox142.Size = new System.Drawing.Size(68, 14);
+            this.pictureBox142.Size = new System.Drawing.Size(125, 25);
             this.pictureBox142.TabIndex = 47;
             this.pictureBox142.TabStop = false;
             this.pictureBox142.Tag = "Wall";
@@ -2057,10 +2068,10 @@ namespace Quoridor
             // pictureBox143
             // 
             this.pictureBox143.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pictureBox143.Location = new System.Drawing.Point(259, 325);
-            this.pictureBox143.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox143.Location = new System.Drawing.Point(475, 600);
+            this.pictureBox143.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox143.Name = "pictureBox143";
-            this.pictureBox143.Size = new System.Drawing.Size(68, 14);
+            this.pictureBox143.Size = new System.Drawing.Size(125, 25);
             this.pictureBox143.TabIndex = 47;
             this.pictureBox143.TabStop = false;
             this.pictureBox143.Tag = "Wall";
@@ -2068,10 +2079,10 @@ namespace Quoridor
             // pictureBox144
             // 
             this.pictureBox144.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pictureBox144.Location = new System.Drawing.Point(300, 41);
-            this.pictureBox144.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox144.Location = new System.Drawing.Point(550, 75);
+            this.pictureBox144.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox144.Name = "pictureBox144";
-            this.pictureBox144.Size = new System.Drawing.Size(68, 14);
+            this.pictureBox144.Size = new System.Drawing.Size(125, 25);
             this.pictureBox144.TabIndex = 47;
             this.pictureBox144.TabStop = false;
             this.pictureBox144.Tag = "Wall";
@@ -2079,10 +2090,10 @@ namespace Quoridor
             // pictureBox145
             // 
             this.pictureBox145.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pictureBox145.Location = new System.Drawing.Point(300, 81);
-            this.pictureBox145.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox145.Location = new System.Drawing.Point(550, 150);
+            this.pictureBox145.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox145.Name = "pictureBox145";
-            this.pictureBox145.Size = new System.Drawing.Size(68, 14);
+            this.pictureBox145.Size = new System.Drawing.Size(125, 25);
             this.pictureBox145.TabIndex = 47;
             this.pictureBox145.TabStop = false;
             this.pictureBox145.Tag = "Wall";
@@ -2090,10 +2101,10 @@ namespace Quoridor
             // pictureBox146
             // 
             this.pictureBox146.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pictureBox146.Location = new System.Drawing.Point(300, 122);
-            this.pictureBox146.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox146.Location = new System.Drawing.Point(550, 225);
+            this.pictureBox146.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox146.Name = "pictureBox146";
-            this.pictureBox146.Size = new System.Drawing.Size(68, 14);
+            this.pictureBox146.Size = new System.Drawing.Size(125, 25);
             this.pictureBox146.TabIndex = 47;
             this.pictureBox146.TabStop = false;
             this.pictureBox146.Tag = "Wall";
@@ -2101,10 +2112,10 @@ namespace Quoridor
             // pictureBox147
             // 
             this.pictureBox147.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pictureBox147.Location = new System.Drawing.Point(300, 163);
-            this.pictureBox147.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox147.Location = new System.Drawing.Point(550, 300);
+            this.pictureBox147.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox147.Name = "pictureBox147";
-            this.pictureBox147.Size = new System.Drawing.Size(68, 14);
+            this.pictureBox147.Size = new System.Drawing.Size(125, 25);
             this.pictureBox147.TabIndex = 47;
             this.pictureBox147.TabStop = false;
             this.pictureBox147.Tag = "Wall";
@@ -2112,10 +2123,10 @@ namespace Quoridor
             // pictureBox148
             // 
             this.pictureBox148.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pictureBox148.Location = new System.Drawing.Point(300, 203);
-            this.pictureBox148.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox148.Location = new System.Drawing.Point(550, 375);
+            this.pictureBox148.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox148.Name = "pictureBox148";
-            this.pictureBox148.Size = new System.Drawing.Size(68, 14);
+            this.pictureBox148.Size = new System.Drawing.Size(125, 25);
             this.pictureBox148.TabIndex = 47;
             this.pictureBox148.TabStop = false;
             this.pictureBox148.Tag = "Wall";
@@ -2123,10 +2134,10 @@ namespace Quoridor
             // pictureBox149
             // 
             this.pictureBox149.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pictureBox149.Location = new System.Drawing.Point(300, 244);
-            this.pictureBox149.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox149.Location = new System.Drawing.Point(550, 450);
+            this.pictureBox149.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox149.Name = "pictureBox149";
-            this.pictureBox149.Size = new System.Drawing.Size(68, 14);
+            this.pictureBox149.Size = new System.Drawing.Size(125, 25);
             this.pictureBox149.TabIndex = 47;
             this.pictureBox149.TabStop = false;
             this.pictureBox149.Tag = "Wall";
@@ -2134,10 +2145,10 @@ namespace Quoridor
             // pictureBox150
             // 
             this.pictureBox150.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pictureBox150.Location = new System.Drawing.Point(300, 284);
-            this.pictureBox150.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox150.Location = new System.Drawing.Point(550, 525);
+            this.pictureBox150.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox150.Name = "pictureBox150";
-            this.pictureBox150.Size = new System.Drawing.Size(68, 14);
+            this.pictureBox150.Size = new System.Drawing.Size(125, 25);
             this.pictureBox150.TabIndex = 47;
             this.pictureBox150.TabStop = false;
             this.pictureBox150.Tag = "Wall";
@@ -2145,10 +2156,10 @@ namespace Quoridor
             // pictureBox151
             // 
             this.pictureBox151.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pictureBox151.Location = new System.Drawing.Point(300, 325);
-            this.pictureBox151.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox151.Location = new System.Drawing.Point(550, 600);
+            this.pictureBox151.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox151.Name = "pictureBox151";
-            this.pictureBox151.Size = new System.Drawing.Size(68, 14);
+            this.pictureBox151.Size = new System.Drawing.Size(125, 25);
             this.pictureBox151.TabIndex = 47;
             this.pictureBox151.TabStop = false;
             this.pictureBox151.Tag = "Wall";
@@ -2156,10 +2167,10 @@ namespace Quoridor
             // pictureBox152
             // 
             this.pictureBox152.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pictureBox152.Location = new System.Drawing.Point(41, 54);
-            this.pictureBox152.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox152.Location = new System.Drawing.Point(75, 100);
+            this.pictureBox152.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox152.Name = "pictureBox152";
-            this.pictureBox152.Size = new System.Drawing.Size(14, 68);
+            this.pictureBox152.Size = new System.Drawing.Size(25, 125);
             this.pictureBox152.TabIndex = 46;
             this.pictureBox152.TabStop = false;
             this.pictureBox152.Tag = "Wall";
@@ -2167,10 +2178,10 @@ namespace Quoridor
             // pictureBox153
             // 
             this.pictureBox153.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pictureBox153.Location = new System.Drawing.Point(41, 95);
-            this.pictureBox153.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox153.Location = new System.Drawing.Point(75, 175);
+            this.pictureBox153.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox153.Name = "pictureBox153";
-            this.pictureBox153.Size = new System.Drawing.Size(14, 68);
+            this.pictureBox153.Size = new System.Drawing.Size(25, 125);
             this.pictureBox153.TabIndex = 46;
             this.pictureBox153.TabStop = false;
             this.pictureBox153.Tag = "Wall";
@@ -2178,10 +2189,10 @@ namespace Quoridor
             // pictureBox154
             // 
             this.pictureBox154.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pictureBox154.Location = new System.Drawing.Point(41, 135);
-            this.pictureBox154.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox154.Location = new System.Drawing.Point(75, 250);
+            this.pictureBox154.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox154.Name = "pictureBox154";
-            this.pictureBox154.Size = new System.Drawing.Size(14, 68);
+            this.pictureBox154.Size = new System.Drawing.Size(25, 125);
             this.pictureBox154.TabIndex = 46;
             this.pictureBox154.TabStop = false;
             this.pictureBox154.Tag = "Wall";
@@ -2189,10 +2200,10 @@ namespace Quoridor
             // pictureBox155
             // 
             this.pictureBox155.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pictureBox155.Location = new System.Drawing.Point(41, 176);
-            this.pictureBox155.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox155.Location = new System.Drawing.Point(75, 325);
+            this.pictureBox155.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox155.Name = "pictureBox155";
-            this.pictureBox155.Size = new System.Drawing.Size(14, 68);
+            this.pictureBox155.Size = new System.Drawing.Size(25, 125);
             this.pictureBox155.TabIndex = 46;
             this.pictureBox155.TabStop = false;
             this.pictureBox155.Tag = "Wall";
@@ -2200,10 +2211,10 @@ namespace Quoridor
             // pictureBox156
             // 
             this.pictureBox156.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pictureBox156.Location = new System.Drawing.Point(41, 217);
-            this.pictureBox156.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox156.Location = new System.Drawing.Point(75, 400);
+            this.pictureBox156.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox156.Name = "pictureBox156";
-            this.pictureBox156.Size = new System.Drawing.Size(14, 68);
+            this.pictureBox156.Size = new System.Drawing.Size(25, 125);
             this.pictureBox156.TabIndex = 46;
             this.pictureBox156.TabStop = false;
             this.pictureBox156.Tag = "Wall";
@@ -2211,10 +2222,10 @@ namespace Quoridor
             // pictureBox157
             // 
             this.pictureBox157.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pictureBox157.Location = new System.Drawing.Point(41, 257);
-            this.pictureBox157.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox157.Location = new System.Drawing.Point(75, 475);
+            this.pictureBox157.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox157.Name = "pictureBox157";
-            this.pictureBox157.Size = new System.Drawing.Size(14, 68);
+            this.pictureBox157.Size = new System.Drawing.Size(25, 125);
             this.pictureBox157.TabIndex = 46;
             this.pictureBox157.TabStop = false;
             this.pictureBox157.Tag = "Wall";
@@ -2222,10 +2233,10 @@ namespace Quoridor
             // pictureBox158
             // 
             this.pictureBox158.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pictureBox158.Location = new System.Drawing.Point(41, 298);
-            this.pictureBox158.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox158.Location = new System.Drawing.Point(75, 550);
+            this.pictureBox158.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox158.Name = "pictureBox158";
-            this.pictureBox158.Size = new System.Drawing.Size(14, 68);
+            this.pictureBox158.Size = new System.Drawing.Size(25, 125);
             this.pictureBox158.TabIndex = 46;
             this.pictureBox158.TabStop = false;
             this.pictureBox158.Tag = "Wall";
@@ -2233,10 +2244,10 @@ namespace Quoridor
             // pictureBox159
             // 
             this.pictureBox159.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pictureBox159.Location = new System.Drawing.Point(82, 14);
-            this.pictureBox159.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox159.Location = new System.Drawing.Point(150, 25);
+            this.pictureBox159.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox159.Name = "pictureBox159";
-            this.pictureBox159.Size = new System.Drawing.Size(14, 68);
+            this.pictureBox159.Size = new System.Drawing.Size(25, 125);
             this.pictureBox159.TabIndex = 46;
             this.pictureBox159.TabStop = false;
             this.pictureBox159.Tag = "Wall";
@@ -2244,10 +2255,10 @@ namespace Quoridor
             // pictureBox160
             // 
             this.pictureBox160.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pictureBox160.Location = new System.Drawing.Point(123, 14);
-            this.pictureBox160.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox160.Location = new System.Drawing.Point(225, 25);
+            this.pictureBox160.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox160.Name = "pictureBox160";
-            this.pictureBox160.Size = new System.Drawing.Size(14, 68);
+            this.pictureBox160.Size = new System.Drawing.Size(25, 125);
             this.pictureBox160.TabIndex = 46;
             this.pictureBox160.TabStop = false;
             this.pictureBox160.Tag = "Wall";
@@ -2255,10 +2266,10 @@ namespace Quoridor
             // pictureBox161
             // 
             this.pictureBox161.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pictureBox161.Location = new System.Drawing.Point(164, 14);
-            this.pictureBox161.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox161.Location = new System.Drawing.Point(300, 25);
+            this.pictureBox161.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox161.Name = "pictureBox161";
-            this.pictureBox161.Size = new System.Drawing.Size(14, 68);
+            this.pictureBox161.Size = new System.Drawing.Size(25, 125);
             this.pictureBox161.TabIndex = 46;
             this.pictureBox161.TabStop = false;
             this.pictureBox161.Tag = "Wall";
@@ -2267,10 +2278,10 @@ namespace Quoridor
             // pictureBox162
             // 
             this.pictureBox162.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pictureBox162.Location = new System.Drawing.Point(205, 14);
-            this.pictureBox162.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox162.Location = new System.Drawing.Point(375, 25);
+            this.pictureBox162.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox162.Name = "pictureBox162";
-            this.pictureBox162.Size = new System.Drawing.Size(14, 68);
+            this.pictureBox162.Size = new System.Drawing.Size(25, 125);
             this.pictureBox162.TabIndex = 46;
             this.pictureBox162.TabStop = false;
             this.pictureBox162.Tag = "Wall";
@@ -2278,10 +2289,10 @@ namespace Quoridor
             // pictureBox163
             // 
             this.pictureBox163.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pictureBox163.Location = new System.Drawing.Point(245, 14);
-            this.pictureBox163.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox163.Location = new System.Drawing.Point(450, 25);
+            this.pictureBox163.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox163.Name = "pictureBox163";
-            this.pictureBox163.Size = new System.Drawing.Size(14, 68);
+            this.pictureBox163.Size = new System.Drawing.Size(25, 125);
             this.pictureBox163.TabIndex = 46;
             this.pictureBox163.TabStop = false;
             this.pictureBox163.Tag = "Wall";
@@ -2289,10 +2300,10 @@ namespace Quoridor
             // pictureBox164
             // 
             this.pictureBox164.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pictureBox164.Location = new System.Drawing.Point(286, 14);
-            this.pictureBox164.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox164.Location = new System.Drawing.Point(525, 25);
+            this.pictureBox164.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox164.Name = "pictureBox164";
-            this.pictureBox164.Size = new System.Drawing.Size(14, 68);
+            this.pictureBox164.Size = new System.Drawing.Size(25, 125);
             this.pictureBox164.TabIndex = 46;
             this.pictureBox164.TabStop = false;
             this.pictureBox164.Tag = "Wall";
@@ -2300,10 +2311,10 @@ namespace Quoridor
             // pictureBox165
             // 
             this.pictureBox165.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pictureBox165.Location = new System.Drawing.Point(327, 14);
-            this.pictureBox165.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox165.Location = new System.Drawing.Point(600, 25);
+            this.pictureBox165.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox165.Name = "pictureBox165";
-            this.pictureBox165.Size = new System.Drawing.Size(14, 68);
+            this.pictureBox165.Size = new System.Drawing.Size(25, 125);
             this.pictureBox165.TabIndex = 46;
             this.pictureBox165.TabStop = false;
             this.pictureBox165.Tag = "Wall";
@@ -2311,10 +2322,10 @@ namespace Quoridor
             // pictureBox166
             // 
             this.pictureBox166.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pictureBox166.Location = new System.Drawing.Point(82, 54);
-            this.pictureBox166.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox166.Location = new System.Drawing.Point(150, 100);
+            this.pictureBox166.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox166.Name = "pictureBox166";
-            this.pictureBox166.Size = new System.Drawing.Size(14, 68);
+            this.pictureBox166.Size = new System.Drawing.Size(25, 125);
             this.pictureBox166.TabIndex = 46;
             this.pictureBox166.TabStop = false;
             this.pictureBox166.Tag = "Wall";
@@ -2322,10 +2333,10 @@ namespace Quoridor
             // pictureBox167
             // 
             this.pictureBox167.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pictureBox167.Location = new System.Drawing.Point(123, 54);
-            this.pictureBox167.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox167.Location = new System.Drawing.Point(225, 100);
+            this.pictureBox167.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox167.Name = "pictureBox167";
-            this.pictureBox167.Size = new System.Drawing.Size(14, 68);
+            this.pictureBox167.Size = new System.Drawing.Size(25, 125);
             this.pictureBox167.TabIndex = 46;
             this.pictureBox167.TabStop = false;
             this.pictureBox167.Tag = "Wall";
@@ -2333,10 +2344,10 @@ namespace Quoridor
             // pictureBox168
             // 
             this.pictureBox168.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pictureBox168.Location = new System.Drawing.Point(164, 54);
-            this.pictureBox168.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox168.Location = new System.Drawing.Point(300, 100);
+            this.pictureBox168.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox168.Name = "pictureBox168";
-            this.pictureBox168.Size = new System.Drawing.Size(14, 68);
+            this.pictureBox168.Size = new System.Drawing.Size(25, 125);
             this.pictureBox168.TabIndex = 46;
             this.pictureBox168.TabStop = false;
             this.pictureBox168.Tag = "Wall";
@@ -2344,10 +2355,10 @@ namespace Quoridor
             // pictureBox169
             // 
             this.pictureBox169.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pictureBox169.Location = new System.Drawing.Point(205, 54);
-            this.pictureBox169.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox169.Location = new System.Drawing.Point(375, 100);
+            this.pictureBox169.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox169.Name = "pictureBox169";
-            this.pictureBox169.Size = new System.Drawing.Size(14, 68);
+            this.pictureBox169.Size = new System.Drawing.Size(25, 125);
             this.pictureBox169.TabIndex = 46;
             this.pictureBox169.TabStop = false;
             this.pictureBox169.Tag = "Wall";
@@ -2355,10 +2366,10 @@ namespace Quoridor
             // pictureBox170
             // 
             this.pictureBox170.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pictureBox170.Location = new System.Drawing.Point(245, 54);
-            this.pictureBox170.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox170.Location = new System.Drawing.Point(450, 100);
+            this.pictureBox170.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox170.Name = "pictureBox170";
-            this.pictureBox170.Size = new System.Drawing.Size(14, 68);
+            this.pictureBox170.Size = new System.Drawing.Size(25, 125);
             this.pictureBox170.TabIndex = 46;
             this.pictureBox170.TabStop = false;
             this.pictureBox170.Tag = "Wall";
@@ -2366,10 +2377,10 @@ namespace Quoridor
             // pictureBox171
             // 
             this.pictureBox171.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pictureBox171.Location = new System.Drawing.Point(286, 54);
-            this.pictureBox171.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox171.Location = new System.Drawing.Point(525, 100);
+            this.pictureBox171.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox171.Name = "pictureBox171";
-            this.pictureBox171.Size = new System.Drawing.Size(14, 68);
+            this.pictureBox171.Size = new System.Drawing.Size(25, 125);
             this.pictureBox171.TabIndex = 46;
             this.pictureBox171.TabStop = false;
             this.pictureBox171.Tag = "Wall";
@@ -2377,10 +2388,10 @@ namespace Quoridor
             // pictureBox172
             // 
             this.pictureBox172.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pictureBox172.Location = new System.Drawing.Point(327, 54);
-            this.pictureBox172.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox172.Location = new System.Drawing.Point(600, 100);
+            this.pictureBox172.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox172.Name = "pictureBox172";
-            this.pictureBox172.Size = new System.Drawing.Size(14, 68);
+            this.pictureBox172.Size = new System.Drawing.Size(25, 125);
             this.pictureBox172.TabIndex = 46;
             this.pictureBox172.TabStop = false;
             this.pictureBox172.Tag = "Wall";
@@ -2388,10 +2399,10 @@ namespace Quoridor
             // pictureBox173
             // 
             this.pictureBox173.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pictureBox173.Location = new System.Drawing.Point(82, 95);
-            this.pictureBox173.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox173.Location = new System.Drawing.Point(150, 175);
+            this.pictureBox173.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox173.Name = "pictureBox173";
-            this.pictureBox173.Size = new System.Drawing.Size(14, 68);
+            this.pictureBox173.Size = new System.Drawing.Size(25, 125);
             this.pictureBox173.TabIndex = 46;
             this.pictureBox173.TabStop = false;
             this.pictureBox173.Tag = "Wall";
@@ -2399,10 +2410,10 @@ namespace Quoridor
             // pictureBox174
             // 
             this.pictureBox174.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pictureBox174.Location = new System.Drawing.Point(123, 95);
-            this.pictureBox174.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox174.Location = new System.Drawing.Point(225, 175);
+            this.pictureBox174.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox174.Name = "pictureBox174";
-            this.pictureBox174.Size = new System.Drawing.Size(14, 68);
+            this.pictureBox174.Size = new System.Drawing.Size(25, 125);
             this.pictureBox174.TabIndex = 46;
             this.pictureBox174.TabStop = false;
             this.pictureBox174.Tag = "Wall";
@@ -2410,10 +2421,10 @@ namespace Quoridor
             // pictureBox175
             // 
             this.pictureBox175.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pictureBox175.Location = new System.Drawing.Point(164, 95);
-            this.pictureBox175.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox175.Location = new System.Drawing.Point(300, 175);
+            this.pictureBox175.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox175.Name = "pictureBox175";
-            this.pictureBox175.Size = new System.Drawing.Size(14, 68);
+            this.pictureBox175.Size = new System.Drawing.Size(25, 125);
             this.pictureBox175.TabIndex = 46;
             this.pictureBox175.TabStop = false;
             this.pictureBox175.Tag = "Wall";
@@ -2421,10 +2432,10 @@ namespace Quoridor
             // pictureBox176
             // 
             this.pictureBox176.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pictureBox176.Location = new System.Drawing.Point(205, 95);
-            this.pictureBox176.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox176.Location = new System.Drawing.Point(375, 175);
+            this.pictureBox176.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox176.Name = "pictureBox176";
-            this.pictureBox176.Size = new System.Drawing.Size(14, 68);
+            this.pictureBox176.Size = new System.Drawing.Size(25, 125);
             this.pictureBox176.TabIndex = 46;
             this.pictureBox176.TabStop = false;
             this.pictureBox176.Tag = "Wall";
@@ -2432,10 +2443,10 @@ namespace Quoridor
             // pictureBox177
             // 
             this.pictureBox177.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pictureBox177.Location = new System.Drawing.Point(245, 95);
-            this.pictureBox177.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox177.Location = new System.Drawing.Point(450, 175);
+            this.pictureBox177.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox177.Name = "pictureBox177";
-            this.pictureBox177.Size = new System.Drawing.Size(14, 68);
+            this.pictureBox177.Size = new System.Drawing.Size(25, 125);
             this.pictureBox177.TabIndex = 46;
             this.pictureBox177.TabStop = false;
             this.pictureBox177.Tag = "Wall";
@@ -2443,10 +2454,10 @@ namespace Quoridor
             // pictureBox178
             // 
             this.pictureBox178.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pictureBox178.Location = new System.Drawing.Point(286, 95);
-            this.pictureBox178.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox178.Location = new System.Drawing.Point(525, 175);
+            this.pictureBox178.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox178.Name = "pictureBox178";
-            this.pictureBox178.Size = new System.Drawing.Size(14, 68);
+            this.pictureBox178.Size = new System.Drawing.Size(25, 125);
             this.pictureBox178.TabIndex = 46;
             this.pictureBox178.TabStop = false;
             this.pictureBox178.Tag = "Wall";
@@ -2454,10 +2465,10 @@ namespace Quoridor
             // pictureBox179
             // 
             this.pictureBox179.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pictureBox179.Location = new System.Drawing.Point(327, 95);
-            this.pictureBox179.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox179.Location = new System.Drawing.Point(600, 175);
+            this.pictureBox179.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox179.Name = "pictureBox179";
-            this.pictureBox179.Size = new System.Drawing.Size(14, 68);
+            this.pictureBox179.Size = new System.Drawing.Size(25, 125);
             this.pictureBox179.TabIndex = 46;
             this.pictureBox179.TabStop = false;
             this.pictureBox179.Tag = "Wall";
@@ -2465,10 +2476,10 @@ namespace Quoridor
             // pictureBox180
             // 
             this.pictureBox180.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pictureBox180.Location = new System.Drawing.Point(82, 135);
-            this.pictureBox180.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox180.Location = new System.Drawing.Point(150, 249);
+            this.pictureBox180.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox180.Name = "pictureBox180";
-            this.pictureBox180.Size = new System.Drawing.Size(14, 68);
+            this.pictureBox180.Size = new System.Drawing.Size(25, 125);
             this.pictureBox180.TabIndex = 46;
             this.pictureBox180.TabStop = false;
             this.pictureBox180.Tag = "Wall";
@@ -2476,10 +2487,10 @@ namespace Quoridor
             // pictureBox181
             // 
             this.pictureBox181.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pictureBox181.Location = new System.Drawing.Point(123, 135);
-            this.pictureBox181.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox181.Location = new System.Drawing.Point(225, 250);
+            this.pictureBox181.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox181.Name = "pictureBox181";
-            this.pictureBox181.Size = new System.Drawing.Size(14, 68);
+            this.pictureBox181.Size = new System.Drawing.Size(25, 125);
             this.pictureBox181.TabIndex = 46;
             this.pictureBox181.TabStop = false;
             this.pictureBox181.Tag = "Wall";
@@ -2487,10 +2498,10 @@ namespace Quoridor
             // pictureBox182
             // 
             this.pictureBox182.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pictureBox182.Location = new System.Drawing.Point(164, 135);
-            this.pictureBox182.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox182.Location = new System.Drawing.Point(300, 250);
+            this.pictureBox182.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox182.Name = "pictureBox182";
-            this.pictureBox182.Size = new System.Drawing.Size(14, 68);
+            this.pictureBox182.Size = new System.Drawing.Size(25, 125);
             this.pictureBox182.TabIndex = 46;
             this.pictureBox182.TabStop = false;
             this.pictureBox182.Tag = "Wall";
@@ -2498,10 +2509,10 @@ namespace Quoridor
             // pictureBox183
             // 
             this.pictureBox183.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pictureBox183.Location = new System.Drawing.Point(205, 135);
-            this.pictureBox183.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox183.Location = new System.Drawing.Point(375, 250);
+            this.pictureBox183.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox183.Name = "pictureBox183";
-            this.pictureBox183.Size = new System.Drawing.Size(14, 68);
+            this.pictureBox183.Size = new System.Drawing.Size(25, 125);
             this.pictureBox183.TabIndex = 46;
             this.pictureBox183.TabStop = false;
             this.pictureBox183.Tag = "Wall";
@@ -2509,10 +2520,10 @@ namespace Quoridor
             // pictureBox184
             // 
             this.pictureBox184.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pictureBox184.Location = new System.Drawing.Point(245, 135);
-            this.pictureBox184.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox184.Location = new System.Drawing.Point(450, 250);
+            this.pictureBox184.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox184.Name = "pictureBox184";
-            this.pictureBox184.Size = new System.Drawing.Size(14, 68);
+            this.pictureBox184.Size = new System.Drawing.Size(25, 125);
             this.pictureBox184.TabIndex = 46;
             this.pictureBox184.TabStop = false;
             this.pictureBox184.Tag = "Wall";
@@ -2520,10 +2531,10 @@ namespace Quoridor
             // pictureBox185
             // 
             this.pictureBox185.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pictureBox185.Location = new System.Drawing.Point(286, 135);
-            this.pictureBox185.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox185.Location = new System.Drawing.Point(525, 250);
+            this.pictureBox185.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox185.Name = "pictureBox185";
-            this.pictureBox185.Size = new System.Drawing.Size(14, 68);
+            this.pictureBox185.Size = new System.Drawing.Size(25, 125);
             this.pictureBox185.TabIndex = 46;
             this.pictureBox185.TabStop = false;
             this.pictureBox185.Tag = "Wall";
@@ -2531,10 +2542,10 @@ namespace Quoridor
             // pictureBox186
             // 
             this.pictureBox186.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pictureBox186.Location = new System.Drawing.Point(327, 135);
-            this.pictureBox186.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox186.Location = new System.Drawing.Point(600, 250);
+            this.pictureBox186.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox186.Name = "pictureBox186";
-            this.pictureBox186.Size = new System.Drawing.Size(14, 68);
+            this.pictureBox186.Size = new System.Drawing.Size(25, 125);
             this.pictureBox186.TabIndex = 46;
             this.pictureBox186.TabStop = false;
             this.pictureBox186.Tag = "Wall";
@@ -2542,10 +2553,10 @@ namespace Quoridor
             // pictureBox187
             // 
             this.pictureBox187.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pictureBox187.Location = new System.Drawing.Point(82, 176);
-            this.pictureBox187.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox187.Location = new System.Drawing.Point(150, 325);
+            this.pictureBox187.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox187.Name = "pictureBox187";
-            this.pictureBox187.Size = new System.Drawing.Size(14, 68);
+            this.pictureBox187.Size = new System.Drawing.Size(25, 125);
             this.pictureBox187.TabIndex = 46;
             this.pictureBox187.TabStop = false;
             this.pictureBox187.Tag = "Wall";
@@ -2553,10 +2564,10 @@ namespace Quoridor
             // pictureBox188
             // 
             this.pictureBox188.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pictureBox188.Location = new System.Drawing.Point(123, 176);
-            this.pictureBox188.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox188.Location = new System.Drawing.Point(225, 325);
+            this.pictureBox188.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox188.Name = "pictureBox188";
-            this.pictureBox188.Size = new System.Drawing.Size(14, 68);
+            this.pictureBox188.Size = new System.Drawing.Size(25, 125);
             this.pictureBox188.TabIndex = 46;
             this.pictureBox188.TabStop = false;
             this.pictureBox188.Tag = "Wall";
@@ -2564,10 +2575,10 @@ namespace Quoridor
             // pictureBox189
             // 
             this.pictureBox189.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pictureBox189.Location = new System.Drawing.Point(164, 176);
-            this.pictureBox189.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox189.Location = new System.Drawing.Point(300, 325);
+            this.pictureBox189.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox189.Name = "pictureBox189";
-            this.pictureBox189.Size = new System.Drawing.Size(14, 68);
+            this.pictureBox189.Size = new System.Drawing.Size(25, 125);
             this.pictureBox189.TabIndex = 46;
             this.pictureBox189.TabStop = false;
             this.pictureBox189.Tag = "Wall";
@@ -2575,10 +2586,10 @@ namespace Quoridor
             // pictureBox190
             // 
             this.pictureBox190.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pictureBox190.Location = new System.Drawing.Point(205, 176);
-            this.pictureBox190.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox190.Location = new System.Drawing.Point(375, 325);
+            this.pictureBox190.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox190.Name = "pictureBox190";
-            this.pictureBox190.Size = new System.Drawing.Size(14, 68);
+            this.pictureBox190.Size = new System.Drawing.Size(25, 125);
             this.pictureBox190.TabIndex = 46;
             this.pictureBox190.TabStop = false;
             this.pictureBox190.Tag = "Wall";
@@ -2586,10 +2597,10 @@ namespace Quoridor
             // pictureBox191
             // 
             this.pictureBox191.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pictureBox191.Location = new System.Drawing.Point(245, 176);
-            this.pictureBox191.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox191.Location = new System.Drawing.Point(450, 325);
+            this.pictureBox191.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox191.Name = "pictureBox191";
-            this.pictureBox191.Size = new System.Drawing.Size(14, 68);
+            this.pictureBox191.Size = new System.Drawing.Size(25, 125);
             this.pictureBox191.TabIndex = 46;
             this.pictureBox191.TabStop = false;
             this.pictureBox191.Tag = "Wall";
@@ -2597,10 +2608,10 @@ namespace Quoridor
             // pictureBox192
             // 
             this.pictureBox192.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pictureBox192.Location = new System.Drawing.Point(286, 176);
-            this.pictureBox192.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox192.Location = new System.Drawing.Point(525, 325);
+            this.pictureBox192.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox192.Name = "pictureBox192";
-            this.pictureBox192.Size = new System.Drawing.Size(14, 68);
+            this.pictureBox192.Size = new System.Drawing.Size(25, 125);
             this.pictureBox192.TabIndex = 46;
             this.pictureBox192.TabStop = false;
             this.pictureBox192.Tag = "Wall";
@@ -2608,10 +2619,10 @@ namespace Quoridor
             // pictureBox193
             // 
             this.pictureBox193.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pictureBox193.Location = new System.Drawing.Point(327, 176);
-            this.pictureBox193.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox193.Location = new System.Drawing.Point(600, 325);
+            this.pictureBox193.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox193.Name = "pictureBox193";
-            this.pictureBox193.Size = new System.Drawing.Size(14, 68);
+            this.pictureBox193.Size = new System.Drawing.Size(25, 125);
             this.pictureBox193.TabIndex = 46;
             this.pictureBox193.TabStop = false;
             this.pictureBox193.Tag = "Wall";
@@ -2619,10 +2630,10 @@ namespace Quoridor
             // pictureBox194
             // 
             this.pictureBox194.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pictureBox194.Location = new System.Drawing.Point(82, 217);
-            this.pictureBox194.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox194.Location = new System.Drawing.Point(150, 400);
+            this.pictureBox194.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox194.Name = "pictureBox194";
-            this.pictureBox194.Size = new System.Drawing.Size(14, 68);
+            this.pictureBox194.Size = new System.Drawing.Size(25, 125);
             this.pictureBox194.TabIndex = 46;
             this.pictureBox194.TabStop = false;
             this.pictureBox194.Tag = "Wall";
@@ -2630,10 +2641,10 @@ namespace Quoridor
             // pictureBox195
             // 
             this.pictureBox195.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pictureBox195.Location = new System.Drawing.Point(123, 217);
-            this.pictureBox195.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox195.Location = new System.Drawing.Point(225, 400);
+            this.pictureBox195.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox195.Name = "pictureBox195";
-            this.pictureBox195.Size = new System.Drawing.Size(14, 68);
+            this.pictureBox195.Size = new System.Drawing.Size(25, 125);
             this.pictureBox195.TabIndex = 46;
             this.pictureBox195.TabStop = false;
             this.pictureBox195.Tag = "Wall";
@@ -2641,10 +2652,10 @@ namespace Quoridor
             // pictureBox196
             // 
             this.pictureBox196.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pictureBox196.Location = new System.Drawing.Point(164, 217);
-            this.pictureBox196.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox196.Location = new System.Drawing.Point(300, 400);
+            this.pictureBox196.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox196.Name = "pictureBox196";
-            this.pictureBox196.Size = new System.Drawing.Size(14, 68);
+            this.pictureBox196.Size = new System.Drawing.Size(25, 125);
             this.pictureBox196.TabIndex = 46;
             this.pictureBox196.TabStop = false;
             this.pictureBox196.Tag = "Wall";
@@ -2652,10 +2663,10 @@ namespace Quoridor
             // pictureBox197
             // 
             this.pictureBox197.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pictureBox197.Location = new System.Drawing.Point(205, 217);
-            this.pictureBox197.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox197.Location = new System.Drawing.Point(375, 400);
+            this.pictureBox197.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox197.Name = "pictureBox197";
-            this.pictureBox197.Size = new System.Drawing.Size(14, 68);
+            this.pictureBox197.Size = new System.Drawing.Size(25, 125);
             this.pictureBox197.TabIndex = 46;
             this.pictureBox197.TabStop = false;
             this.pictureBox197.Tag = "Wall";
@@ -2663,10 +2674,10 @@ namespace Quoridor
             // pictureBox198
             // 
             this.pictureBox198.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pictureBox198.Location = new System.Drawing.Point(245, 217);
-            this.pictureBox198.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox198.Location = new System.Drawing.Point(450, 400);
+            this.pictureBox198.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox198.Name = "pictureBox198";
-            this.pictureBox198.Size = new System.Drawing.Size(14, 68);
+            this.pictureBox198.Size = new System.Drawing.Size(25, 125);
             this.pictureBox198.TabIndex = 46;
             this.pictureBox198.TabStop = false;
             this.pictureBox198.Tag = "Wall";
@@ -2674,10 +2685,10 @@ namespace Quoridor
             // pictureBox199
             // 
             this.pictureBox199.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pictureBox199.Location = new System.Drawing.Point(286, 217);
-            this.pictureBox199.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox199.Location = new System.Drawing.Point(525, 400);
+            this.pictureBox199.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox199.Name = "pictureBox199";
-            this.pictureBox199.Size = new System.Drawing.Size(14, 68);
+            this.pictureBox199.Size = new System.Drawing.Size(25, 125);
             this.pictureBox199.TabIndex = 46;
             this.pictureBox199.TabStop = false;
             this.pictureBox199.Tag = "Wall";
@@ -2685,10 +2696,10 @@ namespace Quoridor
             // pictureBox200
             // 
             this.pictureBox200.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pictureBox200.Location = new System.Drawing.Point(327, 217);
-            this.pictureBox200.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox200.Location = new System.Drawing.Point(600, 400);
+            this.pictureBox200.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox200.Name = "pictureBox200";
-            this.pictureBox200.Size = new System.Drawing.Size(14, 68);
+            this.pictureBox200.Size = new System.Drawing.Size(25, 125);
             this.pictureBox200.TabIndex = 46;
             this.pictureBox200.TabStop = false;
             this.pictureBox200.Tag = "Wall";
@@ -2696,10 +2707,10 @@ namespace Quoridor
             // pictureBox201
             // 
             this.pictureBox201.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pictureBox201.Location = new System.Drawing.Point(82, 257);
-            this.pictureBox201.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox201.Location = new System.Drawing.Point(150, 475);
+            this.pictureBox201.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox201.Name = "pictureBox201";
-            this.pictureBox201.Size = new System.Drawing.Size(14, 68);
+            this.pictureBox201.Size = new System.Drawing.Size(25, 125);
             this.pictureBox201.TabIndex = 46;
             this.pictureBox201.TabStop = false;
             this.pictureBox201.Tag = "Wall";
@@ -2707,10 +2718,10 @@ namespace Quoridor
             // pictureBox202
             // 
             this.pictureBox202.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pictureBox202.Location = new System.Drawing.Point(123, 257);
-            this.pictureBox202.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox202.Location = new System.Drawing.Point(225, 475);
+            this.pictureBox202.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox202.Name = "pictureBox202";
-            this.pictureBox202.Size = new System.Drawing.Size(14, 68);
+            this.pictureBox202.Size = new System.Drawing.Size(25, 125);
             this.pictureBox202.TabIndex = 46;
             this.pictureBox202.TabStop = false;
             this.pictureBox202.Tag = "Wall";
@@ -2718,10 +2729,10 @@ namespace Quoridor
             // pictureBox203
             // 
             this.pictureBox203.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pictureBox203.Location = new System.Drawing.Point(164, 257);
-            this.pictureBox203.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox203.Location = new System.Drawing.Point(300, 475);
+            this.pictureBox203.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox203.Name = "pictureBox203";
-            this.pictureBox203.Size = new System.Drawing.Size(14, 68);
+            this.pictureBox203.Size = new System.Drawing.Size(25, 125);
             this.pictureBox203.TabIndex = 46;
             this.pictureBox203.TabStop = false;
             this.pictureBox203.Tag = "Wall";
@@ -2729,10 +2740,10 @@ namespace Quoridor
             // pictureBox204
             // 
             this.pictureBox204.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pictureBox204.Location = new System.Drawing.Point(205, 257);
-            this.pictureBox204.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox204.Location = new System.Drawing.Point(375, 475);
+            this.pictureBox204.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox204.Name = "pictureBox204";
-            this.pictureBox204.Size = new System.Drawing.Size(14, 68);
+            this.pictureBox204.Size = new System.Drawing.Size(25, 125);
             this.pictureBox204.TabIndex = 46;
             this.pictureBox204.TabStop = false;
             this.pictureBox204.Tag = "Wall";
@@ -2740,10 +2751,10 @@ namespace Quoridor
             // pictureBox205
             // 
             this.pictureBox205.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pictureBox205.Location = new System.Drawing.Point(245, 257);
-            this.pictureBox205.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox205.Location = new System.Drawing.Point(450, 475);
+            this.pictureBox205.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox205.Name = "pictureBox205";
-            this.pictureBox205.Size = new System.Drawing.Size(14, 68);
+            this.pictureBox205.Size = new System.Drawing.Size(25, 125);
             this.pictureBox205.TabIndex = 46;
             this.pictureBox205.TabStop = false;
             this.pictureBox205.Tag = "Wall";
@@ -2751,10 +2762,10 @@ namespace Quoridor
             // pictureBox206
             // 
             this.pictureBox206.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pictureBox206.Location = new System.Drawing.Point(286, 257);
-            this.pictureBox206.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox206.Location = new System.Drawing.Point(525, 475);
+            this.pictureBox206.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox206.Name = "pictureBox206";
-            this.pictureBox206.Size = new System.Drawing.Size(14, 68);
+            this.pictureBox206.Size = new System.Drawing.Size(25, 125);
             this.pictureBox206.TabIndex = 46;
             this.pictureBox206.TabStop = false;
             this.pictureBox206.Tag = "Wall";
@@ -2762,10 +2773,10 @@ namespace Quoridor
             // pictureBox207
             // 
             this.pictureBox207.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pictureBox207.Location = new System.Drawing.Point(327, 257);
-            this.pictureBox207.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox207.Location = new System.Drawing.Point(600, 475);
+            this.pictureBox207.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox207.Name = "pictureBox207";
-            this.pictureBox207.Size = new System.Drawing.Size(14, 68);
+            this.pictureBox207.Size = new System.Drawing.Size(25, 125);
             this.pictureBox207.TabIndex = 46;
             this.pictureBox207.TabStop = false;
             this.pictureBox207.Tag = "Wall";
@@ -2773,10 +2784,10 @@ namespace Quoridor
             // pictureBox208
             // 
             this.pictureBox208.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pictureBox208.Location = new System.Drawing.Point(82, 298);
-            this.pictureBox208.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox208.Location = new System.Drawing.Point(150, 550);
+            this.pictureBox208.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox208.Name = "pictureBox208";
-            this.pictureBox208.Size = new System.Drawing.Size(14, 68);
+            this.pictureBox208.Size = new System.Drawing.Size(25, 125);
             this.pictureBox208.TabIndex = 46;
             this.pictureBox208.TabStop = false;
             this.pictureBox208.Tag = "Wall";
@@ -2784,10 +2795,10 @@ namespace Quoridor
             // pictureBox209
             // 
             this.pictureBox209.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pictureBox209.Location = new System.Drawing.Point(123, 298);
-            this.pictureBox209.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox209.Location = new System.Drawing.Point(225, 550);
+            this.pictureBox209.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox209.Name = "pictureBox209";
-            this.pictureBox209.Size = new System.Drawing.Size(14, 68);
+            this.pictureBox209.Size = new System.Drawing.Size(25, 125);
             this.pictureBox209.TabIndex = 46;
             this.pictureBox209.TabStop = false;
             this.pictureBox209.Tag = "Wall";
@@ -2795,10 +2806,10 @@ namespace Quoridor
             // pictureBox210
             // 
             this.pictureBox210.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pictureBox210.Location = new System.Drawing.Point(164, 298);
-            this.pictureBox210.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox210.Location = new System.Drawing.Point(300, 550);
+            this.pictureBox210.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox210.Name = "pictureBox210";
-            this.pictureBox210.Size = new System.Drawing.Size(14, 68);
+            this.pictureBox210.Size = new System.Drawing.Size(25, 125);
             this.pictureBox210.TabIndex = 46;
             this.pictureBox210.TabStop = false;
             this.pictureBox210.Tag = "Wall";
@@ -2806,10 +2817,10 @@ namespace Quoridor
             // pictureBox211
             // 
             this.pictureBox211.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pictureBox211.Location = new System.Drawing.Point(205, 298);
-            this.pictureBox211.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox211.Location = new System.Drawing.Point(375, 550);
+            this.pictureBox211.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox211.Name = "pictureBox211";
-            this.pictureBox211.Size = new System.Drawing.Size(14, 68);
+            this.pictureBox211.Size = new System.Drawing.Size(25, 125);
             this.pictureBox211.TabIndex = 46;
             this.pictureBox211.TabStop = false;
             this.pictureBox211.Tag = "Wall";
@@ -2817,10 +2828,10 @@ namespace Quoridor
             // pictureBox212
             // 
             this.pictureBox212.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pictureBox212.Location = new System.Drawing.Point(245, 298);
-            this.pictureBox212.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox212.Location = new System.Drawing.Point(450, 550);
+            this.pictureBox212.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox212.Name = "pictureBox212";
-            this.pictureBox212.Size = new System.Drawing.Size(14, 68);
+            this.pictureBox212.Size = new System.Drawing.Size(25, 125);
             this.pictureBox212.TabIndex = 46;
             this.pictureBox212.TabStop = false;
             this.pictureBox212.Tag = "Wall";
@@ -2828,10 +2839,10 @@ namespace Quoridor
             // pictureBox213
             // 
             this.pictureBox213.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pictureBox213.Location = new System.Drawing.Point(286, 298);
-            this.pictureBox213.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox213.Location = new System.Drawing.Point(525, 550);
+            this.pictureBox213.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox213.Name = "pictureBox213";
-            this.pictureBox213.Size = new System.Drawing.Size(14, 68);
+            this.pictureBox213.Size = new System.Drawing.Size(25, 125);
             this.pictureBox213.TabIndex = 46;
             this.pictureBox213.TabStop = false;
             this.pictureBox213.Tag = "Wall";
@@ -2839,10 +2850,10 @@ namespace Quoridor
             // pictureBox214
             // 
             this.pictureBox214.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pictureBox214.Location = new System.Drawing.Point(327, 298);
-            this.pictureBox214.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox214.Location = new System.Drawing.Point(600, 550);
+            this.pictureBox214.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox214.Name = "pictureBox214";
-            this.pictureBox214.Size = new System.Drawing.Size(14, 68);
+            this.pictureBox214.Size = new System.Drawing.Size(25, 125);
             this.pictureBox214.TabIndex = 46;
             this.pictureBox214.TabStop = false;
             this.pictureBox214.Tag = "Wall";
@@ -2850,10 +2861,10 @@ namespace Quoridor
             // pictureBox215
             // 
             this.pictureBox215.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pictureBox215.Location = new System.Drawing.Point(93, 95);
-            this.pictureBox215.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox215.Location = new System.Drawing.Point(170, 175);
+            this.pictureBox215.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox215.Name = "pictureBox215";
-            this.pictureBox215.Size = new System.Drawing.Size(27, 27);
+            this.pictureBox215.Size = new System.Drawing.Size(50, 50);
             this.pictureBox215.TabIndex = 45;
             this.pictureBox215.TabStop = false;
             this.pictureBox215.Tag = "Cell";
@@ -2861,10 +2872,10 @@ namespace Quoridor
             // pictureBox216
             // 
             this.pictureBox216.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pictureBox216.Location = new System.Drawing.Point(93, 135);
-            this.pictureBox216.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox216.Location = new System.Drawing.Point(170, 250);
+            this.pictureBox216.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox216.Name = "pictureBox216";
-            this.pictureBox216.Size = new System.Drawing.Size(27, 27);
+            this.pictureBox216.Size = new System.Drawing.Size(50, 50);
             this.pictureBox216.TabIndex = 45;
             this.pictureBox216.TabStop = false;
             this.pictureBox216.Tag = "Cell";
@@ -2872,10 +2883,10 @@ namespace Quoridor
             // pictureBox217
             // 
             this.pictureBox217.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pictureBox217.Location = new System.Drawing.Point(136, 95);
-            this.pictureBox217.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox217.Location = new System.Drawing.Point(250, 175);
+            this.pictureBox217.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox217.Name = "pictureBox217";
-            this.pictureBox217.Size = new System.Drawing.Size(27, 27);
+            this.pictureBox217.Size = new System.Drawing.Size(50, 50);
             this.pictureBox217.TabIndex = 45;
             this.pictureBox217.TabStop = false;
             this.pictureBox217.Tag = "Cell";
@@ -2883,10 +2894,10 @@ namespace Quoridor
             // pictureBox218
             // 
             this.pictureBox218.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pictureBox218.Location = new System.Drawing.Point(93, 176);
-            this.pictureBox218.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox218.Location = new System.Drawing.Point(170, 325);
+            this.pictureBox218.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox218.Name = "pictureBox218";
-            this.pictureBox218.Size = new System.Drawing.Size(27, 27);
+            this.pictureBox218.Size = new System.Drawing.Size(50, 50);
             this.pictureBox218.TabIndex = 45;
             this.pictureBox218.TabStop = false;
             this.pictureBox218.Tag = "Cell";
@@ -2894,10 +2905,10 @@ namespace Quoridor
             // pictureBox219
             // 
             this.pictureBox219.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pictureBox219.Location = new System.Drawing.Point(93, 217);
-            this.pictureBox219.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox219.Location = new System.Drawing.Point(170, 400);
+            this.pictureBox219.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox219.Name = "pictureBox219";
-            this.pictureBox219.Size = new System.Drawing.Size(27, 27);
+            this.pictureBox219.Size = new System.Drawing.Size(50, 50);
             this.pictureBox219.TabIndex = 45;
             this.pictureBox219.TabStop = false;
             this.pictureBox219.Tag = "Cell";
@@ -2905,10 +2916,10 @@ namespace Quoridor
             // pictureBox220
             // 
             this.pictureBox220.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pictureBox220.Location = new System.Drawing.Point(136, 135);
-            this.pictureBox220.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox220.Location = new System.Drawing.Point(250, 250);
+            this.pictureBox220.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox220.Name = "pictureBox220";
-            this.pictureBox220.Size = new System.Drawing.Size(27, 27);
+            this.pictureBox220.Size = new System.Drawing.Size(50, 50);
             this.pictureBox220.TabIndex = 45;
             this.pictureBox220.TabStop = false;
             this.pictureBox220.Tag = "Cell";
@@ -2916,10 +2927,10 @@ namespace Quoridor
             // pictureBox221
             // 
             this.pictureBox221.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pictureBox221.Location = new System.Drawing.Point(93, 257);
-            this.pictureBox221.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox221.Location = new System.Drawing.Point(170, 475);
+            this.pictureBox221.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox221.Name = "pictureBox221";
-            this.pictureBox221.Size = new System.Drawing.Size(27, 27);
+            this.pictureBox221.Size = new System.Drawing.Size(50, 50);
             this.pictureBox221.TabIndex = 45;
             this.pictureBox221.TabStop = false;
             this.pictureBox221.Tag = "Cell";
@@ -2927,10 +2938,10 @@ namespace Quoridor
             // pictureBox222
             // 
             this.pictureBox222.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pictureBox222.Location = new System.Drawing.Point(177, 95);
-            this.pictureBox222.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox222.Location = new System.Drawing.Point(325, 175);
+            this.pictureBox222.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox222.Name = "pictureBox222";
-            this.pictureBox222.Size = new System.Drawing.Size(27, 27);
+            this.pictureBox222.Size = new System.Drawing.Size(50, 50);
             this.pictureBox222.TabIndex = 45;
             this.pictureBox222.TabStop = false;
             this.pictureBox222.Tag = "Cell";
@@ -2938,10 +2949,10 @@ namespace Quoridor
             // pictureBox223
             // 
             this.pictureBox223.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pictureBox223.Location = new System.Drawing.Point(136, 176);
-            this.pictureBox223.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox223.Location = new System.Drawing.Point(250, 325);
+            this.pictureBox223.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox223.Name = "pictureBox223";
-            this.pictureBox223.Size = new System.Drawing.Size(27, 27);
+            this.pictureBox223.Size = new System.Drawing.Size(50, 50);
             this.pictureBox223.TabIndex = 45;
             this.pictureBox223.TabStop = false;
             this.pictureBox223.Tag = "Cell";
@@ -2949,10 +2960,10 @@ namespace Quoridor
             // pictureBox224
             // 
             this.pictureBox224.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pictureBox224.Location = new System.Drawing.Point(136, 217);
-            this.pictureBox224.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox224.Location = new System.Drawing.Point(250, 400);
+            this.pictureBox224.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox224.Name = "pictureBox224";
-            this.pictureBox224.Size = new System.Drawing.Size(27, 27);
+            this.pictureBox224.Size = new System.Drawing.Size(50, 50);
             this.pictureBox224.TabIndex = 45;
             this.pictureBox224.TabStop = false;
             this.pictureBox224.Tag = "Cell";
@@ -2960,10 +2971,10 @@ namespace Quoridor
             // pictureBox225
             // 
             this.pictureBox225.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pictureBox225.Location = new System.Drawing.Point(177, 135);
-            this.pictureBox225.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox225.Location = new System.Drawing.Point(325, 250);
+            this.pictureBox225.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox225.Name = "pictureBox225";
-            this.pictureBox225.Size = new System.Drawing.Size(27, 27);
+            this.pictureBox225.Size = new System.Drawing.Size(50, 50);
             this.pictureBox225.TabIndex = 45;
             this.pictureBox225.TabStop = false;
             this.pictureBox225.Tag = "Cell";
@@ -2971,10 +2982,10 @@ namespace Quoridor
             // pictureBox226
             // 
             this.pictureBox226.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pictureBox226.Location = new System.Drawing.Point(136, 257);
-            this.pictureBox226.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox226.Location = new System.Drawing.Point(250, 475);
+            this.pictureBox226.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox226.Name = "pictureBox226";
-            this.pictureBox226.Size = new System.Drawing.Size(27, 27);
+            this.pictureBox226.Size = new System.Drawing.Size(50, 50);
             this.pictureBox226.TabIndex = 45;
             this.pictureBox226.TabStop = false;
             this.pictureBox226.Tag = "Cell";
@@ -2982,10 +2993,10 @@ namespace Quoridor
             // pictureBox227
             // 
             this.pictureBox227.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pictureBox227.Location = new System.Drawing.Point(177, 176);
-            this.pictureBox227.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox227.Location = new System.Drawing.Point(325, 325);
+            this.pictureBox227.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox227.Name = "pictureBox227";
-            this.pictureBox227.Size = new System.Drawing.Size(27, 27);
+            this.pictureBox227.Size = new System.Drawing.Size(50, 50);
             this.pictureBox227.TabIndex = 45;
             this.pictureBox227.TabStop = false;
             this.pictureBox227.Tag = "Cell";
@@ -2993,10 +3004,10 @@ namespace Quoridor
             // pictureBox228
             // 
             this.pictureBox228.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pictureBox228.Location = new System.Drawing.Point(177, 217);
-            this.pictureBox228.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox228.Location = new System.Drawing.Point(325, 400);
+            this.pictureBox228.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox228.Name = "pictureBox228";
-            this.pictureBox228.Size = new System.Drawing.Size(27, 27);
+            this.pictureBox228.Size = new System.Drawing.Size(50, 50);
             this.pictureBox228.TabIndex = 45;
             this.pictureBox228.TabStop = false;
             this.pictureBox228.Tag = "Cell";
@@ -3004,10 +3015,10 @@ namespace Quoridor
             // pictureBox229
             // 
             this.pictureBox229.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pictureBox229.Location = new System.Drawing.Point(177, 257);
-            this.pictureBox229.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox229.Location = new System.Drawing.Point(325, 475);
+            this.pictureBox229.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox229.Name = "pictureBox229";
-            this.pictureBox229.Size = new System.Drawing.Size(27, 27);
+            this.pictureBox229.Size = new System.Drawing.Size(50, 50);
             this.pictureBox229.TabIndex = 45;
             this.pictureBox229.TabStop = false;
             this.pictureBox229.Tag = "Cell";
@@ -3016,10 +3027,10 @@ namespace Quoridor
             // 
             this.GreenDot.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.GreenDot.Image = ((System.Drawing.Image)(resources.GetObject("GreenDot.Image")));
-            this.GreenDot.Location = new System.Drawing.Point(181, 17);
-            this.GreenDot.Margin = new System.Windows.Forms.Padding(2);
+            this.GreenDot.Location = new System.Drawing.Point(332, 31);
+            this.GreenDot.Margin = new System.Windows.Forms.Padding(4);
             this.GreenDot.Name = "GreenDot";
-            this.GreenDot.Size = new System.Drawing.Size(22, 22);
+            this.GreenDot.Size = new System.Drawing.Size(40, 41);
             this.GreenDot.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.GreenDot.TabIndex = 48;
             this.GreenDot.TabStop = false;
@@ -3029,10 +3040,10 @@ namespace Quoridor
             // 
             this.RedDot.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.RedDot.Image = ((System.Drawing.Image)(resources.GetObject("RedDot.Image")));
-            this.RedDot.Location = new System.Drawing.Point(182, 343);
-            this.RedDot.Margin = new System.Windows.Forms.Padding(2);
+            this.RedDot.Location = new System.Drawing.Point(334, 633);
+            this.RedDot.Margin = new System.Windows.Forms.Padding(4);
             this.RedDot.Name = "RedDot";
-            this.RedDot.Size = new System.Drawing.Size(19, 19);
+            this.RedDot.Size = new System.Drawing.Size(35, 35);
             this.RedDot.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.RedDot.TabIndex = 48;
             this.RedDot.TabStop = false;
@@ -3044,10 +3055,9 @@ namespace Quoridor
             this.label1.BackColor = System.Drawing.Color.PaleVioletRed;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.857143F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(12, 0);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(22, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.Size = new System.Drawing.Size(53, 20);
             this.label1.TabIndex = 49;
             this.label1.Text = "label1";
             // 
@@ -3057,30 +3067,18 @@ namespace Quoridor
             this.label2.BackColor = System.Drawing.Color.Aquamarine;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.857143F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(209, 0);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(383, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.Size = new System.Drawing.Size(53, 20);
             this.label2.TabIndex = 49;
             this.label2.Text = "label1";
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Blue;
-            this.pictureBox2.Location = new System.Drawing.Point(415, 0);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(14, 352);
-            this.pictureBox2.TabIndex = 2;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Tag = "Wall";
-            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(382, 380);
+            this.ClientSize = new System.Drawing.Size(700, 702);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox174);
@@ -3315,12 +3313,13 @@ namespace Quoridor
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pictureBox2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quoridor";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
@@ -3549,7 +3548,6 @@ namespace Quoridor
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox229)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GreenDot)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.RedDot)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -3559,6 +3557,7 @@ namespace Quoridor
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Timer gameTimer;
+        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pictureBox6;
@@ -3789,7 +3788,6 @@ namespace Quoridor
         private System.Windows.Forms.PictureBox RedDot;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
 
