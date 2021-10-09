@@ -2,13 +2,30 @@ namespace Model
 {
     public class CellCoords
     {
-        public int Top {get; private set;}
-        public int Left {get; private set;}
+        public int Top {get; private set; }
+        public int Left {get; private set; }
+
+        private bool Equals(CellCoords other)
+        {
+            return Top == other.Top && Left == other.Left;
+        }
+
         public override bool Equals(object obj)
         {
-            var cell = (CellCoords)obj;
-            return cell.Top == this.Top && cell.Left == this.Left;
+            if (ReferenceEquals(null, obj)) return false;
+            if (ReferenceEquals(this, obj)) return true;
+            if (obj.GetType() != this.GetType()) return false;
+            return Equals((CellCoords) obj);
         }
+
+        public override int GetHashCode()
+        {
+            unchecked
+            {
+                return (Top * 397) ^ Left;
+            }
+        }
+
         public CellCoords(int top, int left)
         {
             Top = top;

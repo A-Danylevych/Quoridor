@@ -7,7 +7,7 @@ namespace Model
         void RenderEnding(string message);
         void RenderPlayer(int top, int left);
         void RenderWall(int top, int left);
-        void RenderRemainingWalls(int TopCount, int BottomCount);
+        void RenderRemainingWalls(int topCount, int bottomCount);
         void ChangePlayer();
     }
 }

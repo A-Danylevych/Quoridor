@@ -1,8 +1,9 @@
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Model
 {
-    class Board
+    internal class Board
     {
         private List<Cell> Cells {get; set;}
         private const int CellsCount = 81;
@@ -17,33 +18,26 @@ namespace Model
         }
         public void MovePlayer(Player player, CellCoords coords)
         {
-            Cell cell = FindCellByCoords(coords);
+            var cell = FindCellByCoords(coords);
             MovePlayer(player, cell);
         }
         public Cell FindCellByCoords(CellCoords coords)
         {
-            foreach(Cell cell in Cells)
-            {
-                if(cell.Coords.Top == coords.Top && cell.Coords.Left == coords.Left)
-                {
-                    return cell;
-                }
-            }
-            return null;
+            return Cells.FirstOrDefault(cell => cell.Coords.Top == coords.Top && cell.Coords.Left == coords.Left);
         }
         private void InitializeCells()
         {
             Cells = new List<Cell>();
-            int leftStart = 25;
-            int topStart = 25;
-            int top = topStart;
-            int left = leftStart;
-            int offset = 75; 
-            for(int i = 0; i < SideWidth; i++)
+            const int leftStart = 25;
+            const int topStart = 25;
+            var top = topStart;
+            var left = leftStart;
+            const int offset = 75; 
+            for(var i = 0; i < SideWidth; i++)
             {
-                for(int j = 0; j<SideWidth; j++)
+                for(var j = 0; j<SideWidth; j++)
                 {
-                    CellCoords coords = new CellCoords(top, left);
+                    var coords = new CellCoords(top, left);
                     Cells.Add(new Cell(coords));
                     left += offset;
                 }
@@ -51,9 +45,9 @@ namespace Model
                 left = leftStart;
             }
 
-            for(int i = 0; i < SideWidth; i++)
+            for(var i = 0; i < SideWidth; i++)
             {
-                for(int j = 0; j < SideWidth; j++)
+                for(var j = 0; j < SideWidth; j++)
                 {
                     if(i != SideWidth-1)
                     {
@@ -76,18 +70,18 @@ namespace Model
         }
         public Cell TopStartPosition()
         {
-            int upperIndex = SideWidth/2;
+            const int upperIndex = SideWidth/2;
             return Cells[upperIndex];
         }
         public Cell BottomStartPosition()
         {
-            int downIndex = CellsCount - SideWidth/2 - 2;
+            const int downIndex = CellsCount - SideWidth/2 - 2;
             return Cells[downIndex];
         }
         public List<Cell> TopWinningCells()
         {
-            List<Cell> topWinningCells = new List<Cell>();
-            for(int i = CellsCount - 1; i > CellsCount - 1 - SideWidth; i--)
+            var topWinningCells = new List<Cell>();
+            for(var i = CellsCount - 1; i > CellsCount - 1 - SideWidth; i--)
             {
                 topWinningCells.Add(Cells[i]);
             }
@@ -95,21 +89,24 @@ namespace Model
         }
         public List<Cell> BottomWinningCells()
         {
-            List<Cell> bottomWinningCells = new List<Cell>();
-            for(int i = 0; i< SideWidth; i++)
+            var bottomWinningCells = new List<Cell>();
+            for(var i = 0; i< SideWidth; i++)
             {
                 bottomWinningCells.Add(Cells[i]);
             }
             return bottomWinningCells;
         }
-        public void MovePlayer(Player player, Cell cell)
+
+        internal void MovePlayer(Player player, Cell cell)
         {
             player.ChangeCell(cell);
         }
-        public void PutWall(Wall wall){
+
+        internal void PutWall(Wall wall){
 
         }
-        public void DropWall(Wall wall){
+
+        internal void DropWall(Wall wall){
             
         }
     }

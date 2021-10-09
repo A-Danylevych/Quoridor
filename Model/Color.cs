@@ -1,6 +1,6 @@
 namespace Model
 {
-    enum Color
+    internal enum Color
     {
         Red,
         Green
