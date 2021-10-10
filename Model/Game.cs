@@ -14,7 +14,8 @@ namespace Model
         private readonly GameState _gameState;
         private static Game _instance;
         private readonly Board _board;
-        private static readonly object SyncRoot = new object(); 
+        private static readonly object SyncRoot = new object();
+        private bool blocked;
         private Game(IController controller, IViewer viewer)
         {
             Controller = controller;
@@ -30,6 +31,7 @@ namespace Model
             var topWinningCells = _board.TopWinningCells();
             var bottomWinningCells = _board.BottomWinningCells();
             _gameState = new GameState(topWinningCells, bottomWinningCells);
+            blocked = false;
         }
         private void ChangeCurrentPlayer()
         {
@@ -54,11 +56,11 @@ namespace Model
         {
             if (_currentPlayer == _bottomPlayer)
             {
-                Viewer.RenderBottomPlayer(top,left);
+                Viewer.RenderBottomPlayer(top, left);
             }
             else
             {
-                Viewer.RenderUpperPlayer(top,left);
+                Viewer.RenderUpperPlayer(top, left);
             }
         }
 
@@ -67,6 +69,11 @@ namespace Model
             switch (Controller.GetAction())
                 {
                     case Action.MakeMove:
+                        if (blocked)
+                        {
+                            return;
+                        }
+
                         var cell = Controller.GetCell();
                         if (!MoveValidator.IsValidMove(cell, _currentPlayer, _otherPlayer))
                         {
@@ -77,25 +84,33 @@ namespace Model
                             ChangeCurrentPlayer();
                         }
 
+                        blocked = true;
                         break;
                     case Action.PlaceWall:
+                        if(blocked)
+                            return;
                         var wall = Controller.GetWall();
                         if (_currentPlayer.PlaceWall())
                         {
-                            _board.PutWall(wall);
-                            if (MoveValidator.IsThereAWay(_gameState, _topPlayer, _bottomPlayer))
+                            //_board.PutWall(wall);
+                            if (!MoveValidator.IsThereAWay(_gameState, _topPlayer, _bottomPlayer))
                             {
                                 var wallCoords = wall.Coords;
                                 Viewer.RenderWall(wallCoords.Top, wallCoords.Left);
+                                ChangeCurrentPlayer();
                             }
                             else
                             {
-                                _board.DropWall(wall);
+                                //_board.DropWall(wall);
                                 _currentPlayer.UnPlaceWall();
                             }
                         }
 
                         Viewer.RenderRemainingWalls(_topPlayer.WallsCount, _bottomPlayer.WallsCount);
+                        blocked = true;
+                        break;
+                    case Action.NextTask:
+                        blocked = false;
                         break;
                     default:
                         throw new ArgumentException();

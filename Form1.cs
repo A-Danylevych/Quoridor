@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using Quoridor.Controller;
 using Model;
+using Action = Model.Action;
 using Color = System.Drawing.Color;
 
 //розробила базову логіку гри, дала можливість гравцю ставити стіни і ходити - Довгань Валерія
@@ -48,8 +49,7 @@ namespace Quoridor
                     x.MouseClick += (a_sender, a_args) =>  //активується при кліку миші, ставимо стіни
                     {
                         Controller.SetAction(Model.Action.PlaceWall);
-                        Controller.SetWall(x.Top, x.Left, IsVertical(x.Top,x.Left));
-                        RenderWall(x.Top, x.Left);
+                        Controller.SetWall(x.Top, x.Left, IsVertical(x.Top, x.Left));
                         Game.Update();
                     };
 
@@ -74,10 +74,11 @@ namespace Quoridor
 
                 if ((string)x.Tag == "Cell")  //прописуємо дії для гральних клітинок
                 {
-                    Controller.SetAction(Model.Action.MakeMove);
+                    
 
                     x.MouseClick += (a_sender, a_args) => //активується при кліку миші
                     {
+                        Controller.SetAction(Model.Action.MakeMove);
                         int top = x.Top + 4;
                         int left = x.Left + 4;
                         Controller.SetCell(top, left);
@@ -87,6 +88,9 @@ namespace Quoridor
                 }
 
             }
+
+            Controller.SetAction(Action.NextTask);
+            Game.Update();
 
         }
 
