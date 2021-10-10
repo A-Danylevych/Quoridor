@@ -15,14 +15,12 @@ namespace Quoridor
     public partial class Form1 : Form, IViewer //Все, що відбувається в формі
     {
         Controller.Controller Controller { get; set; }
-        PictureBox Dot { get; set; }
         Game Game;
 
         public Form1()  //запускає дії в формі
         {
             Controller = new Controller.Controller();
             InitializeComponent();
-            Dot = RedDot;
             Game = Game.GetInstance(Controller, this);
             resetGame();
         }
@@ -80,10 +78,9 @@ namespace Quoridor
 
                     x.MouseClick += (a_sender, a_args) => //активується при кліку миші
                     {
-                            int top = x.Top + 4;
-                            int left = x.Left + 4;
-                            Controller.SetCell(top, left);
-
+                        int top = x.Top + 4;
+                        int left = x.Left + 4;
+                        Controller.SetCell(top, left);
                         Game.Update();
                     };
 
@@ -133,15 +130,20 @@ namespace Quoridor
             gameOver(message);
         }
 
-        public void RenderPlayer(int top, int left)
+        public void RenderUpperPlayer(int top, int left)
         {
-
-                Dot.Top = top;
-                Dot.Left = left;
-            
-            Dot.BringToFront();
+            GreenDot.Top = top;
+            GreenDot.Left = left;
+            GreenDot.BringToFront();
         }
 
+        public void RenderBottomPlayer(int top, int left)
+        {
+            RedDot.Top = top;
+            RedDot.Left = left;
+            RedDot.BringToFront();
+        }
+        
         public void RenderWall(int top, int left)
         {
             RenderWall(top, left, Color.LightSlateGray);
@@ -406,19 +408,6 @@ namespace Quoridor
         {
             label1.Text = "Залишилось стін: " + BottomCount;
             label2.Text = "Залишилось стін: " + TopCount;
-        }
-
-
-        public void ChangePlayer()
-        {
-            if (Dot == GreenDot)
-            {
-                Dot = RedDot;
-            }
-            else
-            {
-                Dot = GreenDot;
-            }
         }
 
     }

@@ -26,10 +26,10 @@ namespace Quoridor.Controller
         {
             return Cell;
         }
-        public void SetWall(int top, int left, bool vertical)
+        public void SetWall(int top, int left, bool isVertical)
         {
             var coords = new CellCoords(top, left);
-            Wall = new Wall(coords);
+            Wall = new Wall(coords, isVertical);
         }
         public Wall GetWall()
         {

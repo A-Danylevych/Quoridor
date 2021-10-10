@@ -5,17 +5,24 @@ namespace Model
     public class Wall : IPlaceable
     {
         public CellCoords Coords { get; private set;}
+        public bool IsVertical { get; private set; }
         public List<IPlaceable> LeftCell { get; private set; }
         public List<IPlaceable> RightCell { get; private set; }
         public List<IPlaceable> UpCell { get; private set; }
         public List<IPlaceable> DownCell { get; private set; }
-        public Wall(CellCoords coords)
+        public Wall(CellCoords coords, bool isVertical)
         {
             Coords = coords;
+            IsVertical = isVertical;
             LeftCell = new List<IPlaceable>();
             RightCell = new List<IPlaceable>();
             UpCell = new List<IPlaceable>();
             DownCell = new List<IPlaceable>();
+        }
+
+        public Wall()
+        {
+            
         }
         public void UpperConnect(List<IPlaceable> placeable) => Connect(placeable, Direction.Up);
         public void BottomConnect(List<IPlaceable> placeable) => Connect(placeable, Direction.Down);

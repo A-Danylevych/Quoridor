@@ -57,10 +57,11 @@ namespace Model
         public Cell(CellCoords coords)
         {
             Coords = coords;
-            LeftCell = new Wall(coords);
-            RightCell = new Wall(coords);
-            UpCell = new Wall(coords);
-            DownCell = new Wall(coords);
+            var abstractWall = new Wall();
+            LeftCell = abstractWall;
+            RightCell = abstractWall;
+            UpCell = abstractWall;
+            DownCell = abstractWall;
         }
     }
 }

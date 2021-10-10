@@ -49,49 +49,64 @@ namespace Model
             return _currentPlayer == _bottomPlayer ? _gameState.CheckBottomWinning(_bottomPlayer) : 
                 _gameState.CheckTopWinning(_topPlayer);
         }
+
+        private void RenderPlayer(int top, int left)
+        {
+            if (_currentPlayer == _bottomPlayer)
+            {
+                Viewer.RenderBottomPlayer(top,left);
+            }
+            else
+            {
+                Viewer.RenderUpperPlayer(top,left);
+            }
+        }
+
         public void Update()
         {
-            switch(Controller.GetAction())
-            {
-                case Action.MakeMove:
-                    var cell = Controller.GetCell();
-                    if (MoveValidator.IsValidMove(cell, _currentPlayer, _otherPlayer))
-                    {      
-                        _board.MovePlayer(_currentPlayer, cell);
-                        var playerCoords = _currentPlayer.CurrentCell.Coords;
-                        Viewer.RenderPlayer(playerCoords.Top, playerCoords.Left);
-                        Viewer.ChangePlayer();
-                        CheckWinning();
-                        ChangeCurrentPlayer();
-                    }
-                    break;
-                case Action.PlaceWall:
-                    var wall = Controller.GetWall();
-                    if(_currentPlayer.PlaceWall())
-                    {
-                        _board.PutWall(wall);
-                        if(MoveValidator.IsThereAWay(_gameState, _topPlayer, _bottomPlayer))
+            switch (Controller.GetAction())
+                {
+                    case Action.MakeMove:
+                        var cell = Controller.GetCell();
+                        if (!MoveValidator.IsValidMove(cell, _currentPlayer, _otherPlayer))
                         {
-                            var wallCoords = wall.Coords;
-                            Viewer.RenderWall(wallCoords.Top, wallCoords.Left);
+                            _board.MovePlayer(_currentPlayer, cell);
+                            var playerCoords = _currentPlayer.CurrentCell.Coords;
+                            RenderPlayer(playerCoords.Top, playerCoords.Left);
+                            CheckWinning();
+                            ChangeCurrentPlayer();
                         }
-                        else
+
+                        break;
+                    case Action.PlaceWall:
+                        var wall = Controller.GetWall();
+                        if (_currentPlayer.PlaceWall())
                         {
-                            _board.DropWall(wall);
-                            _currentPlayer.UnPlaceWall();
+                            _board.PutWall(wall);
+                            if (MoveValidator.IsThereAWay(_gameState, _topPlayer, _bottomPlayer))
+                            {
+                                var wallCoords = wall.Coords;
+                                Viewer.RenderWall(wallCoords.Top, wallCoords.Left);
+                            }
+                            else
+                            {
+                                _board.DropWall(wall);
+                                _currentPlayer.UnPlaceWall();
+                            }
                         }
-                    }
-                    Viewer.RenderRemainingWalls(_topPlayer.WallsCount, _bottomPlayer.WallsCount);
-                    break;
-                default:
-                    throw new ArgumentException();
-            }
-            if(!_gameState.InPlay)
-            {
-                Viewer.RenderEnding("Game over!");
-            }
-            
+
+                        Viewer.RenderRemainingWalls(_topPlayer.WallsCount, _bottomPlayer.WallsCount);
+                        break;
+                    default:
+                        throw new ArgumentException();
+                }
+
+                if (!_gameState.InPlay)
+                {
+                    Viewer.RenderEnding("Game over!");
+                }
         }
+
         public static Game GetInstance(IController controller, IViewer viewer)
         {
             if(_instance == null)

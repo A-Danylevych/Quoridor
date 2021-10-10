@@ -102,12 +102,143 @@ namespace Model
             player.ChangeCell(cell);
         }
 
-        internal void PutWall(Wall wall){
+        internal void PutWall(Wall wall)
+        {
+            if (wall.IsVertical)
+            {
+                PutVerticalWall(wall);
+            }
+            else
+            {
+                PutHorizontalWall(wall);
+            }
+        }
 
+        private void PutVerticalWall(Wall wall)
+        {
+            var cellList = FindVerticalWallNeighbours(wall);
+            var LeftUpperCell = cellList[0];
+            var LeftBottomCell = cellList[1];
+            var RightUpperCell = cellList[2];
+            var RightBottomCell = cellList[3];
+            LeftUpperCell.RightConnect(wall);
+            LeftBottomCell.RightConnect(wall);
+            RightUpperCell.LeftConnect(wall);
+            RightBottomCell.LeftConnect(wall);
+            var leftList = new List<IPlaceable>()
+            {
+                LeftUpperCell,
+                LeftBottomCell
+            };
+            var rightList = new List<IPlaceable>()
+            {
+                RightUpperCell,
+                RightBottomCell
+            };
+            wall.LeftConnect(leftList);
+            wall.RightConnect(rightList);
+        }
+
+        private void PutHorizontalWall(Wall wall)
+        {
+            var cellList = FindHorizontalWallNeighbours(wall);
+            var UpperRightCell = cellList[0];
+            var UpperLeftCell = cellList[1];
+            var BottomRightCell = cellList[2];
+            var BottomLeftCell = cellList[3];
+            UpperRightCell.BottomConnect(wall);
+            UpperLeftCell.BottomConnect(wall);
+            BottomRightCell.UpperConnect(wall);
+            BottomLeftCell.UpperConnect(wall);
+            var upperList = new List<IPlaceable>()
+            {
+                UpperRightCell,
+                UpperLeftCell
+            };
+            var bottomList = new List<IPlaceable>()
+            {
+                BottomRightCell,
+                BottomLeftCell
+            };
+            wall.UpperConnect(upperList);
+            wall.BottomConnect(bottomList);
         }
 
         internal void DropWall(Wall wall){
-            
+            if (wall.IsVertical)
+            {
+                DropVerticalWall(wall);
+            }
+            else
+            {
+                DropHorizontalWall(wall);
+            }
+        }
+
+        private void DropVerticalWall(Wall wall)
+        {
+            var cellList = FindVerticalWallNeighbours(wall);
+            var LeftUpperCell = cellList[0];
+            var LeftBottomCell = cellList[1];
+            var RightUpperCell = cellList[2];
+            var RightBottomCell = cellList[3];
+            LeftUpperCell.RightConnect(RightUpperCell);
+            LeftBottomCell.RightConnect(RightBottomCell);
+            RightUpperCell.LeftConnect(LeftUpperCell);
+            RightBottomCell.LeftConnect(LeftBottomCell);
+        }
+
+        private void DropHorizontalWall(Wall wall)
+        {
+            var cellList = FindHorizontalWallNeighbours(wall);
+            var UpperRightCell = cellList[0];
+            var UpperLeftCell = cellList[1];
+            var BottomRightCell = cellList[2];
+            var BottomLeftCell = cellList[3];
+            UpperRightCell.BottomConnect(BottomRightCell);
+            UpperLeftCell.BottomConnect(BottomLeftCell);
+            BottomRightCell.UpperConnect(UpperRightCell);
+            BottomLeftCell.UpperConnect(UpperLeftCell);
+        }
+
+        private List<Cell> FindVerticalWallNeighbours(Wall wall)
+        {
+            var LeftUpperCoords = new CellCoords(wall.Coords.Top, wall.Coords.Left - 50);
+            var LeftBottomCoords = new CellCoords(wall.Coords.Top + 75, wall.Coords.Left - 50);
+            var RightUpperCoords = new CellCoords(wall.Coords.Top, wall.Coords.Left + 25);
+            var RightBottomCoords = new CellCoords(wall.Coords.Top + 75, wall.Coords.Left + 25);
+            var LeftUpperCell = FindCellByCoords(LeftUpperCoords);
+            var LeftBottomCell = FindCellByCoords(LeftBottomCoords);
+            var RightUpperCell = FindCellByCoords(RightUpperCoords);
+            var RightBottomCell = FindCellByCoords(RightBottomCoords);
+            var list = new List<Cell>()
+            {
+                LeftUpperCell,
+                LeftBottomCell,
+                RightUpperCell,
+                RightBottomCell
+            };
+            return list;
+        }
+
+        private List<Cell> FindHorizontalWallNeighbours(Wall wall)
+        {
+            var UpperRightCoords = new CellCoords(wall.Coords.Top - 50, wall.Coords.Left);
+            var UpperLeftCoords = new CellCoords(wall.Coords.Top -50, wall.Coords.Left + 75);
+            var BottomRightCoords = new CellCoords(wall.Coords.Top + 25, wall.Coords.Left + 25);
+            var BottomLeftCoords = new CellCoords(wall.Coords.Top + 25, wall.Coords.Left - 75);
+            var UpperRightCell = FindCellByCoords(UpperRightCoords);
+            var UpperLeftCell = FindCellByCoords(UpperLeftCoords);
+            var BottomRightCell = FindCellByCoords(BottomRightCoords);
+            var BottomLeftCell = FindCellByCoords(BottomLeftCoords);
+            var list = new List<Cell>()
+            {
+                UpperRightCell,
+                UpperLeftCell,
+                BottomRightCell,
+                BottomLeftCell
+            };
+            return list;
         }
     }
 }
