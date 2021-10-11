@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.Windows.Forms;
-using Quoridor.Controller;
 using Model;
 using Action = Model.Action;
 using Color = System.Drawing.Color;
@@ -22,6 +20,7 @@ namespace Quoridor
         {
             Controller = new Controller.Controller();
             InitializeComponent();
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             Game = Game.GetInstance(Controller, this);
             resetGame();
         }
@@ -40,17 +39,16 @@ namespace Quoridor
 
         private void mainGameTimer(object sender, EventArgs e)  //запускає всі процеси в грі (логічні і не дуже)
         {
-
             foreach (Control x in this.Controls) //починаємо працювати з кожним елементом форми
             {
 
                 if ((string)x.Tag == "Wall")  //прописуємо дії для стін
                 {
                     x.MouseClick += (a_sender, a_args) =>  //активується при кліку миші, ставимо стіни
-                    {
+                    {      
                         Controller.SetAction(Model.Action.PlaceWall);
                         Controller.SetWall(x.Top, x.Left, IsVertical(x.Top, x.Left));
-                        Game.Update();
+                        Game.Update();                           
                     };
 
 
@@ -70,6 +68,8 @@ namespace Quoridor
                             x.SendToBack();
                         }
                     };
+
+
                 }
 
                 if ((string)x.Tag == "Cell")  //прописуємо дії для гральних клітинок
@@ -103,6 +103,11 @@ namespace Quoridor
             label2.Text = "Залишилось стін: 10";
 
             isGameOver = false;
+
+            RedDot.Top = 343;
+            RedDot.Left = 181;
+            GreenDot.Top = 17;
+            GreenDot.Left = 181;
         }
 
         private void gameOver(string message)
