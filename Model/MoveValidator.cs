@@ -1,93 +1,85 @@
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Model
 {
-    static class MoveValidator
+    internal static class MoveValidator
     {
-        static public bool IsValidMove(Cell cell, Player currentPlayer, Player otherPlayer)
+        public static bool IsValidMove(Cell cell, Player currentPlayer, Player otherPlayer)
         {
-            List<Cell> possibleMoves = PossibleToMoveCells(currentPlayer, otherPlayer);
-            foreach(Cell possibleCell in possibleMoves)
-            {
-                if(possibleCell.Coords.Equals(cell.Coords))
-                {
-                    return true;
-                }
-            }
-            return false;
+            var possibleMoves = PossibleToMoveCells(currentPlayer, otherPlayer);
+            return possibleMoves.Any(possibleCell => possibleCell.Coords.Equals(cell.Coords));
         }
-        static private List<Cell> PossibleToMoveCells(Player currentPlayer, Player otherPlayer)
+        private static IEnumerable<Cell> PossibleToMoveCells(Player currentPlayer, Player otherPlayer)
         {
-            List<Cell> PossibleToMove = new List<Cell>();
-            PossibleToMove = MoveIsValid(currentPlayer, PossibleToMove);       
-            PossibleToMove = CheckForOtherPlayer(currentPlayer, otherPlayer, PossibleToMove);
-            return PossibleToMove;
+            var possibleToMove = new List<Cell>();
+            possibleToMove = MoveIsValid(currentPlayer, possibleToMove);       
+            possibleToMove = CheckForOtherPlayer(currentPlayer, otherPlayer, possibleToMove);
+            return possibleToMove;
         }
-        static public bool IsThereAWay(GameState gameState, Player topPlayer, Player bottomPlayer)
+        public static bool IsThereAWay(GameState gameState, Player topPlayer, Player bottomPlayer)
         {
-            return FindAWay(gameState.BottomWinningCells, bottomPlayer.CurrentCell) && FindAWay(gameState.TopWinningCells, topPlayer.CurrentCell);
+            return FindAWay(gameState.BottomWinningCells, bottomPlayer.CurrentCell) && 
+                   FindAWay(gameState.TopWinningCells, topPlayer.CurrentCell);
         }
-        static private bool FindAWay(List<Cell> Cells, Cell cell)
+        private static bool FindAWay(ICollection<Cell> cells, Cell cell)
         {
-            Stack<Cell> StackCells = new Stack<Cell>();
-            List<Cell> Visited = new List<Cell>();
+            var stackCells = new Stack<Cell>();
+            var visited = new List<Cell>();
             
-            StackCells.Push(cell);
-            Visited.Add(cell);
+            stackCells.Push(cell);
+            visited.Add(cell);
 
-            while (StackCells.Count != 0)
+            while (stackCells.Count != 0)
             {
-                Cell CurrenrCell = StackCells.Pop();
-                foreach (Cell next in CurrenrCell.GetNeighbors())
+                var currentCell = stackCells.Pop();
+                foreach (var next in currentCell.GetNeighbors().Where(next => !visited.Contains(next)))
                 {
-                    if(!(Visited.Contains(next)))
+                    if(cells.Contains(next))
                     {
-                        if(Cells.Contains(next))
-                        {
-                            return true;
-                        }
-                        StackCells.Push(next);
-                        Visited.Add(next);            
+                        return true;
                     }
-                    
+                    stackCells.Push(next);
+                    visited.Add(next);
                 }
             }
             return false;
         }
-        static private List<Cell> MoveIsValid(Player player, List<Cell> PossibleToMove)
+        private static List<Cell> MoveIsValid(Player player, List<Cell> possibleToMove)
         {
             if(!(player.CurrentCell.UpCell is Wall))
             {
-                PossibleToMove.Add((Cell)player.CurrentCell.UpCell);
+                possibleToMove.Add((Cell)player.CurrentCell.UpCell);
             }
             if(!(player.CurrentCell.DownCell is Wall))
             {
-                PossibleToMove.Add((Cell)player.CurrentCell.DownCell);
+                possibleToMove.Add((Cell)player.CurrentCell.DownCell);
             }
             if(!(player.CurrentCell.LeftCell is Wall))
             {
-                PossibleToMove.Add((Cell)player.CurrentCell.LeftCell);
+                possibleToMove.Add((Cell)player.CurrentCell.LeftCell);
             }
             if(!(player.CurrentCell.RightCell is Wall))
             {
-                PossibleToMove.Add((Cell)player.CurrentCell.RightCell);
+                possibleToMove.Add((Cell)player.CurrentCell.RightCell);
             }
-            return PossibleToMove;
+            return possibleToMove;
         }
 
-        static private List<Cell> CheckForOtherPlayer(Player currentPlayer, Player otherPlayer, List<Cell> PossibleToMove)
+        private static List<Cell> CheckForOtherPlayer(Player currentPlayer, Player otherPlayer, 
+            List<Cell> possibleToMove)
         {   
             if(currentPlayer.CurrentCell.DownCell == otherPlayer.CurrentCell)
             {   
-                PossibleToMove.Remove(otherPlayer.CurrentCell);
-                PossibleToMove.Add((Cell)otherPlayer.CurrentCell.DownCell);
+                possibleToMove.Remove(otherPlayer.CurrentCell);
+                possibleToMove.Add((Cell)otherPlayer.CurrentCell.DownCell);
             }
             else if(currentPlayer.CurrentCell.UpCell == otherPlayer.CurrentCell)
             {
-                PossibleToMove.Remove(otherPlayer.CurrentCell);
-                PossibleToMove.Add((Cell)otherPlayer.CurrentCell.UpCell);
+                possibleToMove.Remove(otherPlayer.CurrentCell);
+                possibleToMove.Add((Cell)otherPlayer.CurrentCell.UpCell);
             }
-            return PossibleToMove;
+            return possibleToMove;
         }
     }
 }

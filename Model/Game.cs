@@ -5,110 +5,138 @@ namespace Model
 {
     public class Game
     {
-        private readonly Player TopPlayer;
-        public IController Controller {get; private set;}
-        public IViewer Viewer {get; private set;}
-        private readonly Player BottomPlayer;
-        private Player CurrentPlayer;
-        private Player OtherPlayer;
-        private readonly GameState gameState;
-        private static Game instance;
-        private readonly Board Board;
-        private readonly static object syncRoot = new Object(); 
+        private readonly Player _topPlayer;
+        private IController Controller {get; set;}
+        private IViewer Viewer {get; set;}
+        private readonly Player _bottomPlayer;
+        private Player _currentPlayer;
+        private Player _otherPlayer;
+        private readonly GameState _gameState;
+        private static Game _instance;
+        private readonly Board _board;
+        private static readonly object SyncRoot = new object();
+        private bool blocked;
         private Game(IController controller, IViewer viewer)
         {
             Controller = controller;
             Viewer = viewer;
-            Board = new Board();
-            Board.NewBoard();
-            Cell topStartPosition = Board.TopStartPosition();
-            TopPlayer = new Player(Color.Green, topStartPosition);
-            Cell bottomStartPosition = Board.BottomStartPosition();
-            BottomPlayer = new Player(Color.Red, bottomStartPosition);
-            CurrentPlayer = BottomPlayer;
-            OtherPlayer = TopPlayer;
-            List<Cell> topWinningCells = Board.TopWinningCells();
-            List<Cell> bottomWinningCells = Board.BottomWinningCells();
-            gameState = new GameState(topWinningCells, bottomWinningCells);
+            _board = new Board();
+            _board.NewBoard();
+            var topStartPosition = _board.TopStartPosition();
+            _topPlayer = new Player(Color.Green, topStartPosition);
+            var bottomStartPosition = _board.BottomStartPosition();
+            _bottomPlayer = new Player(Color.Red, bottomStartPosition);
+            _currentPlayer = _bottomPlayer;
+            _otherPlayer = _topPlayer;
+            var topWinningCells = _board.TopWinningCells();
+            var bottomWinningCells = _board.BottomWinningCells();
+            _gameState = new GameState(topWinningCells, bottomWinningCells);
+            blocked = false;
         }
         private void ChangeCurrentPlayer()
         {
-            if(CurrentPlayer == BottomPlayer)
+            if(_currentPlayer == _bottomPlayer)
             {
-                OtherPlayer = BottomPlayer;
-                CurrentPlayer = TopPlayer;
+                _otherPlayer = _bottomPlayer;
+                _currentPlayer = _topPlayer;
             }
             else
             {
-                OtherPlayer = TopPlayer;
-                CurrentPlayer = BottomPlayer;
+                _otherPlayer = _topPlayer;
+                _currentPlayer = _bottomPlayer;
             }
         }
-        private bool CheckWinning(){
-            if(CurrentPlayer == BottomPlayer)
-            {
-                return gameState.CheckBottompWinning(BottomPlayer);
+        private bool CheckWinning()
+        {
+            return _currentPlayer == _bottomPlayer ? _gameState.CheckBottomWinning(_bottomPlayer) : 
+                _gameState.CheckTopWinning(_topPlayer);
+        }
 
+        private void RenderPlayer(int top, int left)
+        {
+            if (_currentPlayer == _bottomPlayer)
+            {
+                Viewer.RenderBottomPlayer(top, left);
             }
             else
             {
-                return gameState.CheckTopWinning(TopPlayer);
+                Viewer.RenderUpperPlayer(top, left);
             }
         }
+
         public void Update()
         {
-            switch(Controller.GetAction())
-            {
-                case Action.MakeMove:
-                    Cell cell = Controller.GetCell();
-                    if (MoveValidator.IsValidMove(cell, CurrentPlayer, OtherPlayer))
-                    {      
-                            Board.MovePlayer(CurrentPlayer, cell);
-                            var playerCoords = CurrentPlayer.CurrentCell.Coords;
-                            Viewer.RenderPlayer(playerCoords.Top, playerCoords.Left);
-                        Viewer.ChangePlayer();
+            switch (Controller.GetAction())
+                {
+                    case Action.MakeMove:
+                        if (blocked)
+                        {
+                            return;
+                        }
+                        var cell = Controller.GetCell();
+                        if (!MoveValidator.IsValidMove(cell, _currentPlayer, _otherPlayer))
+                        {
+                            _board.MovePlayer(_currentPlayer, cell);
+                            var playerCoords = _currentPlayer.CurrentCell.Coords;
+                            RenderPlayer(playerCoords.Top, playerCoords.Left);
                             CheckWinning();
                             ChangeCurrentPlayer();
-                    }
-                    break;
-                case Action.PlaceWall:
-                    Wall wall = Controller.GetWall();
-                    if(CurrentPlayer.PlaceWall())
-                    {
-                        Board.PutWall(wall);
-                        if(MoveValidator.IsThereAWay(gameState, TopPlayer, BottomPlayer))
+                        }
+
+                        blocked = true;
+                        break;
+                    case Action.PlaceWall:
+                        if(blocked)
+                            return;
+                        var wall = Controller.GetWall();
+                        if (_currentPlayer.PlaceWall())
                         {
-                            var wallCoords = wall.Coords;
+                            var wallCoords = wall.Coords; 
                             Viewer.RenderWall(wallCoords.Top, wallCoords.Left);
+                            ChangeCurrentPlayer();
+                            //_board.PutWall(wall);
+                            // if (!MoveValidator.IsThereAWay(_gameState, _topPlayer, _bottomPlayer))
+                            // {
+                            //     var wallCoords = wall.Coords;
+                            //     Viewer.RenderWall(wallCoords.Top, wallCoords.Left);
+                            //     ChangeCurrentPlayer();
+                            // }
+                            // else
+                            // {
+                            //     //_board.DropWall(wall);
+                            //     _currentPlayer.UnPlaceWall();
+                            // }
                         }
-                        else
-                        {
-                            Board.DropWall(wall);
-                            CurrentPlayer.UnPlaceWall();
-                        }
-                    }
-                    Viewer.RenderRemainingWalls(TopPlayer.WallsCount, BottomPlayer.WallsCount);
-                    break;
-            }
-            if(!gameState.InPlay)
-            {
-                Viewer.RenderEnding("Game over!");
-            }
-            
+
+                        Viewer.RenderRemainingWalls(_topPlayer.WallsCount, _bottomPlayer.WallsCount);
+                        blocked = true;
+                        break;
+                    case Action.NextTask:
+                        blocked = false;
+                        break;
+                    default:
+                        throw new ArgumentException();
+                }
+
+                if (!_gameState.InPlay)
+                {
+                    Viewer.RenderEnding("Game over!");
+                }
         }
+
         public static Game GetInstance(IController controller, IViewer viewer)
         {
-            if (instance == null)
+            if(_instance == null)
             {
-                lock (syncRoot)
+                lock (SyncRoot)
                 {
-                    if (instance == null)
+                    if (_instance == null)
                     {
-                        instance = new Game(controller, viewer);
+                        _instance = new Game(controller, viewer);
                     }
                 }   
             }
-            return instance;
+            return _instance;
         }
     }
 }

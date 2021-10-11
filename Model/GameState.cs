@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Model
 {
@@ -7,36 +8,24 @@ namespace Model
         public bool InPlay {get; private set;}
         public List<Cell> TopWinningCells { get; private set;}
         public List<Cell> BottomWinningCells { get; private set;}
-        public Player Winner {get; private set;}
-        public bool CheckTopWinning(Player player) 
+
+        public bool CheckTopWinning(Player player)
         {
-            if(CheckWinning(player.CurrentCell, TopWinningCells))
-            {
-                Winner = player;
-                return true;
-            }
-            return false;
+            return CheckWinning(player.CurrentCell, TopWinningCells);
         }
-        public bool CheckBottompWinning(Player player) 
+        public bool CheckBottomWinning(Player player)
         {
-            if(CheckWinning(player.CurrentCell, BottomWinningCells))
-            {
-                Winner = player;
-                return true;
-            }
-            return false;
+            return CheckWinning(player.CurrentCell, BottomWinningCells);
         }
 
         private bool CheckWinning(Cell currentCell, List<Cell> winningCells)
         {
-            foreach(var cell in winningCells)
+            if (winningCells.Any(cell => currentCell == cell))
             {
-                if(currentCell == cell)
-                {
-                    InPlay = false;
-                    return true;
-                }
+                InPlay = false;
+                return true;
             }
+
             return false;
         }
         public GameState(List<Cell> topWinningCells, List<Cell> bottomWinningCells)

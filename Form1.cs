@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Windows.Forms;
 using Model;
+using Action = Model.Action;
 using Color = System.Drawing.Color;
 
 //розробила базову логіку гри, дала можливість гравцю ставити стіни і ходити - Довгань Валерія
@@ -13,7 +14,6 @@ namespace Quoridor
     public partial class Form1 : Form, IViewer //Все, що відбувається в формі
     {
         Controller.Controller Controller { get; set; }
-        PictureBox Dot { get; set; }
         Game Game;
 
         public Form1()  //запускає дії в формі
@@ -21,7 +21,6 @@ namespace Quoridor
             Controller = new Controller.Controller();
             InitializeComponent();
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
-            Dot = RedDot;
             Game = Game.GetInstance(Controller, this);
             resetGame();
         }
@@ -49,7 +48,6 @@ namespace Quoridor
                     {      
                         Controller.SetAction(Model.Action.PlaceWall);
                         Controller.SetWall(x.Top, x.Left, IsVertical(x.Top, x.Left));
-                        RenderWall(x.Top, x.Left);
                         Game.Update();                           
                     };
 
@@ -76,20 +74,23 @@ namespace Quoridor
 
                 if ((string)x.Tag == "Cell")  //прописуємо дії для гральних клітинок
                 {
-                    Controller.SetAction(Model.Action.MakeMove);
+                    
 
                     x.MouseClick += (a_sender, a_args) => //активується при кліку миші
                     {
-                            int top = x.Top + 4;
-                            int left = x.Left + 4;
-                            Controller.SetCell(top, left);
-
+                        Controller.SetAction(Model.Action.MakeMove);
+                        int top = x.Top + 4;
+                        int left = x.Left + 4;
+                        Controller.SetCell(top, left);
                         Game.Update();
                     };
 
                 }
 
             }
+
+            Controller.SetAction(Action.NextTask);
+            Game.Update();
 
         }
 
@@ -138,15 +139,20 @@ namespace Quoridor
             gameOver(message);
         }
 
-        public void RenderPlayer(int top, int left)
+        public void RenderUpperPlayer(int top, int left)
         {
-
-                Dot.Top = top;
-                Dot.Left = left;
-            
-            Dot.BringToFront();
+            GreenDot.Top = top;
+            GreenDot.Left = left;
+            GreenDot.BringToFront();
         }
 
+        public void RenderBottomPlayer(int top, int left)
+        {
+            RedDot.Top = top;
+            RedDot.Left = left;
+            RedDot.BringToFront();
+        }
+        
         public void RenderWall(int top, int left)
         {
             RenderWall(top, left, Color.LightSlateGray);
@@ -411,19 +417,6 @@ namespace Quoridor
         {
             label1.Text = "Залишилось стін: " + BottomCount;
             label2.Text = "Залишилось стін: " + TopCount;
-        }
-
-
-        public void ChangePlayer()
-        {
-            if (Dot == GreenDot)
-            {
-                Dot = RedDot;
-            }
-            else
-            {
-                Dot = GreenDot;
-            }
         }
 
     }

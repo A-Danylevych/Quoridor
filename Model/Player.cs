@@ -9,7 +9,7 @@ namespace Model
             WallsCount = 10;
         }
         public Cell CurrentCell{ get; private set;}
-    
+
         public Color Color{get; private set;}
         public int WallsCount{ get; private set;}
          public bool PlaceWall()

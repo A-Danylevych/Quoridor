@@ -35,32 +35,33 @@ namespace Model
         }
         public List<Cell> GetNeighbors()
         {
-            List<Cell> Neighbors = new List<Cell>();
+            var neighbors = new List<Cell>();
             if(!(UpCell is Wall))
             {
-                Neighbors.Add((Cell)UpCell);
+                neighbors.Add((Cell)UpCell);
             }
             if(!(DownCell is Wall))
             {
-                Neighbors.Add((Cell)DownCell);
+                neighbors.Add((Cell)DownCell);
             }
             if(!(LeftCell is Wall))
             {
-                Neighbors.Add((Cell)LeftCell);
+                neighbors.Add((Cell)LeftCell);
             }
             if(!(RightCell is Wall))
             {
-                Neighbors.Add((Cell)RightCell);
+                neighbors.Add((Cell)RightCell);
             }
-            return Neighbors;
+            return neighbors;
         }
         public Cell(CellCoords coords)
         {
             Coords = coords;
-            LeftCell = new Wall(coords);
-            RightCell = new Wall(coords);
-            UpCell = new Wall(coords);
-            DownCell = new Wall(coords);
+            var abstractWall = new Wall();
+            LeftCell = abstractWall;
+            RightCell = abstractWall;
+            UpCell = abstractWall;
+            DownCell = abstractWall;
         }
     }
 }

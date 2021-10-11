@@ -1,23 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Model;
+﻿using Model;
 
 namespace Quoridor.Controller
 {
     public class Controller : IController
     {
-        Model.Action Action { get; set; }
-        Cell Cell { get; set; }
-        Wall Wall { get; set; }
+        private Action Action { get; set; }
+        private Cell Cell { get; set; }
+        private Wall Wall { get; set; }
 
-        public void SetAction(Model.Action action)
+        public void SetAction(Action action)
         {
             Action = action;
         }
-        public Model.Action GetAction()
+        public Action GetAction()
         {
             return Action;
         }
@@ -31,18 +26,14 @@ namespace Quoridor.Controller
         {
             return Cell;
         }
-        public void SetWall(int top, int left, bool vertical)
+        public void SetWall(int top, int left, bool isVertical)
         {
             var coords = new CellCoords(top, left);
-            Wall = new Wall(coords);
+            Wall = new Wall(coords, isVertical);
         }
         public Wall GetWall()
         {
             return Wall;
-        }
-        public Controller()
-        {
-
         }
     }
 }

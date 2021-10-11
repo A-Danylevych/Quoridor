@@ -1,6 +1,6 @@
 namespace Model
 {
-    enum Direction
+    internal enum Direction
     {
         Up = 1,
         Down = -1*Up,

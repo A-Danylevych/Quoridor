@@ -5,9 +5,9 @@ namespace Model
     public interface IViewer
     {
         void RenderEnding(string message);
-        void RenderPlayer(int top, int left);
+        void RenderUpperPlayer(int top, int left);
+        void RenderBottomPlayer(int top, int left);
         void RenderWall(int top, int left);
-        void RenderRemainingWalls(int TopCount, int BottomCount);
-        void ChangePlayer();
+        void RenderRemainingWalls(int topCount, int bottomCount);
     }
 }
