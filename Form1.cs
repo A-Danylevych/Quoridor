@@ -33,7 +33,7 @@ namespace Quoridor
         }
         private void keyisup(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter && isGameOver == true)
+            if (e.KeyCode == Keys.Enter)
                 resetGame();
         }
 
