@@ -92,6 +92,14 @@ namespace Quoridor
 
         }
 
+        private bool TouchingOther()
+        {
+            return false;
+            foreach (var wall in WallsList())
+            {
+                return false;
+            }
+        }
         private void resetGame() //дії, які відбуваються при перезапуску гри
         {
 
@@ -101,11 +109,21 @@ namespace Quoridor
             label2.Text = "Залишилось стін: 10";
 
             isGameOver = false;
-
+            
+            Game.NewGame();
+            ClearWalls();
             RenderBottomPlayer(625, 325);
             RenderUpperPlayer(25, 325);
         }
 
+        private void ClearWalls()
+        {
+            foreach (var wall in WallsList())
+            {
+                wall.BackColor = Color.LightSkyBlue;
+                wall.SendToBack();
+            }
+        }
 
         private void gameOver(string message)
         {
