@@ -74,7 +74,7 @@ namespace Model
                             return;
                         }
                         var cell = Controller.GetCell();
-                        if (!MoveValidator.IsValidMove(cell, _currentPlayer, _otherPlayer))
+                        if (MoveValidator.IsValidMove(cell, _currentPlayer, _otherPlayer))
                         {
                             _board.MovePlayer(_currentPlayer, cell);
                             var playerCoords = _currentPlayer.CurrentCell.Coords;
@@ -91,21 +91,19 @@ namespace Model
                         var wall = Controller.GetWall();
                         if (_currentPlayer.PlaceWall())
                         {
-                            var wallCoords = wall.Coords; 
-                            Viewer.RenderWall(wallCoords.Top, wallCoords.Left);
-                            ChangeCurrentPlayer();
-                            //_board.PutWall(wall);
-                            // if (!MoveValidator.IsThereAWay(_gameState, _topPlayer, _bottomPlayer))
-                            // {
-                            //     var wallCoords = wall.Coords;
-                            //     Viewer.RenderWall(wallCoords.Top, wallCoords.Left);
-                            //     ChangeCurrentPlayer();
-                            // }
-                            // else
-                            // {
-                            //     //_board.DropWall(wall);
-                            //     _currentPlayer.UnPlaceWall();
-                            // }
+                            
+                            _board.PutWall(wall);
+                             if (MoveValidator.IsThereAWay(_gameState, _topPlayer, _bottomPlayer))
+                            {
+                                var wallCoords = wall.Coords;
+                                Viewer.RenderWall(wallCoords.Top, wallCoords.Left);
+                                ChangeCurrentPlayer();
+                             }
+                             else
+                            {
+                                _board.DropWall(wall);
+                                _currentPlayer.UnPlaceWall();
+                             }
                         }
 
                         Viewer.RenderRemainingWalls(_topPlayer.WallsCount, _bottomPlayer.WallsCount);

@@ -3027,7 +3027,7 @@ namespace Quoridor
             // 
             this.GreenDot.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.GreenDot.Image = ((System.Drawing.Image)(resources.GetObject("GreenDot.Image")));
-            this.GreenDot.Location = new System.Drawing.Point(332, 31);
+            this.GreenDot.Location = new System.Drawing.Point(327, 26);
             this.GreenDot.Margin = new System.Windows.Forms.Padding(4);
             this.GreenDot.Name = "GreenDot";
             this.GreenDot.Size = new System.Drawing.Size(40, 41);
@@ -3040,7 +3040,7 @@ namespace Quoridor
             // 
             this.RedDot.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.RedDot.Image = ((System.Drawing.Image)(resources.GetObject("RedDot.Image")));
-            this.RedDot.Location = new System.Drawing.Point(334, 633);
+            this.RedDot.Location = new System.Drawing.Point(332, 632);
             this.RedDot.Margin = new System.Windows.Forms.Padding(4);
             this.RedDot.Name = "RedDot";
             this.RedDot.Size = new System.Drawing.Size(35, 35);
@@ -3057,7 +3057,7 @@ namespace Quoridor
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(22, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 20);
+            this.label1.Size = new System.Drawing.Size(35, 13);
             this.label1.TabIndex = 49;
             this.label1.Text = "label1";
             // 
@@ -3069,13 +3069,13 @@ namespace Quoridor
             this.label2.ForeColor = System.Drawing.Color.Black;
             this.label2.Location = new System.Drawing.Point(383, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 20);
+            this.label2.Size = new System.Drawing.Size(35, 13);
             this.label2.TabIndex = 49;
             this.label2.Text = "label1";
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;

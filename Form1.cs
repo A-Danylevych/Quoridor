@@ -33,7 +33,7 @@ namespace Quoridor
         }
         private void keyisup(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter && isGameOver == true)
+            if (e.KeyCode == Keys.Enter)
                 resetGame();
         }
 
@@ -79,9 +79,7 @@ namespace Quoridor
                     x.MouseClick += (a_sender, a_args) => //активується при кліку миші
                     {
                         Controller.SetAction(Model.Action.MakeMove);
-                        int top = x.Top + 4;
-                        int left = x.Left + 4;
-                        Controller.SetCell(top, left);
+                        Controller.SetCell(x.Top, x.Left);
                         Game.Update();
                     };
 
@@ -104,11 +102,10 @@ namespace Quoridor
 
             isGameOver = false;
 
-            RedDot.Top = 343;
-            RedDot.Left = 181;
-            GreenDot.Top = 17;
-            GreenDot.Left = 181;
+            RenderBottomPlayer(625, 325);
+            RenderUpperPlayer(25, 325);
         }
+
 
         private void gameOver(string message)
         {
@@ -141,15 +138,15 @@ namespace Quoridor
 
         public void RenderUpperPlayer(int top, int left)
         {
-            GreenDot.Top = top;
-            GreenDot.Left = left;
+            GreenDot.Top = top + 5;
+            GreenDot.Left = left + 5;
             GreenDot.BringToFront();
         }
 
         public void RenderBottomPlayer(int top, int left)
         {
-            RedDot.Top = top;
-            RedDot.Left = left;
+            RedDot.Top = top + 5;
+            RedDot.Left = left + 5;
             RedDot.BringToFront();
         }
         
