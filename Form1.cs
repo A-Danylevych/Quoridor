@@ -95,7 +95,7 @@ namespace Quoridor
         {
             foreach (var w in WallsList())
             {
-                if (top - 75 == w.Top || top + 75 == w.Top || left - 75 == w.Left || left + 75 == w.Left)
+                if (top == w.Top -75 || top == w.Top +75 || left  == w.Left -75 || left == w.Left +75)
                 {
                     if (w.BackColor == Color.LightSlateGray)
                     {
@@ -121,6 +121,9 @@ namespace Quoridor
             ClearWalls();
             RenderBottomPlayer(625, 325);
             RenderUpperPlayer(25, 325);
+
+            label1.Left = 22;
+            label2.Left = 383;
         }
 
         private void ClearWalls()
@@ -163,15 +166,15 @@ namespace Quoridor
 
         public void RenderUpperPlayer(int top, int left)
         {
-            GreenDot.Top = top + 4;
-            GreenDot.Left = left + 4;
+            GreenDot.Top = top + 6;
+            GreenDot.Left = left +6;
             GreenDot.BringToFront();
         }
 
         public void RenderBottomPlayer(int top, int left)
         {
-            RedDot.Top = top + 4;
-            RedDot.Left = left + 4;
+            RedDot.Top = top + 8;
+            RedDot.Left = left + 8;
             RedDot.BringToFront();
         }
         
@@ -440,7 +443,6 @@ namespace Quoridor
             label1.Text = "Залишилось стін: " + BottomCount;
             label2.Text = "Залишилось стін: " + TopCount;
         }
-
     }
 
 }

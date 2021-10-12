@@ -3027,7 +3027,7 @@ namespace Quoridor
             // 
             this.GreenDot.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.GreenDot.Image = ((System.Drawing.Image)(resources.GetObject("GreenDot.Image")));
-            this.GreenDot.Location = new System.Drawing.Point(327, 26);
+            this.GreenDot.Location = new System.Drawing.Point(329, 28);
             this.GreenDot.Margin = new System.Windows.Forms.Padding(4);
             this.GreenDot.Name = "GreenDot";
             this.GreenDot.Size = new System.Drawing.Size(40, 41);
@@ -3053,11 +3053,11 @@ namespace Quoridor
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.PaleVioletRed;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.857143F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.14286F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(22, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.Size = new System.Drawing.Size(86, 31);
             this.label1.TabIndex = 49;
             this.label1.Text = "label1";
             // 
@@ -3065,11 +3065,11 @@ namespace Quoridor
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Aquamarine;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.857143F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.14286F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.ForeColor = System.Drawing.Color.Black;
             this.label2.Location = new System.Drawing.Point(383, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.Size = new System.Drawing.Size(86, 31);
             this.label2.TabIndex = 49;
             this.label2.Text = "label1";
             // 
