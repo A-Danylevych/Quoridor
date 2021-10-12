@@ -78,9 +78,7 @@ namespace Quoridor
                     x.MouseClick += (a_sender, a_args) => //активується при кліку миші
                     {
                         Controller.SetAction(Model.Action.MakeMove);
-                        int top = x.Top + 4;
-                        int left = x.Left + 4;
-                        Controller.SetCell(top, left);
+                        Controller.SetCell(x.Top, x.Left);
                         Game.Update();
                     };
 
@@ -165,15 +163,15 @@ namespace Quoridor
 
         public void RenderUpperPlayer(int top, int left)
         {
-            GreenDot.Top = top;
-            GreenDot.Left = left;
+            GreenDot.Top = top + 4;
+            GreenDot.Left = left + 4;
             GreenDot.BringToFront();
         }
 
         public void RenderBottomPlayer(int top, int left)
         {
-            RedDot.Top = top;
-            RedDot.Left = left;
+            RedDot.Top = top + 4;
+            RedDot.Left = left + 4;
             RedDot.BringToFront();
         }
         
