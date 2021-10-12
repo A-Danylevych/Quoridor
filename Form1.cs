@@ -119,10 +119,19 @@ namespace Quoridor
 
             isGameOver = false;
 
-            RedDot.Top = 343;
-            RedDot.Left = 181;
-            GreenDot.Top = 17;
-            GreenDot.Left = 181;
+            Game.NewGame();
+            ClearWalls();
+            RenderBottomPlayer(625, 325);
+            RenderUpperPlayer(25, 325);
+        }
+
+        private void ClearWalls()
+        {
+            foreach (var wall in WallsList())
+            {
+                wall.BackColor = Color.LightSkyBlue;
+                wall.SendToBack();
+            }
         }
 
         private void gameOver(string message)
