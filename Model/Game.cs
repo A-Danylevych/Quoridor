@@ -74,7 +74,7 @@ namespace Model
                             return;
                         }
                         var cell = Controller.GetCell();
-                        if (!MoveValidator.IsValidMove(cell, _currentPlayer, _otherPlayer))
+                        if (MoveValidator.IsValidMove(cell, _currentPlayer, _otherPlayer))
                         {
                             _board.MovePlayer(_currentPlayer, cell);
                             var playerCoords = _currentPlayer.CurrentCell.Coords;

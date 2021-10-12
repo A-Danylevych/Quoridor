@@ -41,14 +41,13 @@ namespace Quoridor
         {
             foreach (Control x in this.Controls) //починаємо працювати з кожним елементом форми
             {
-
-                if ((string)x.Tag == "Wall")  //прописуємо дії для стін
-                {
+                if ((string)x.Tag == "Wall" && !TouchingOther(x.Top, x.Left))  //прописуємо дії для стін
+                {                    
                     x.MouseClick += (a_sender, a_args) =>  //активується при кліку миші, ставимо стіни
                     {      
                         Controller.SetAction(Model.Action.PlaceWall);
                         Controller.SetWall(x.Top, x.Left, IsVertical(x.Top, x.Left));
-                        Game.Update();                           
+                        Game.Update();
                     };
 
 
@@ -92,6 +91,22 @@ namespace Quoridor
             Controller.SetAction(Action.NextTask);
             Game.Update();
 
+        }
+
+        private bool TouchingOther(int top, int left)
+        {
+            foreach (var w in WallsList())
+            {
+                if (top - 75 == w.Top || top + 75 == w.Top || left - 75 == w.Left || left + 75 == w.Left)
+                {
+                    if (w.BackColor == Color.LightSlateGray)
+                    {
+                        return true;
+                    }
+                }
+            }
+
+            return false;
         }
 
         private void resetGame() //дії, які відбуваються при перезапуску гри
