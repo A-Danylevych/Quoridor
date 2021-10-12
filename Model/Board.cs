@@ -75,7 +75,7 @@ namespace Model
         }
         public Cell BottomStartPosition()
         {
-            const int downIndex = CellsCount - SideWidth/2 - 2;
+            const int downIndex = CellsCount - SideWidth/2 - 1;
             return Cells[downIndex];
         }
         public List<Cell> TopWinningCells()
@@ -99,7 +99,8 @@ namespace Model
 
         internal void MovePlayer(Player player, Cell cell)
         {
-            player.ChangeCell(cell);
+            var cellToMove = FindCellByCoords(cell.Coords);
+            player.ChangeCell(cellToMove);
         }
 
         internal void PutWall(Wall wall)
@@ -223,10 +224,10 @@ namespace Model
 
         private List<Cell> FindHorizontalWallNeighbours(Wall wall)
         {
-            var UpperRightCoords = new CellCoords(wall.Coords.Top - 50, wall.Coords.Left);
-            var UpperLeftCoords = new CellCoords(wall.Coords.Top -50, wall.Coords.Left + 75);
-            var BottomRightCoords = new CellCoords(wall.Coords.Top + 25, wall.Coords.Left + 25);
-            var BottomLeftCoords = new CellCoords(wall.Coords.Top + 25, wall.Coords.Left - 75);
+            var UpperRightCoords = new CellCoords(wall.Coords.Top - 50, wall.Coords.Left + 75);
+            var UpperLeftCoords = new CellCoords(wall.Coords.Top - 50, wall.Coords.Left);
+            var BottomRightCoords = new CellCoords(wall.Coords.Top + 25, wall.Coords.Left + 75);
+            var BottomLeftCoords = new CellCoords(wall.Coords.Top + 25, wall.Coords.Left);
             var UpperRightCell = FindCellByCoords(UpperRightCoords);
             var UpperLeftCell = FindCellByCoords(UpperLeftCoords);
             var BottomRightCell = FindCellByCoords(BottomRightCoords);

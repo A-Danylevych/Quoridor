@@ -5,13 +5,13 @@ namespace Model
 {
     public class Game
     {
-        private readonly Player _topPlayer;
         private IController Controller {get; set;}
         private IViewer Viewer {get; set;}
-        private readonly Player _bottomPlayer;
+        private Player _topPlayer;
+        private Player _bottomPlayer;
         private Player _currentPlayer;
         private Player _otherPlayer;
-        private readonly GameState _gameState;
+        private GameState _gameState;
         private static Game _instance;
         private readonly Board _board;
         private static readonly object SyncRoot = new object();
@@ -21,6 +21,21 @@ namespace Model
             Controller = controller;
             Viewer = viewer;
             _board = new Board();
+            _board.NewBoard();
+            var topStartPosition = _board.TopStartPosition();
+            _topPlayer = new Player(Color.Green, topStartPosition);
+            var bottomStartPosition = _board.BottomStartPosition();
+            _bottomPlayer = new Player(Color.Red, bottomStartPosition);
+            _currentPlayer = _bottomPlayer;
+            _otherPlayer = _topPlayer;
+            var topWinningCells = _board.TopWinningCells();
+            var bottomWinningCells = _board.BottomWinningCells();
+            _gameState = new GameState(topWinningCells, bottomWinningCells);
+            blocked = false;
+        }
+
+        public void NewGame()
+        {
             _board.NewBoard();
             var topStartPosition = _board.TopStartPosition();
             _topPlayer = new Player(Color.Green, topStartPosition);
@@ -91,21 +106,19 @@ namespace Model
                         var wall = Controller.GetWall();
                         if (_currentPlayer.PlaceWall())
                         {
-                            var wallCoords = wall.Coords; 
-                            Viewer.RenderWall(wallCoords.Top, wallCoords.Left);
-                            ChangeCurrentPlayer();
-                            //_board.PutWall(wall);
-                            // if (!MoveValidator.IsThereAWay(_gameState, _topPlayer, _bottomPlayer))
-                            // {
-                            //     var wallCoords = wall.Coords;
-                            //     Viewer.RenderWall(wallCoords.Top, wallCoords.Left);
-                            //     ChangeCurrentPlayer();
-                            // }
-                            // else
-                            // {
-                            //     //_board.DropWall(wall);
-                            //     _currentPlayer.UnPlaceWall();
-                            // }
+                            
+                            _board.PutWall(wall);
+                             if (MoveValidator.IsThereAWay(_gameState, _topPlayer, _bottomPlayer))
+                            {
+                                var wallCoords = wall.Coords;
+                                Viewer.RenderWall(wallCoords.Top, wallCoords.Left);
+                                ChangeCurrentPlayer();
+                             }
+                             else
+                            {
+                                _board.DropWall(wall);
+                                _currentPlayer.UnPlaceWall();
+                             }
                         }
 
                         Viewer.RenderRemainingWalls(_topPlayer.WallsCount, _bottomPlayer.WallsCount);
