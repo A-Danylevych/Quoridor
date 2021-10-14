@@ -1,33 +1,84 @@
 using System;
+using System.Collections.Generic;
 
 namespace Model
 {
     class Bot : Player
     {
-        List
+        private List<Wall> WallsSpots;
         public void MakeAMove(IController controller, Player otherPlayer)
         {            
             var rand = new Random();
-            Type type = typeof(Action);
-            Array values = type.GetEnumValues();
+            var type = typeof(Action);
+            var values = type.GetEnumValues();
 
-            int index = rand.Next(values.Length);
-			Action action = (Action)values.GetValue(index);
+            var index = rand.Next(values.Length-1);
+			var action = (Action)values.GetValue(index);
             controller.SetAction(action);
-            if(action == MakeMove)
+            switch (action)
             {
-                var cells = MoveValidator.PossibleToMoveCells(this, otherPlayer);
-                var cell = rand.Next(cells.Count);
-                controller.SetCell(cell.Coords.Top, cell.Coords.Left);
-            }
-            if(action == PlaceWall)
-            {       
-                var randomBool = random.Next(2) == 1;
-                int top = rand.Next(1, 8) * 25;
-                int left = rand.Next(1, 8) * 25;
-                controller.SetWall(top, left, randomBool)
+                case Action.MakeMove:
+                {
+                    var cells = MoveValidator.PossibleToMoveCells(this, otherPlayer);
+                    var i = rand.Next(cells.Count);
+                    var cell = cells[i];
+                    controller.SetCell(cell.Coords.Top, cell.Coords.Left);
+                    break;
+                }
+                case Action.PlaceWall:
+                {
+                    var i = rand.Next(WallsSpots.Count);
+                    var wall = WallsSpots[i];
+                    WallsSpots.Remove(wall);
+                    controller.SetWall(wall.Coords.Top, wall.Coords.Left, wall.IsVertical);
+                    break;
+                }
             }
         }
 
+        private void WallSpots()
+        {
+            WallsSpots = new List<Wall>();
+            FillHorizontal();
+            FillVertical();
+        }
+
+        private void FillHorizontal()
+        {
+            var top = 75;
+            var left = 25;
+            for (var i = 0; i < 8; i++)
+            {
+                for (var j = 0; j < 8; j++)
+                {
+                    var coord = new CellCoords(top, left);
+                    WallsSpots.Add(new Wall(coord, false));
+                    left += 75;
+                }
+                left = 25;
+                top += 75;
+            } 
+        }
+        private void FillVertical()
+        {
+            var top = 25;
+            var left = 75;
+            for (var i = 0; i < 8; i++)
+            {
+                for (var j = 0; j < 8; j++)
+                {
+                    var coord = new CellCoords(top, left);
+                    WallsSpots.Add(new Wall(coord, true));
+                    left += 75;
+                }
+                left = 75;
+                top += 75;
+            } 
+        }
+
+        public Bot(Color color, Cell cell) : base(color, cell)
+        {
+            WallSpots();
+        }
     }
 }

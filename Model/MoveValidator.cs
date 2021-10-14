@@ -10,7 +10,7 @@ namespace Model
             var possibleMoves = PossibleToMoveCells(currentPlayer, otherPlayer);
             return possibleMoves.Any(possibleCell => possibleCell.Coords.Equals(cell.Coords));
         }
-        public static IEnumerable<Cell> PossibleToMoveCells(Player currentPlayer, Player otherPlayer)
+        public static List<Cell> PossibleToMoveCells(Player currentPlayer, Player otherPlayer)
         {
             var possibleToMove = new List<Cell>();
             possibleToMove = MoveIsValid(currentPlayer, possibleToMove);       

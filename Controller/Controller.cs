@@ -29,7 +29,7 @@ namespace Quoridor.Controller
         public void SetWall(int top, int left, bool isVertical)
         {
             var coords = new CellCoords(top, left);
-            Wall = new Wall(coords, !isVertical);
+            Wall = new Wall(coords, isVertical);
         }
         public Wall GetWall()
         {

@@ -16,29 +16,26 @@ namespace Model
         private readonly Board _board;
         private static readonly object SyncRoot = new object();
         private bool blocked;
-        private Game(IController controller, IViewer viewer)
+        private Game(IController controller, IViewer viewer, bool withBot)
         {
             Controller = controller;
             Viewer = viewer;
             _board = new Board();
-            _board.NewBoard();
-            var topStartPosition = _board.TopStartPosition();
-            _topPlayer = new Player(Color.Green, topStartPosition);
-            var bottomStartPosition = _board.BottomStartPosition();
-            _bottomPlayer = new Player(Color.Red, bottomStartPosition);
-            _currentPlayer = _bottomPlayer;
-            _otherPlayer = _topPlayer;
-            var topWinningCells = _board.TopWinningCells();
-            var bottomWinningCells = _board.BottomWinningCells();
-            _gameState = new GameState(topWinningCells, bottomWinningCells);
-            blocked = false;
+           NewGame(withBot);
         }
 
-        public void NewGame()
+        public void NewGame(bool withBot)
         {
             _board.NewBoard();
             var topStartPosition = _board.TopStartPosition();
-            _topPlayer = new Player(Color.Green, topStartPosition);
+            if (withBot)
+            {
+                _topPlayer = new Bot(Color.Green, topStartPosition);
+            }
+            else
+            {
+                _topPlayer = new Player(Color.Green, topStartPosition);
+            }
             var bottomStartPosition = _board.BottomStartPosition();
             _bottomPlayer = new Player(Color.Red, bottomStartPosition);
             _currentPlayer = _bottomPlayer;
@@ -59,6 +56,16 @@ namespace Model
             {
                 _otherPlayer = _topPlayer;
                 _currentPlayer = _bottomPlayer;
+            }
+        }
+
+        private void BotMove()
+        {
+            if(_currentPlayer is Bot bot)
+            {
+                bot.MakeAMove(Controller, _otherPlayer);
+                blocked = false;
+                Update();
             }
         }
         private bool CheckWinning()
@@ -109,15 +116,15 @@ namespace Model
                             
                             _board.PutWall(wall);
                              if (MoveValidator.IsThereAWay(_gameState, _topPlayer, _bottomPlayer))
-                            {
+                             {
                                 var wallCoords = wall.Coords;
                                 Viewer.RenderWall(wallCoords.Top, wallCoords.Left);
                                 ChangeCurrentPlayer();
                              }
                              else
-                            {
-                                _board.DropWall(wall);
-                                _currentPlayer.UnPlaceWall();
+                             {
+                                 _board.DropWall(wall);
+                                 _currentPlayer.UnPlaceWall();
                              }
                         }
 
@@ -135,9 +142,10 @@ namespace Model
                 {
                     Viewer.RenderEnding("Game over!");
                 }
+            BotMove();
         }
 
-        public static Game GetInstance(IController controller, IViewer viewer)
+        public static Game GetInstance(IController controller, IViewer viewer, bool withBot)
         {
             if(_instance == null)
             {
@@ -145,7 +153,7 @@ namespace Model
                 {
                     if (_instance == null)
                     {
-                        _instance = new Game(controller, viewer);
+                        _instance = new Game(controller, viewer, withBot);
                     }
                 }   
             }

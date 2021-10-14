@@ -21,7 +21,7 @@ namespace Quoridor
             Controller = new Controller.Controller();
             InitializeComponent();
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
-            Game = Game.GetInstance(Controller, this);
+            Game = Game.GetInstance(Controller, this, true);
             resetGame();
         }
 
@@ -117,7 +117,7 @@ namespace Quoridor
 
             isGameOver = false;
 
-            Game.NewGame();
+            Game.NewGame(true);
             ClearWalls();
             RenderBottomPlayer(625, 325);
             RenderUpperPlayer(25, 325);
@@ -156,7 +156,7 @@ namespace Quoridor
                 if (v.Height == 25 && v.Top == top && v.Left == left)
                     horizont = true;
             }
-            return horizont;
+            return !horizont;
         }
 
         public void RenderEnding(string message)

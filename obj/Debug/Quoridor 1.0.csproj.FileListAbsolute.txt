@@ -89,10 +89,3 @@ C:\Users\anton\OneDrive\Documents\GitHub\Quoridor\bin\Debug\System.Numerics.Vect
 C:\Users\anton\OneDrive\Documents\GitHub\Quoridor\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\anton\OneDrive\Documents\GitHub\Quoridor\bin\Debug\System.ValueTuple.xml
 C:\Users\anton\OneDrive\Documents\GitHub\Quoridor\bin\Debug\Uno.Core.xml
-C:\Users\anton\OneDrive\Documents\GitHub\Quoridor\obj\Debug\Quoridor 1.0.csproj.CopyComplete
-C:\Users\anton\OneDrive\Documents\GitHub\Quoridor\bin\Debug\Uno.Core.pdb
-C:\Users\anton\OneDrive\Documents\GitHub\Quoridor\bin\Debug\Uno.Diagnostics.Eventing.pdb
-C:\Users\anton\OneDrive\Documents\GitHub\Quoridor\bin\Debug\Uno.UI.FluentTheme.pdb
-C:\Users\anton\OneDrive\Documents\GitHub\Quoridor\bin\Debug\Uno.UI.FluentTheme.v1.pdb
-C:\Users\anton\OneDrive\Documents\GitHub\Quoridor\bin\Debug\Uno.UI.FluentTheme.v2.pdb
-C:\Users\anton\OneDrive\Documents\GitHub\Quoridor\bin\Debug\Uno.UI.Toolkit.pdb
