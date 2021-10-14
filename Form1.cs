@@ -91,13 +91,43 @@ namespace Quoridor
 
         private bool TouchingOther(int top, int left)
         {
+            var isVertical = IsVertical(top, left);
             foreach (var w in WallsList())
             {
-                if (top == w.Top -75 || top == w.Top +75 || left  == w.Left -75 || left == w.Left +75)
+                if (isVertical)
                 {
-                    if (w.BackColor == Color.LightSlateGray)
+                    if (w.Left == left && (w.Top == top-75 || w.Top == top+75))
                     {
-                        return true;
+                        if (w.BackColor == Color.LightSlateGray)
+                        {
+                            return true;
+                        }
+                    }
+
+                    if (w.Top == top + 50 && w.Left == left - 50)
+                    {
+                        if (w.BackColor == Color.LightSlateGray)
+                        {
+                            return true;
+                        }
+                    }
+                }
+                else
+                {
+                    if (w.Top == top && (w.Left == left-75 || w.Left == left+75))
+                    {
+                        if (w.BackColor == Color.LightSlateGray)
+                        {
+                            return true;
+                        }
+                    }
+
+                    if (w.Top == top - 50 && w.Left == left + 50)
+                    {
+                        if (w.BackColor == Color.LightSlateGray)
+                        {
+                            return true;
+                        }
                     }
                 }
             }
