@@ -145,12 +145,18 @@ namespace Model
 
             if (LeftUpperCell.DownCell is Wall && RightUpperCell.DownCell is Wall)
             {
-                return false;
+                if (LeftUpperCell.DownCell == RightBottomCell.DownCell)
+                {
+                    return false;
+                }
             }
 
             if (LeftBottomCell.UpCell is Wall && RightBottomCell.UpCell is Wall)
             {
-                return false;
+                if (LeftBottomCell.UpCell == RightBottomCell.UpCell)
+                {
+                    return false;
+                }
             }
 
             if (LeftBottomCell.RightCell is Wall || LeftUpperCell.RightCell is Wall)
@@ -193,12 +199,18 @@ namespace Model
 
             if(BottomLeftCell.RightCell is Wall && UpperLeftCell.RightCell is Wall)
             {
-                return false;
+                if (BottomLeftCell.RightCell == UpperLeftCell.RightCell)
+                {
+                    return false;
+                }
             }
 
             if (BottomRightCell.LeftCell is Wall && UpperRightCell.LeftCell is Wall)
             {
-                return false;
+                if (BottomRightCell.LeftCell == UpperRightCell.LeftCell)
+                {
+                    return false;
+                }
             }
 
             return true;
