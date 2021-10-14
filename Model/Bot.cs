@@ -12,8 +12,12 @@ namespace Model
             var type = typeof(Action);
             var values = type.GetEnumValues();
 
-            var index = rand.Next(values.Length-1);
+            var index = rand.Next(values.Length);
 			var action = (Action)values.GetValue(index);
+            if (WallsCount == 0)
+            {
+                action = Action.MakeMove;
+            }
             controller.SetAction(action);
             switch (action)
             {

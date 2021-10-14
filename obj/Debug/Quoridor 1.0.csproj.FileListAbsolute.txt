@@ -89,3 +89,4 @@ C:\Users\anton\OneDrive\Documents\GitHub\Quoridor\bin\Debug\System.Numerics.Vect
 C:\Users\anton\OneDrive\Documents\GitHub\Quoridor\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\anton\OneDrive\Documents\GitHub\Quoridor\bin\Debug\System.ValueTuple.xml
 C:\Users\anton\OneDrive\Documents\GitHub\Quoridor\bin\Debug\Uno.Core.xml
+C:\Users\anton\OneDrive\Documents\GitHub\Quoridor\obj\Debug\Quoridor 1.0.csproj.CopyComplete

@@ -91,10 +91,6 @@ namespace Model
             switch (Controller.GetAction())
                 {
                     case Action.MakeMove:
-                        if (blocked)
-                        {
-                            return;
-                        }
                         var cell = Controller.GetCell();
                         if (MoveValidator.IsValidMove(cell, _currentPlayer, _otherPlayer))
                         {
@@ -105,11 +101,8 @@ namespace Model
                             ChangeCurrentPlayer();
                         }
 
-                        blocked = true;
                         break;
                     case Action.PlaceWall:
-                        if(blocked)
-                            return;
                         var wall = Controller.GetWall();
                         if (_board.CanBePlaced(wall) && _currentPlayer.PlaceWall())
                         {
@@ -129,10 +122,6 @@ namespace Model
                         }
 
                         Viewer.RenderRemainingWalls(_topPlayer.WallsCount, _bottomPlayer.WallsCount);
-                        blocked = true;
-                        break;
-                    case Action.NextTask:
-                        blocked = false;
                         break;
                     default:
                         throw new ArgumentException();
