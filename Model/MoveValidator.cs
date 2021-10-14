@@ -10,7 +10,7 @@ namespace Model
             var possibleMoves = PossibleToMoveCells(currentPlayer, otherPlayer);
             return possibleMoves.Any(possibleCell => possibleCell.Coords.Equals(cell.Coords));
         }
-        private static IEnumerable<Cell> PossibleToMoveCells(Player currentPlayer, Player otherPlayer)
+        public static IEnumerable<Cell> PossibleToMoveCells(Player currentPlayer, Player otherPlayer)
         {
             var possibleToMove = new List<Cell>();
             possibleToMove = MoveIsValid(currentPlayer, possibleToMove);       
@@ -72,12 +72,34 @@ namespace Model
             if(currentPlayer.CurrentCell.DownCell == otherPlayer.CurrentCell)
             {   
                 possibleToMove.Remove(otherPlayer.CurrentCell);
-                possibleToMove.Add((Cell)otherPlayer.CurrentCell.DownCell);
+                if(otherPlayer.CurrentCell.DownCell is Cell)
+                {
+                    possibleToMove.Add((Cell)otherPlayer.CurrentCell.DownCell);
+                }
             }
-            else if(currentPlayer.CurrentCell.UpCell == otherPlayer.CurrentCell)
+            if(currentPlayer.CurrentCell.UpCell == otherPlayer.CurrentCell)
             {
                 possibleToMove.Remove(otherPlayer.CurrentCell);
-                possibleToMove.Add((Cell)otherPlayer.CurrentCell.UpCell);
+                if(otherPlayer.CurrentCell.UpCell is Cell)
+                {
+                    possibleToMove.Add((Cell)otherPlayer.CurrentCell.UpCell);
+                }
+            }
+            if(currentPlayer.CurrentCell.LeftCell == otherPlayer.CurrentCell)
+            {
+                possibleToMove.Remove(otherPlayer.CurrentCell);
+                if(otherPlayer.CurrentCell.LeftCell is Cell)
+                {
+                    possibleToMove.Add((Cell)otherPlayer.CurrentCell.LeftCell);
+                }
+            }
+            if(currentPlayer.CurrentCell.RightCell == otherPlayer.CurrentCell)
+            {
+                possibleToMove.Remove(otherPlayer.CurrentCell);
+                if(otherPlayer.CurrentCell.RightCell is Cell)
+                {
+                    possibleToMove.Add((Cell)otherPlayer.CurrentCell.RightCell);
+                }
             }
             return possibleToMove;
         }
