@@ -4,7 +4,7 @@ namespace Model
 {
     class Bot : Player
     {
-
+        List
         public void MakeAMove(IController controller, Player otherPlayer)
         {            
             var rand = new Random();
@@ -21,8 +21,11 @@ namespace Model
                 controller.SetCell(cell.Coords.Top, cell.Coords.Left);
             }
             if(action == PlaceWall)
-            {
-
+            {       
+                var randomBool = random.Next(2) == 1;
+                int top = rand.Next(1, 8) * 25;
+                int left = rand.Next(1, 8) * 25;
+                controller.SetWall(top, left, randomBool)
             }
         }
 
