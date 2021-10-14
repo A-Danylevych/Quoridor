@@ -47,21 +47,21 @@ namespace Model
         }
         private static List<Cell> MoveIsValid(Player player, List<Cell> possibleToMove)
         {
-            if(!(player.CurrentCell.UpCell is Wall))
+            if(player.CurrentCell.UpCell is Cell cell)
             {
-                possibleToMove.Add((Cell)player.CurrentCell.UpCell);
+                possibleToMove.Add(cell);
             }
-            if(!(player.CurrentCell.DownCell is Wall))
+            if(player.CurrentCell.DownCell is Cell downCell)
             {
-                possibleToMove.Add((Cell)player.CurrentCell.DownCell);
+                possibleToMove.Add(downCell);
             }
-            if(!(player.CurrentCell.LeftCell is Wall))
+            if(player.CurrentCell.LeftCell is Cell leftCell)
             {
-                possibleToMove.Add((Cell)player.CurrentCell.LeftCell);
+                possibleToMove.Add(leftCell);
             }
-            if(!(player.CurrentCell.RightCell is Wall))
+            if(player.CurrentCell.RightCell is Cell RightCell)
             {
-                possibleToMove.Add((Cell)player.CurrentCell.RightCell);
+                possibleToMove.Add(RightCell);
             }
             return possibleToMove;
         }
@@ -72,33 +72,81 @@ namespace Model
             if(currentPlayer.CurrentCell.DownCell == otherPlayer.CurrentCell)
             {   
                 possibleToMove.Remove(otherPlayer.CurrentCell);
-                if(otherPlayer.CurrentCell.DownCell is Cell)
+                if(otherPlayer.CurrentCell.DownCell is Cell cell)
                 {
-                    possibleToMove.Add((Cell)otherPlayer.CurrentCell.DownCell);
+                    possibleToMove.Add(cell);
+                }
+                else
+                {
+                    if (otherPlayer.CurrentCell.RightCell is Cell rightCell)
+                    {
+                        possibleToMove.Add(rightCell);
+                    }
+
+                    if (otherPlayer.CurrentCell.LeftCell is Cell leftCell)
+                    {
+                        possibleToMove.Add(leftCell);
+                    }
                 }
             }
             if(currentPlayer.CurrentCell.UpCell == otherPlayer.CurrentCell)
             {
                 possibleToMove.Remove(otherPlayer.CurrentCell);
-                if(otherPlayer.CurrentCell.UpCell is Cell)
+                if(otherPlayer.CurrentCell.UpCell is Cell cell)
                 {
-                    possibleToMove.Add((Cell)otherPlayer.CurrentCell.UpCell);
+                    possibleToMove.Add(cell);
+                }
+                else
+                {
+                    if (otherPlayer.CurrentCell.RightCell is Cell rightCell)
+                    {
+                        possibleToMove.Add(rightCell);
+                    }
+
+                    if (otherPlayer.CurrentCell.LeftCell is Cell leftCell)
+                    {
+                        possibleToMove.Add(leftCell);
+                    }
                 }
             }
             if(currentPlayer.CurrentCell.LeftCell == otherPlayer.CurrentCell)
             {
                 possibleToMove.Remove(otherPlayer.CurrentCell);
-                if(otherPlayer.CurrentCell.LeftCell is Cell)
+                if(otherPlayer.CurrentCell.LeftCell is Cell cell)
                 {
-                    possibleToMove.Add((Cell)otherPlayer.CurrentCell.LeftCell);
+                    possibleToMove.Add(cell);
+                }
+                else
+                {
+                    if (otherPlayer.CurrentCell.UpCell is Cell upCell)
+                    {
+                        possibleToMove.Add(upCell);
+                    }
+
+                    if (otherPlayer.CurrentCell.DownCell is Cell downCell)
+                    {
+                        possibleToMove.Add(downCell);
+                    }
                 }
             }
             if(currentPlayer.CurrentCell.RightCell == otherPlayer.CurrentCell)
             {
                 possibleToMove.Remove(otherPlayer.CurrentCell);
-                if(otherPlayer.CurrentCell.RightCell is Cell)
+                if(otherPlayer.CurrentCell.RightCell is Cell cell )
                 {
-                    possibleToMove.Add((Cell)otherPlayer.CurrentCell.RightCell);
+                    possibleToMove.Add(cell);
+                }
+                else
+                {
+                    if (otherPlayer.CurrentCell.UpCell is Cell upCell)
+                    {
+                        possibleToMove.Add(upCell);
+                    }
+
+                    if (otherPlayer.CurrentCell.DownCell is Cell downCell)
+                    {
+                        possibleToMove.Add(downCell);
+                    }
                 }
             }
             return possibleToMove;
