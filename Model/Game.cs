@@ -104,7 +104,7 @@ namespace Model
                         if(blocked)
                             return;
                         var wall = Controller.GetWall();
-                        if (_currentPlayer.PlaceWall())
+                        if (_currentPlayer.PlaceWall() && _board.CanBePlaced(wall))
                         {
                             
                             _board.PutWall(wall);

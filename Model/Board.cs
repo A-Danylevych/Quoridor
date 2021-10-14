@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 
 namespace Model
 {
@@ -115,6 +116,93 @@ namespace Model
             }
         }
 
+        public bool CanBePlaced(Wall wall)
+        {
+            if (wall.IsVertical)
+            {
+                return CanBePlacedVertical(wall);
+            }
+            else
+            {
+                return CanBePlacedHorizontal(wall);
+            }
+        }
+
+        private bool CanBePlacedVertical(Wall wall)
+        {
+            var cellList = FindVerticalWallNeighbours(wall);
+            foreach (var cell in cellList)
+            {
+                if (cell == null)
+                {
+                    return false;
+                }
+            }
+            var LeftUpperCell = cellList[0];
+            var LeftBottomCell = cellList[1];
+            var RightUpperCell = cellList[2];
+            var RightBottomCell = cellList[3];
+
+            if (LeftUpperCell.DownCell is Wall && RightUpperCell.DownCell is Wall)
+            {
+                return false;
+            }
+
+            if (LeftBottomCell.UpCell is Wall && RightBottomCell.UpCell is Wall)
+            {
+                return false;
+            }
+
+            if (LeftBottomCell.RightCell is Wall || LeftUpperCell.RightCell is Wall)
+            {
+                return false;
+            }
+
+            if (RightBottomCell.LeftCell is Wall || RightUpperCell.LeftCell is Wall)
+            {
+                return false;
+            }
+
+            return true;
+        }
+
+        private bool CanBePlacedHorizontal(Wall wall)
+        {
+            var cellList = FindHorizontalWallNeighbours(wall);
+            foreach (var cell in cellList)
+            {
+                if (cell == null)
+                {
+                    return false;
+                }
+            }
+            var UpperRightCell = cellList[0];
+            var UpperLeftCell = cellList[1];
+            var BottomRightCell = cellList[2];
+            var BottomLeftCell = cellList[3];
+
+            if (UpperLeftCell.DownCell is Wall || UpperRightCell.DownCell is Wall)
+            {
+                return false;
+            }
+
+            if (BottomLeftCell.UpCell is Wall || BottomRightCell.UpCell is Wall)
+            {
+                return false;
+            }
+
+            if(BottomLeftCell.RightCell is Wall && UpperLeftCell.RightCell is Wall)
+            {
+                return false;
+            }
+
+            if (BottomRightCell.LeftCell is Wall && UpperRightCell.LeftCell is Wall)
+            {
+                return false;
+            }
+
+            return true;
+        }
         private void PutVerticalWall(Wall wall)
         {
             var cellList = FindVerticalWallNeighbours(wall);
