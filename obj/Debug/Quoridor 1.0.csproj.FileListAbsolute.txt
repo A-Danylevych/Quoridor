@@ -133,3 +133,5 @@ C:\Users\Валерия\OneDrive\Документы\GitHub\Quoridor\obj\Debug\Qu
 C:\Users\Валерия\OneDrive\Документы\GitHub\Quoridor\obj\Debug\Quoridor 1.0.exe
 C:\Users\Валерия\OneDrive\Документы\GitHub\Quoridor\obj\Debug\Quoridor 1.0.pdb
 C:\Users\Валерия\OneDrive\Документы\GitHub\Quoridor\obj\Debug\Quoridor.Form0.resources
+C:\Users\anton\OneDrive\Documents\GitHub\Quoridor\obj\Debug\Quoridor.Form0.resources
+C:\Users\anton\OneDrive\Documents\GitHub\Quoridor\obj\Debug\Quoridor 1.0.csproj.CopyComplete

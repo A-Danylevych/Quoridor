@@ -129,12 +129,12 @@ namespace Model
 
                 if (!_gameState.InPlay)
                 {
-                    Viewer.RenderEnding("Game over!");
+                    Viewer.RenderEnding(_gameState.Winner.Color + " player won!");
                 }
             BotMove();
         }
 
-        public static Game GetInstance(IController controller, IViewer viewer, bool withBot)
+        public static Game GetInstance(IController controller, IViewer viewer, bool withBot = false)
         {
             if(_instance == null)
             {

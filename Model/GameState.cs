@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using System.Windows.Navigation;
 
 namespace Model
 {
@@ -8,14 +9,20 @@ namespace Model
         public bool InPlay {get; private set;}
         public List<Cell> TopWinningCells { get; private set;}
         public List<Cell> BottomWinningCells { get; private set;}
+        public  Player Winner { get; private set; }
 
         public bool CheckTopWinning(Player player)
         {
-            return CheckWinning(player.CurrentCell, TopWinningCells);
+            if (!CheckWinning(player.CurrentCell, TopWinningCells)) return false;
+            Winner = player;
+            return true;
         }
         public bool CheckBottomWinning(Player player)
         {
-            return CheckWinning(player.CurrentCell, BottomWinningCells);
+            if (!CheckWinning(player.CurrentCell, BottomWinningCells)) return false;
+            Winner = player;
+            return true;
+
         }
 
         private bool CheckWinning(Cell currentCell, List<Cell> winningCells)

@@ -7,20 +7,22 @@ namespace Quoridor
 {
     public partial class Form0 : Form
     {
+        private Form1 Form;
         public Form0()
         {
             InitializeComponent();
+            Form = new Form1(this);
         }
 
         public bool playWithBot { get; set; }
 
         private void Close()
         {
-            this.Hide();
+            Hide();
 
-            Form1 form1 = new Form1(playWithBot);
-
-            form1.Show();
+            Form.resetGame(playWithBot);
+            
+            Form.Show();
 
         }
 

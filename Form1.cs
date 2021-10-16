@@ -11,16 +11,16 @@ namespace Quoridor
     {
         Controller.Controller Controller { get; set; }
         Game Game;
+        private Form0 Form;
 
         bool isGameOver;
 
-        public Form1(bool gameWithBot)  //запускає дії в формі
+        public Form1(Form0 form)  //запускає дії в формі
         {
+            Form = form;
             Controller = new Controller.Controller();
             InitializeComponent();
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
-            Game = Game.GetInstance(Controller, this, gameWithBot) ;
-            resetGame(gameWithBot);
+            Game = Game.GetInstance(Controller, this) ;
         }
 
         private void keyisdown(object sender, KeyEventArgs e)
@@ -31,9 +31,8 @@ namespace Quoridor
         {
             if (e.KeyCode == Keys.Enter)
             {
-                this.Hide();
-                Form0 form1 = new Form0();
-                form1.Show();
+                Hide();
+                Form.Show();
             }
         }
 
@@ -135,7 +134,7 @@ namespace Quoridor
             return false;
         }
 
-        private void resetGame(bool gameWithBot)
+        public void resetGame(bool gameWithBot)
         {
 
             gameTimer.Start(); 
