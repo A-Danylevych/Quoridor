@@ -89,3 +89,47 @@ C:\Users\anton\OneDrive\Documents\GitHub\Quoridor\bin\Debug\System.Numerics.Vect
 C:\Users\anton\OneDrive\Documents\GitHub\Quoridor\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\anton\OneDrive\Documents\GitHub\Quoridor\bin\Debug\System.ValueTuple.xml
 C:\Users\anton\OneDrive\Documents\GitHub\Quoridor\bin\Debug\Uno.Core.xml
+C:\Users\Валерия\OneDrive\Документы\GitHub\Quoridor\bin\Debug\Quoridor 1.0.exe.config
+C:\Users\Валерия\OneDrive\Документы\GitHub\Quoridor\bin\Debug\Quoridor 1.0.exe
+C:\Users\Валерия\OneDrive\Документы\GitHub\Quoridor\bin\Debug\Quoridor 1.0.pdb
+C:\Users\Валерия\OneDrive\Документы\GitHub\Quoridor\bin\Debug\CommonServiceLocator.dll
+C:\Users\Валерия\OneDrive\Документы\GitHub\Quoridor\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\Валерия\OneDrive\Документы\GitHub\Quoridor\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\Валерия\OneDrive\Документы\GitHub\Quoridor\bin\Debug\Microsoft.Extensions.Logging.dll
+C:\Users\Валерия\OneDrive\Документы\GitHub\Quoridor\bin\Debug\System.Buffers.dll
+C:\Users\Валерия\OneDrive\Документы\GitHub\Quoridor\bin\Debug\System.Collections.Immutable.dll
+C:\Users\Валерия\OneDrive\Документы\GitHub\Quoridor\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+C:\Users\Валерия\OneDrive\Документы\GitHub\Quoridor\bin\Debug\System.Memory.dll
+C:\Users\Валерия\OneDrive\Документы\GitHub\Quoridor\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\Валерия\OneDrive\Документы\GitHub\Quoridor\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Валерия\OneDrive\Документы\GitHub\Quoridor\bin\Debug\System.ValueTuple.dll
+C:\Users\Валерия\OneDrive\Документы\GitHub\Quoridor\bin\Debug\Uno.Core.dll
+C:\Users\Валерия\OneDrive\Документы\GitHub\Quoridor\bin\Debug\Uno.Diagnostics.Eventing.dll
+C:\Users\Валерия\OneDrive\Документы\GitHub\Quoridor\bin\Debug\Uno.dll
+C:\Users\Валерия\OneDrive\Документы\GitHub\Quoridor\bin\Debug\Uno.Foundation.dll
+C:\Users\Валерия\OneDrive\Документы\GitHub\Quoridor\bin\Debug\Uno.UI.dll
+C:\Users\Валерия\OneDrive\Документы\GitHub\Quoridor\bin\Debug\Uno.UI.FluentTheme.dll
+C:\Users\Валерия\OneDrive\Документы\GitHub\Quoridor\bin\Debug\Uno.UI.FluentTheme.v1.dll
+C:\Users\Валерия\OneDrive\Документы\GitHub\Quoridor\bin\Debug\Uno.UI.FluentTheme.v2.dll
+C:\Users\Валерия\OneDrive\Документы\GitHub\Quoridor\bin\Debug\Uno.UI.Toolkit.dll
+C:\Users\Валерия\OneDrive\Документы\GitHub\Quoridor\bin\Debug\Uno.Xaml.dll
+C:\Users\Валерия\OneDrive\Документы\GitHub\Quoridor\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+C:\Users\Валерия\OneDrive\Документы\GitHub\Quoridor\bin\Debug\Microsoft.Extensions.Logging.xml
+C:\Users\Валерия\OneDrive\Документы\GitHub\Quoridor\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+C:\Users\Валерия\OneDrive\Документы\GitHub\Quoridor\bin\Debug\System.Buffers.xml
+C:\Users\Валерия\OneDrive\Документы\GitHub\Quoridor\bin\Debug\System.Collections.Immutable.xml
+C:\Users\Валерия\OneDrive\Документы\GitHub\Quoridor\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+C:\Users\Валерия\OneDrive\Документы\GitHub\Quoridor\bin\Debug\System.Memory.xml
+C:\Users\Валерия\OneDrive\Документы\GitHub\Quoridor\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\Валерия\OneDrive\Документы\GitHub\Quoridor\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\Валерия\OneDrive\Документы\GitHub\Quoridor\bin\Debug\System.ValueTuple.xml
+C:\Users\Валерия\OneDrive\Документы\GitHub\Quoridor\bin\Debug\Uno.Core.xml
+C:\Users\Валерия\OneDrive\Документы\GitHub\Quoridor\obj\Debug\Quoridor 1.0.csprojAssemblyReference.cache
+C:\Users\Валерия\OneDrive\Документы\GitHub\Quoridor\obj\Debug\Quoridor.Form1.resources
+C:\Users\Валерия\OneDrive\Документы\GitHub\Quoridor\obj\Debug\Quoridor_1._0.Properties.Resources.resources
+C:\Users\Валерия\OneDrive\Документы\GitHub\Quoridor\obj\Debug\Quoridor 1.0.csproj.GenerateResource.cache
+C:\Users\Валерия\OneDrive\Документы\GitHub\Quoridor\obj\Debug\Quoridor 1.0.csproj.CoreCompileInputs.cache
+C:\Users\Валерия\OneDrive\Документы\GitHub\Quoridor\obj\Debug\Quoridor 1.0.csproj.CopyComplete
+C:\Users\Валерия\OneDrive\Документы\GitHub\Quoridor\obj\Debug\Quoridor 1.0.exe
+C:\Users\Валерия\OneDrive\Документы\GitHub\Quoridor\obj\Debug\Quoridor 1.0.pdb
+C:\Users\Валерия\OneDrive\Документы\GitHub\Quoridor\obj\Debug\Quoridor.Form0.resources

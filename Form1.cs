@@ -2,30 +2,26 @@
 using System.Collections.Generic;
 using System.Windows.Forms;
 using Model;
-using Action = Model.Action;
 using Color = System.Drawing.Color;
-
-//розробила базову логіку гри, дала можливість гравцю ставити стіни і ходити - Довгань Валерія
-
 
 namespace Quoridor
 {
 
-    public partial class Form1 : Form, IViewer //Все, що відбувається в формі
+    public partial class Form1 : Form, IViewer
     {
         Controller.Controller Controller { get; set; }
         Game Game;
 
-        public Form1()  //запускає дії в формі
+        bool isGameOver;
+
+        public Form1(bool gameWithBot)  //запускає дії в формі
         {
             Controller = new Controller.Controller();
             InitializeComponent();
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
-            Game = Game.GetInstance(Controller, this, true);
-            resetGame();
+            Game = Game.GetInstance(Controller, this, gameWithBot) ;
+            resetGame(gameWithBot);
         }
-
-        bool isGameOver = true;
 
         private void keyisdown(object sender, KeyEventArgs e)
         {
@@ -34,16 +30,20 @@ namespace Quoridor
         private void keyisup(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
-                resetGame();
+            {
+                this.Hide();
+                Form0 form1 = new Form0();
+                form1.Show();
+            }
         }
 
-        private void mainGameTimer(object sender, EventArgs e)  //запускає всі процеси в грі (логічні і не дуже)
+        private void mainGameTimer(object sender, EventArgs e)
         {
-            foreach (Control x in this.Controls) //починаємо працювати з кожним елементом форми
+            foreach (Control x in this.Controls)
             {
-                if ((string)x.Tag == "Wall" && !TouchingOther(x.Top, x.Left))  //прописуємо дії для стін
+                if ((string)x.Tag == "Wall" && !TouchingOther(x.Top, x.Left))
                 {                    
-                    x.MouseClick += (a_sender, a_args) =>  //активується при кліку миші, ставимо стіни
+                    x.MouseClick += (a_sender, a_args) => 
                     {      
                         Controller.SetAction(Model.Action.PlaceWall);
                         Controller.SetWall(x.Top, x.Left, IsVertical(x.Top, x.Left));
@@ -51,17 +51,17 @@ namespace Quoridor
                     };
 
 
-                    x.MouseHover += (a_sender, a_args) =>  //активується при наведенні миші на стіну
+                    x.MouseHover += (a_sender, a_args) =>
                     {
-                        if (x.BackColor != Color.LightSlateGray)  //перевіряємо чи не є стіна постійною
+                        if (x.BackColor != Color.LightSlateGray && !TouchingOther(x.Top, x.Left))
                         {
                             RenderWall(x.Top, x.Left, Color.LightSteelBlue);
                         }
 
                     };
-                    x.MouseLeave += (a_sender, a_args) =>  //активується коли миша сповзає зі стіни
+                    x.MouseLeave += (a_sender, a_args) =>  
                     {
-                        if (x.BackColor != Color.LightSlateGray)  //перевіряємо чи не є стіна постійною
+                        if (x.BackColor != Color.LightSlateGray) 
                         {
                             RenderWall(x.Top, x.Left, Color.LightSkyBlue);
                             x.SendToBack();
@@ -71,11 +71,11 @@ namespace Quoridor
 
                 }
 
-                if ((string)x.Tag == "Cell")  //прописуємо дії для гральних клітинок
+                if ((string)x.Tag == "Cell") 
                 {
                     
 
-                    x.MouseClick += (a_sender, a_args) => //активується при кліку миші
+                    x.MouseClick += (a_sender, a_args) =>
                     {
                         Controller.SetAction(Model.Action.MakeMove);
                         Controller.SetCell(x.Top, x.Left);
@@ -135,17 +135,17 @@ namespace Quoridor
             return false;
         }
 
-        private void resetGame() //дії, які відбуваються при перезапуску гри
+        private void resetGame(bool gameWithBot)
         {
 
-            gameTimer.Start();  //починається відлік гри, всі дії можуть відбуватися
+            gameTimer.Start(); 
 
             label1.Text = "Залишилось стін: 10";
             label2.Text = "Залишилось стін: 10";
 
             isGameOver = false;
 
-            Game.NewGame(true);
+            Game.NewGame(gameWithBot);
             ClearWalls();
             RenderBottomPlayer(625, 325);
             RenderUpperPlayer(25, 325);
@@ -178,8 +178,8 @@ namespace Quoridor
 
         public bool IsVertical(int top, int left)
         {
-            bool horizont = false; //за замовчуванням вертикальна
-            foreach (var v in WallsList())  //if true то горизонтальна
+            bool horizont = false;
+            foreach (var v in WallsList())
             {
                 if (v.Height == 25 && v.Top == top && v.Left == left)
                     horizont = true;
@@ -215,7 +215,7 @@ namespace Quoridor
         {
             List<PictureBox> Pic = new List<PictureBox>();
             Pic.Add(pictureBox1);
-            Pic.Add(pictureBox2);
+
             Pic.Add(pictureBox3);
             Pic.Add(pictureBox4);
             Pic.Add(pictureBox5);
